@@ -1,0 +1,15 @@
+[Unit]
+Description=Initialize the serial port bind. Server side.
+
+[Service]
+Restart=on-failure
+RestartSec=3
+Type=simple
+ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-ring/server/socat.sh
+Environment=DEVICE_IP_ADDRESS=10.0.28.69
+Environment=SOCAT_PORT=4161
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

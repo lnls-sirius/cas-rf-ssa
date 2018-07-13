@@ -1,0 +1,16 @@
+[Unit]
+Description=RF Ring Data Acquisition
+After=rf-ring-socat.service
+
+[Service]
+Restart=on-failure
+RestartSec=3
+Type=simple
+Environment=PYTHONPATH=/root/cas-rf/sirius-cas-rf-ring/server
+ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-ring/server/init.sh
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,14 @@
+[Unit]
+Description=Initialize the serial port bind.
+
+[Service]
+Restart=on-failure
+RestartSec=3
+Type=simple
+ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-ring/beaglebone/init.sh
+Environment=SOCAT_PORT=4161
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
