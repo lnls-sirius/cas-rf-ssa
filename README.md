@@ -18,7 +18,7 @@ Author: Claudio Carneiro
     <li>
         Software requirements:<br>
         Python 2, EPICS Base and pcaspy.<br>
-        Tested with Python 2.7.12, EPICS Base 3.15.5 and pcaspy 0.7.1,  socat 1.7.3.1-2+deb9u1 armhf and socat 1.7.3.2-2ubuntu2 amd64.
+        Tested with Python 3.6.5, EPICS Base 3.15.5 and pcaspy 0.7.1,  socat 1.7.3.1-2+deb9u1 armhf and socat 1.7.3.2-2ubuntu2 amd64.
     </li>
 </ul>
 
