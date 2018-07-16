@@ -15,6 +15,10 @@ all: install
  
 install:
 	@echo "\n"
+	@echo "Installing Swig"
+	apt-get -y install swig
+
+	@echo "\n"
 	@echo "Installing Socat!"
 	apt-get install socat
 
