@@ -14,6 +14,11 @@ SERVICE_FILE_DEST = /etc/systemd/system
 all: install
  
 install:
+	@echo "\n"
+	@echo "Installing Socat!"
+	apt-get install socat
+
+	@echo "\n"
 	@echo Installing Python3 and pip3!
 	apt-get install python3
 	apt-get install python3-pip

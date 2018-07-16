@@ -5,7 +5,7 @@ SIRIUS-CAS-RF-RING
 
 Channel Access server for the solid-state amplifiers of Sirius booster RF system.
 
-This application sould be run on the server side. 
+This application sould run on the server side. 
 
 """
 from pcaspy import Driver, Alarm, Severity, SimpleServer
@@ -201,7 +201,7 @@ class RF_BSSA_Driver(Driver):
                             stop = answer.endswith(END_OF_STREAM)
                         
                         if SHOW_DEBUG_INFO:
-                            print('{}'.format(answer))
+                            #print('{}'.format(answer))
                             if self.oks + self.transmission_failures != 0:
                                 print("ok={}\tf={}\ts/f={}\ttout={}\tok%={}".format(self.oks, self.transmission_failures,
                                                                                 self.sec_per_f, self.timeouts,
@@ -385,10 +385,7 @@ class RF_BSSA_Driver(Driver):
         if len(stream) != 738:
             return []
 
-        # The first token contains information about the on/off state of the system
-        # if (stream[:7] != "1S01000") or (stream[8] != ";"):
-        #    return []
-
+        # Some known characters in a healthy stream
         if stream[8] != ";" or stream[3] != str(rack_message_num) or (
                 stream[3] != "1" and stream[3] != "2" and stream[3] != "3" and stream[3] != "4"):
             return []
@@ -404,53 +401,73 @@ class RF_BSSA_Driver(Driver):
         if stream[-9:] != END_OF_STREAM:
             return []
 
-        if rack_message_num == 1:
-            min, max = 1, 3
-        elif rack_message_num == 2:
-            min, max = 3, 5
-        elif rack_message_num == 3:
-            min, max = 5, 7
-        else:
-            min, max = 7, 9
-
         # Here all the other tokens of the stream are processed
         stream = stream[9:-9]
 
-        bar = 1
-        loop = list(range(min, max))
-        loop.append(9)
-        for bar_num in loop:
-            bar_item = 1
-            if bar_num < 9:
-                number_of_parameters = 38
-            else:
-                number_of_parameters = 4
-                bar_item = 1 + 4 * (rack_message_num - 1)
-            while bar_item <= number_of_parameters:
-                base_index = (((bar - 1) * 38) + bar_item - 1) * 9
-                if stream[base_index] != "1":
-                    return []
-                if stream[base_index + 1] != str(bar_num):
-                    return []
-                if stream[(base_index + 2):(base_index + 4)] != str(bar_item).zfill(2):
-                    print("{}  !=  {}".format(str(stream[(base_index + 2):(base_index + 4)]),
-                                              str(str(bar_item).zfill(2))))
-                    return []
-                if stream[base_index + 8] != ";":
-                    return []
-                for offset in range(4):
-                    if stream[base_index + 4 + offset] not in list("0123456789"):
+        # Min and Max values are set according to wich rack is responding. 
+        if rack_message_num == 1:
+            # Bar 1,2 on Rack 1
+            bars = [1,2,9]
+        elif rack_message_num == 2:
+            # Bar 3,4 on Rack 2
+            bars = [3,4,9]
+        elif rack_message_num == 3:
+            # Bar 5,6 on Rack 3
+            bars = [5,6,9]
+        else:
+            # Bar 7,8 on Rack 4
+            bars = [7,8,9]
+
+        # The ';' is used as a separator
+        stream_list = stream.split(';')
+        try:
+            for chunk in stream_list:
+                if chunk and len(chunk) > 0:
+                    if len(chunk) != 8:
+                        # Every piece must have 8 chars
+                        print('[ERROR] Verify Stream Exception:\n{}'.format('not chunk or len(chunk) != 8'))
                         return []
-                adc_code = int(stream[(base_index + 4):(base_index + 8)])
-                if adc_code > 4095:
-                    return []
-                voltage = convert_adc_to_voltage(adc_code=adc_code)
-                if (bar_item <= 34) and (bar < 9):
-                    parameters_list.append(calc_I(voltage))
-                else:
-                    parameters_list.append(calc_Pdbm(voltage))
-                bar_item += 1
-            bar += 1
+
+                    if chunk[0] != '1':
+                        # Must start with '1'
+                        print('[ERROR] Verify Stream Exception:\n{}'.format('chunk[0] != \'1\''))
+                        return []
+
+                    bar_num = int(chunk[1])
+                    
+                    # The bar is wrong
+                    if not bar_num in bars:
+                        print('[ERROR] Verify Stream Exception:\n{}'.format(' not bar_num in bars'))
+                        return []
+
+                    bar_item = int(chunk[2:4])
+                    adc_code = int(chunk[4:])
+                    
+                    # If it's greater than this, something really wrong happened during the data transmission
+                    if adc_code > 4095:
+                        print('[ERROR] Verify Stream Exception:\n{}'.format('adc_code > 4095'))
+                        return []
+                    
+                    # Raw to voltage
+                    voltage = convert_adc_to_voltage(adc_code=adc_code)
+
+                    # Voltage to ...
+                    if (bar_item <= 34) and (bar_num < 9):
+                        # Current
+                        # If the bar item is less or equal 34, this is a current reading! For every other case i'm reading Pdbm
+                        parameters_list.append(calc_I(voltage))
+                    else:
+                        # P dbm
+                        parameters_list.append(calc_Pdbm(voltage))
+        except:
+            # If anything is raised the stream is corrupted
+            print('[ERROR] Verify Stream Exception:\n{}'.format(traceback.format_exc()))
+            return []    
+        
+        # The length of a healthy stream is always 81
+        if len(parameters_list) != 81:
+            print('[ERROR] Verify Stream Exception:\n{}'.format('The paramters list does not have 81 items as expected.'))
+            return []    
 
         return parameters_list
 
