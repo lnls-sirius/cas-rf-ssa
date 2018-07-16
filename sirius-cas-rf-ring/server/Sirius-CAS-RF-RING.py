@@ -10,8 +10,8 @@ This application sould run on the server side.
 """
 from pcaspy import Driver, Alarm, Severity, SimpleServer
 from queue import Queue
+
 from Calc import calc_I, calc_Pdbm, convert_adc_to_voltage
-from Configs import *
 
 import traceback
 import time
@@ -19,6 +19,7 @@ import os
 import pickle
 import threading
 
+from Configs import *
 
 # PVs related to the solid-state amplifiers
 PVs = {}
@@ -444,7 +445,7 @@ class RF_BSSA_Driver(Driver):
                     adc_code = int(chunk[4:])
                     
                     # If it's greater than this, something really wrong happened during the data transmission
-                    if adc_code > 4095:
+                    if adc_code > 4095 or adc_code < 0:
                         print('[ERROR] Verify Stream Exception:\n{}'.format('adc_code > 4095'))
                         return []
                     

@@ -19,24 +19,7 @@ if len(args) == 2:
     except Exception:
         print("Parameter {} could not be converted to True/False".format(args[1]))
 
-#########################################################
-#########################################################
-'''
-current_lolim = ((5.4054 * ((0 / 4095.0) * 5.0)) - 2.703) * 1.05
-current_hilim = ((5.4054 * ((4095 / 4095.0) * 5.0)) - 2.703) * 1.05
-current_low = 1.0
-current_high = 9.5
-current_lolo = 0.0
-current_hihi = 10.0
-
-power_lolim = (7.8806 * math.log((1 / 4095.0) * 5.0)) + 11.289
-power_hilim = (7.8806 * math.log((4095 / 4095.0) * 5.0)) + 11.289
-power_low = 0.0
-power_high = 0.0
-power_lolo = 0.0
-power_hihi = 0.0
-power_lolim = (7.8806 * math.log((1 / 4095.0) * 5.0)) + 11.289
-'''
+ 
 DB_FILENAME = "offsets_parameters.db"
 ALARM_DB_FILENAME = "alarms_parameters.db"
 

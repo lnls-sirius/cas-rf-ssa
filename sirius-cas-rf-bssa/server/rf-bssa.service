@@ -1,0 +1,16 @@
+[Unit]
+Description=RF Bssa Data Acquisition
+After=rf-bssa-socat.service
+
+[Service]
+Restart=on-failure
+RestartSec=3
+Type=simple
+Environment=PYTHONPATH=/root/cas-rf/sirius-cas-rf-bssa/server
+ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-bssa/server/init.sh
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
+

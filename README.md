@@ -34,6 +34,8 @@ On the server side Socat is also used to bind the communication to a virtual ser
 ## Installation
 <p>
 The installation process is meant to be as simple as possible.<br>
+The user MUST clone the repository at `/root/` and execute the commands as sudo
+
 It's important to set the correct values for the following enviroment variables inside the .services files:
 
 `Environment=DEVICE_IP_ADDRESS=(beaglebone ipv4 addr)`<br>
@@ -61,3 +63,18 @@ To persist the values of the offset/alarm pvs, hit the save button.
 
 
 # Sirius Cas Rf Booster
+
+## Installation
+<p>
+The installation process is meant to be as simple as possible.<br>
+It's important to set the correct values for the following enviroment variables inside the .services files:
+
+`Environment=DEVICE_IP_ADDRESS=(beaglebone ipv4 addr)`<br>
+`into`<br>`sirius-cas-rf-bssa/server/rf-bssa-socat.service`<br>
+ 
+`Environment=SOCAT_PORT=(this port must be the same on the client and the server)`<br>
+`into`<br>`sirius-cas-rf-bssa/server/rf-bssa-socat.service and sirius-cas-rf-bssa/beaglebone/rf-bssa-socat.service`<br>
+
+When everything is set:<br>
+`make install or make uninstall`
+</p>
