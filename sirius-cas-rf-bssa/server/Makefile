@@ -12,7 +12,7 @@ SERVICE_FILE_DEST = /etc/systemd/system
 .PHONY: all install-socat install uninstall
 
 all: install
- 
+
 install:
 	@echo "\n"
 	@echo "Installing Swig"
@@ -20,12 +20,12 @@ install:
 
 	@echo "\n"
 	@echo "Installing Socat!"
-	apt-get install socat
+	apt-get -y install socat
 
 	@echo "\n"
 	@echo Installing Python3 and pip3!
-	apt-get install python3
-	apt-get install python3-pip
+	apt-get -y install python3
+	apt-get -y install python3-pip
 	pip3 install -r requirements.txt
 
 	@echo "Executing $@...\n"

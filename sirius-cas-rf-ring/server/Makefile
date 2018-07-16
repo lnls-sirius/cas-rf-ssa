@@ -9,7 +9,7 @@ SRC_SERVICE_FILE = ${SERVICE_NAME}.service
 
 SERVICE_FILE_DEST = /etc/systemd/system
 
-.PHONY: all install-socat install uninstall
+.PHONY: all install uninstall
 
 all: install
  
