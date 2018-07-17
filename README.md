@@ -31,21 +31,58 @@ On the server side Socat is also used to bind the communication to a virtual ser
 <br>"PCASpy provides not only the low level python binding to EPICS Portable Channel Access Server but also the necessary high level abstraction to ease the server tool programming."
 </p>
 
+## How it works
+Services are used to keep everything running.
+
+The services are configured in the following files:
+<ul>
+    <li>cas-rf/sirius-cas-rf-ring/server/rf-ring.service IOC and data processing. Server Hardware</li>
+    <li>cas-rf/sirius-cas-rf-ring/server/rf-ring-socat.service Socat TCP client on the server hardware. </li>
+    <li>cas-rf/sirius-cas-rf-ring/beaglebone/rf-ring-socat.service TCP server that binds the serial port ttyUSB0. </li>
+</ul>
+
+It's possible to execute everything on the Beaglebone, including the IOC. In this case only the following service must be enabled.
+<ul>
+    <li>cas-rf/sirius-cas-rf-ring/beaglebone/ioc/rf-ring-ioc.service IOC and data processing service.</li>
+</ul>
+
 ## Installation
 <p>
-The installation process is meant to be as simple as possible.<br>
-The user MUST clone the repository at `/root/` and execute the commands as sudo
+The user MUST clone the repository at `/root/` and execute the commands as sudo.
 
-It's important to set the correct values for the following enviroment variables inside the .services files:
+It's important to set the correct values for the enviroment variables inside the following service files:
 
-`Environment=DEVICE_IP_ADDRESS=(beaglebone ipv4 addr)`<br>
-`into`<br>`sirius-cas-rf-ring/server/rf-ring-socat.service`<br>
- 
-`Environment=SOCAT_PORT=(this port must be the same on the client and the server)`<br>
-`into`<br>`sirius-cas-rf-ring/server/rf-ring-socat.service and sirius-cas-rf-ring/beaglebone/rf-ring-socat.service`<br>
+<ul>
+    <li>
+        cas-rf/sirius-cas-rf-ring/server/rf-ring.service <br>
+        Environment=RF_RING_SERIAL_PORT=/dev/rfRingSerial
+    </li>
+    <li>
+        sirius-cas-rf-ring/server/rf-ring-socat.service <br>
+        `Environment=DEVICE_IP_ADDRESS=(beaglebone ipv4 addr)` <br>
+        `Environment=SOCAT_PORT=(this port must be the same on the client and the server)` <br>
+        `Environment=RF_RING_SERIAL_PORT=(serial port to read from)` <br>
+    </li>
+     <li>
+        srius-cas-rf-ring/beaglebone/rf-ring-socat.service <br>
+        Environment=SOCAT_PORT=(this port must be the same on the client and the server) <br>
+        Environment=SERVER_IP_ADDR=(server IPv4 address) <br>
+        Environment=SERVER_MASK=(server mask) <br>
+    </li>
+</ul>
 
-When everything is set:<br>
-`make install or make uninstall`
+The variables `Environment=SERVER_IP_ADDR=(server IPv4 address)` and `Environment=SERVER_MASK=(server mask)` make socat accept only connections from the configured IP:
+
+In case it's necessary to change the serial port name, just modify the enviroment variable `RF_RING_SERIAL_PORT` inside the `rf-ring.service` and `rf-ring-socat.service` files. The default value is :
+`Environment=RF_RING_SERIAL_PORT=/dev/rfRingSerial`
+and if enviroment is set, the software tries to connect at /dev/ttyUSB0.
+
+When everything use the Makefiles located at `cas-rf/sirius-cas-rf/server` and `cas-rf/sirius-cas-rf/beaglebone`.<br>
+
+In order run everything inside the Beaglebone, including the IOC, use the Makefile located at `cas-rf/sirius-cas-rf-ring/beaglebone/ioc`. The serial port name can be change by altering the enviroment variable of `the rf-ring-ioc.service` but that shoudn't be necessary as the default value is `/dev/ttyUSB0`. It's importante that only one approach is used at time. The user must guarantee that only one rf-ring related service is running inside the single board computer of choice.
+
+To remove:<br>
+`make uninstall`
 </p>
 
 ## OPI
