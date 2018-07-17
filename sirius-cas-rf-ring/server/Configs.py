@@ -1,12 +1,20 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+
 import math
 import serial
 import traceback
 
+import os  as os
 import sys as sys
-#########################################################
-#########################################################
+
+# @todo: Split this file and move the neccessary parts to a __init__.py file
+
+# Load the serial port name from the enviroment. If it's not set uses the default USB0 connection.
+if "RF_RING_SERIAL_PORT" in os.environ:  
+    SERIAL_PORT_NAME = os.getenv("RF_RING_SERIAL_PORT")
+else:
+    SERIAL_PORT_NAME = "/dev/ttyUSB0"
 
 args = sys.argv
 SHOW_DEBUG_INFO = False
@@ -26,23 +34,26 @@ ALARM_DB_FILENAME = "alarms_parameters.db"
 #########################################################
 #########################################################
 
-'''
-    Serial Connection
-'''
+# Time between attempts to reconnect the serial port
+TIME_RECONNECT = 3.
+
+# Time between scan requests
+SCAN_TIMER = 1.
+
+
 BAUD_RATE = 500000
 TIMEOUT = 1
 STOP_BITS = serial.STOPBITS_ONE
 PARITY = serial.PARITY_NONE
 BYTE_SIZE = serial.EIGHTBITS
-FLOW_CONTROL = False
 
-TIME_RECONNECT = 1.0
-
-
-def get_serial(serial_port):
-    '''return serial.Serial(serial_port)
+def get_serial():
     '''
-    return serial.Serial(port=serial_port,
+        Serial Connection
+
+        return serial.Serial(serial_port)
+    ''' 
+    return serial.Serial(port=SERIAL_PORT_NAME,
                          baudrate=BAUD_RATE,
                          timeout=TIMEOUT,
                          stopbits=STOP_BITS,
@@ -50,23 +61,23 @@ def get_serial(serial_port):
                          bytesize=BYTE_SIZE)
     
 
-SCAN_TIMER = .25
-PORT = {
-    1: "/dev/rfRingSerial",
-    2: "/dev/ttyUSB1",
-    3: "/dev/ttyUSB2",
-    4: "/dev/ttyUSB3"
-}
-
-porta_0 = get_serial(PORT[1])
-
+# First attempt to initialize the serial port.
+# try block so that the program doesn't die on initialization ...
+try :
+    SERIAL_PORT = get_serial()
+except:
+    SERIAL_PORT = None
+    
 READ_MSGS = \
-    [[1, "RACK1".encode('utf-8'), porta_0],
-     [2, "RACK2".encode('utf-8'), porta_0],
-     [3, "RACK3".encode('utf-8'), porta_0],
-     [4, "RACK4".encode('utf-8'), porta_0]]
+    [[1, "RACK1".encode('utf-8'), SERIAL_PORT],
+     [2, "RACK2".encode('utf-8'), SERIAL_PORT],
+     [3, "RACK3".encode('utf-8'), SERIAL_PORT],
+     [4, "RACK4".encode('utf-8'), SERIAL_PORT]]
 
+# A token used on the consumer thread to request readings
 READ_PARAMETERS = "READ_PARAMETERS"
+
+# Token that sinals the end of the stream
 END_OF_STREAM = "####FIM!;"
 
 
@@ -83,7 +94,8 @@ def refresh_serial_connection():
                 except:
                     pass
         # Create a new serial connection and update the READ_MSGS array.
-        porta_0 = get_serial(PORT[1])
+        porta_0 = get_serial()
+
         for i in range(4):
             READ_MSGS[i][2] = porta_0
         return True
