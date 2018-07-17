@@ -11,7 +11,7 @@ This application sould run on the server side.
 from pcaspy import Driver, Alarm, Severity, SimpleServer
 from queue import Queue
 
-from Calc import calc_I, calc_Pdbm, convert_adc_to_voltage
+from Calc import calc_I, calc_Pdbm, convert_adc_to_voltage, flip_low_high
 
 import traceback
 import time
@@ -41,18 +41,21 @@ for rack_num in range(1, 5):
         for reading in range(1, 35):
             PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=heatsink, reading_item_num=reading)] = {
                 "type": "float",
-                "prec": 2, "unit": "A"}
+                "prec": 4, "unit": "A",
+                "MDEL": -1}
 
         for reading in range(35, 39):
             PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=heatsink, reading_item_num=reading)] = {
                 "type": "float",
-                "prec": 2,
-                "unit": "dBm"}
+                "prec": 4,
+                "unit": "dBm",
+                "MDEL": -1}
 
     for reading in range(1, 5):
         PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=9, reading_item_num=reading)] = {"type": "float",
-                                                                                                  "prec": 2,
-                                                                                                  "unit": "dBm"}
+                                                                                                  "prec": 4,
+                                                                                                  "unit": "dBm",
+                                                                                                  "MDEL": -1}
 
 if SHOW_DEBUG_INFO:
     print("#########################################")
@@ -64,14 +67,14 @@ if SHOW_DEBUG_INFO:
 
 
 # Offset PVs
-PVs[OFFSET_PVS_DIC["bar_upper_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_upper_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_lower_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_lower_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["input_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["input_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["output_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["output_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["bar_upper_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["bar_upper_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["bar_lower_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["bar_lower_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["input_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["input_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["output_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
+PVs[OFFSET_PVS_DIC["output_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
 
 # Alarm Limit PVs
 PVs[ALARMS_PVS_DIC["general_power_lim_high"]] = {"type": "float", "prec": 4, "unit": "dB"}
@@ -122,7 +125,7 @@ class RF_BSSA_Driver(Driver):
             pickle.dump(self.power_offsets, open(DB_FILENAME, "wb+"))
             pickle.dump(self.alarm_offsets, open(ALARM_DB_FILENAME, "wb+"))
 
-        self.resetDbParams()
+        self.resetAlarmStatus()
 
         # Here all PVs related to power offset parameters are initialized
         self.setParam(OFFSET_PVS_DIC["bar_upper_incident_power"], self.power_offsets["bar_upper_incident_power"])
@@ -173,9 +176,36 @@ class RF_BSSA_Driver(Driver):
             self.queue.put(READ_PARAMETERS)
             self.event.wait(SCAN_TIMER)
  
+    # Raise a timeout alarm for all monitoring variables
+    def raiseTimoutAlarm(self):
+        if SHOW_DEBUG_INFO:
+            self.timeouts += 1
+        for pv_key, pv_name in RACK_PVS.items():
+            if ((self.pvDB[pv_name].alarm != Alarm.TIMEOUT_ALARM) or (self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
+                # This is used only to update the PV timestamp
+                self.setParam(pv_name, self.getParam(pv_name))
+                # Then the alarm condition is set for the PV
+                self.setParamStatus(pv_name, Alarm.TIMEOUT_ALARM, Severity.INVALID_ALARM)
+
+    # Raise an invalid alarm for all monitoring variables
+    def raiseInvalidAlarm(self):
+        if SHOW_DEBUG_INFO:
+            self.transmission_failures += 1
+            self.sec_per_f = (time.time() - self.TIME_NOW) / self.transmission_failures
+
+        # If the device answered, but the received message doesn't match the
+        # expected pattern, "READ INVALID" is defined as the alarm state for all
+        # device monitoring PVs.
+        for pv_key, pv_name in RACK_PVS.items():
+            if ((self.pvDB[pv_name].alarm != Alarm.READ_ALARM) or (self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
+                # This is used only to update the PV timestamp
+                self.setParam(pv_name, self.getParam(pv_name))
+
+                # Then the alarm condition is set for the PV
+                self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.INVALID_ALARM)
+
     # Thread for queue processing
     def processThread(self):
-
         while True:
 
             # Here the next operation in queue is obtained and processed
@@ -185,62 +215,50 @@ class RF_BSSA_Driver(Driver):
             if queue_item == READ_PARAMETERS:
                 try:
                     for rack_message_num, rack_message, serial_interface in READ_MSGS:
-                        # A new request is sent to the data acquisition hardware of the solid-state
-                        # amplifiers.
+
+                        if not serial_interface:
+                            ''' 
+                            "serial_interface" == None (not serial_interface) means that the serial
+                            connection could not be established during the program initialization.
+                            As this exception is raised, the timeout alarm is set and every x seconds, the program
+                            will try to establish the required connection.
+                            '''
+                            raise Exception('Serial Interface == None')
+
+                        # A new request is sent to the data acquisition hardware of the solid-state amplifiers.
                         if SHOW_DEBUG_INFO:
                             print("Serial Write {}".format(rack_message))
                         serial_interface.write(rack_message)
 
-                        # This routine reads the stream returned by the data acquisition hardware until a
-                        # timeout of 100 ms (approximately) is exceeded.
+                        # This routine reads the stream returned by the data acquisition hardware until a timeout of 100 ms (approximately) is exceeded.
                         answer = ""
                         byte = serial_interface.read(1) 
                         stop = False
                         while not stop:
                             answer += byte.decode('utf-8')
                             byte = serial_interface.read(1)
-                            stop = answer.endswith(END_OF_STREAM)
+
+                            # byte == "" is to support direct serial connections and answer.endswith(END_OF_STREAM) is used alongside socat
+                            stop = (byte == "" or answer.endswith(END_OF_STREAM))
                         
                         if SHOW_DEBUG_INFO:
-                            #print('{}'.format(answer))
                             if self.oks + self.transmission_failures != 0:
                                 print("ok={}\tf={}\ts/f={}\ttout={}\tok%={}".format(self.oks, self.transmission_failures,
                                                                                 self.sec_per_f, self.timeouts,
                                                                                 self.oks * 100 / (self.oks + self.transmission_failures)))
 
-                        # If the device didn't answer, "TIMETOUT INVALID" is defined as the alarm state for
-                        # all device monitoring PVs.
+                        
                         if len(answer) == 0:
-                            if SHOW_DEBUG_INFO:
-                                self.timeouts += 1
-                            for pv_key, pv_name in RACK_PVS.items():
-                                if ((self.pvDB[pv_name].alarm != Alarm.TIMEOUT_ALARM)
-                                        or (self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
-
-                                    # This is used only to update the PV timestamp
-                                    self.setParam(pv_name, self.getParam(pv_name))
-                                    # Then the alarm condition is set for the PV
-                                    self.setParamStatus(pv_name, Alarm.TIMEOUT_ALARM, Severity.INVALID_ALARM)
+                            # If the device didn't answer, "TIMETOUT INVALID" is defined as the alarm state for all device monitoring PVs.
+                            self.raiseTimoutAlarm()
                         else:
                             # Received message verification and processing
                             parameters = self.verifyStream(answer, rack_message_num)
 
+                            
                             if not parameters:
-                                if SHOW_DEBUG_INFO:
-                                    self.transmission_failures += 1
-                                    self.sec_per_f = (time.time() - self.TIME_NOW) / self.transmission_failures
-
-                                # If the device answered, but the received message doesn't match the
-                                # expected pattern, "READ INVALID" is defined as the alarm state for all
-                                # device monitoring PVs.
-                                for pv_key, pv_name in RACK_PVS.items():
-                                    if ((self.pvDB[pv_name].alarm != Alarm.READ_ALARM) or (self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
-                                        # This is used only to update the PV timestamp
-                                        self.setParam(pv_name, self.getParam(pv_name))
-
-                                        # Then the alarm condition is set for the PV
-                                        self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.INVALID_ALARM)
-
+                                # If not, raise data invalid alarm
+                                self.raiseInvalidAlarm()
                             else:
                                 if SHOW_DEBUG_INFO:
                                     self.oks += 1
@@ -270,8 +288,9 @@ class RF_BSSA_Driver(Driver):
                                             new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_reflected_power"])
                                         elif bar_item == 38:
                                             new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_incident_power"])
-                                        if ((self.pvDB[pv_name].severity == Severity.INVALID_ALARM)):
-                                            self.setParam(pv_name, new_value)
+                                        
+                                        
+                                        self.setParam(pv_name, new_value)
                                     
                                         # Current Alarm
                                         if bar_item in range(1, 35):
@@ -280,11 +299,8 @@ class RF_BSSA_Driver(Driver):
                                         # Power Alarm
                                         else:
                                             low, high = self.getParam(ALARMS_PVS_DIC["inner_power_lim_low"]), self.getParam(ALARMS_PVS_DIC["inner_power_lim_high"])
-
-                                        if low > high:
-                                            aux = low
-                                            low = high
-                                            high = aux
+                                        
+                                        low, high = flip_low_high(low, high)
 
                                         # Set or reset the alarm status.
                                         if (new_value < low ) or (new_value > high):
@@ -300,10 +316,8 @@ class RF_BSSA_Driver(Driver):
                                     
                                     low, high = self.getParam(ALARMS_PVS_DIC["general_power_lim_low"]), self.getParam(
                                         ALARMS_PVS_DIC["general_power_lim_high"])
-                                    if low > high:
-                                        aux = low
-                                        low = high
-                                        high = aux
+                                    
+                                    low, high = flip_low_high(low, high)
 
                                     new_value = parameters[(-1) * bar_item]
 
@@ -317,18 +331,24 @@ class RF_BSSA_Driver(Driver):
                                     elif bar_item == 4:
                                         new_value += self.getParam(OFFSET_PVS_DIC["input_reflected_power"])
                                     
-                                    if ((self.pvDB[pv_name].severity == Severity.INVALID_ALARM)):
-                                        self.setParam(pv_name, new_value)
+                                
+                                    self.setParam(pv_name, new_value)
 
-                                        # Set or reset the alarm status
-                                        if  (new_value < low ) or (new_value > high):
-                                            self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
-                                        else:
-                                            self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)   
+                                    # Set or reset the alarm status
+                                    if  (new_value < low ) or (new_value > high):
+                                        self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
+                                    else:
+                                        self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)   
                     
                     # Finally, all connected clients are notified if something changed
                     self.updatePVs()
-                except Exception:
+                    
+                except:
+                    # If an exception is raised here, a problem with the serial connection has happened. 
+                    # Set the alarms
+                    self.raiseTimoutAlarm()
+                    self.updatePVs()
+
                     # Exception has been raised! Try to refresh the serial connection
                     print('[ERROR] Main Loop Exception:\n{}'.format(traceback.format_exc()))
 
@@ -376,7 +396,6 @@ class RF_BSSA_Driver(Driver):
     # Method for verifying the received stream and also for some calculations. It returns a Python
     # list with all the parameters of the RF system. If an empty list is returned, this means that
     # the received stream didn't match the expected pattern.
-
     def verifyStream(self, stream, rack_message_num):
 
         # List with all parameters of the RF system
@@ -530,7 +549,7 @@ class RF_BSSA_Driver(Driver):
             return False
     
     # Reset the alarm status
-    def resetDbParams(self):
+    def resetAlarmStatus(self):
         for k, pv_name in OFFSET_PVS_DIC.items():
             self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)
         for k, pv_name in ALARMS_PVS_DIC.items():
