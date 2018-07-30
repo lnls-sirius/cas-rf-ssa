@@ -345,16 +345,12 @@ class RF_BSSA_Driver(Driver):
                     
                     # Finally, all connected clients are notified if something changed
                     self.updatePVs()
-                    
+
                 except:
-                    # If an exception is raised here, a problem with the serial connection has happened. 
                     # Set the alarms
                     self.raiseTimoutAlarm()
                     self.updatePVs()
-
-                    # Exception has been raised! Try to refresh the serial connection
-                    print('[ERROR] Main Loop Exception:\n{}'.format(traceback.format_exc()))
-
+                     
                     while not refresh_serial_connection():
                         # Loop untill success
                         time.sleep(TIME_RECONNECT)

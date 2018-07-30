@@ -7,8 +7,7 @@ import traceback
 
 import os  as os
 import sys as sys
-
-# @todo: Split this file and move the neccessary parts to a __init__.py file
+import time
 
 # Load the serial port name from the enviroment. If it's not set uses the default USB0 connection.
 if "RF_RING_SERIAL_PORT" in os.environ:  
@@ -35,14 +34,14 @@ ALARM_DB_FILENAME = "alarms_parameters.db"
 #########################################################
 
 # Time between attempts to reconnect the serial port
-TIME_RECONNECT = 3.
+TIME_RECONNECT = 10.
 
 # Time between scan requests
-SCAN_TIMER = 1.
+SCAN_TIMER = 5.
 
 
 BAUD_RATE = 500000
-TIMEOUT = 1
+TIMEOUT = 2.
 STOP_BITS = serial.STOPBITS_ONE
 PARITY = serial.PARITY_NONE
 BYTE_SIZE = serial.EIGHTBITS
@@ -64,7 +63,10 @@ def get_serial():
 # First attempt to initialize the serial port.
 # try block so that the program doesn't die on initialization ...
 try :
-    SERIAL_PORT = get_serial()
+    if os.path.exists(SERIAL_PORT_NAME):
+        SERIAL_PORT = get_serial()
+    else:
+        SERIAL_PORT = None
 except:
     SERIAL_PORT = None
     
@@ -86,19 +88,41 @@ def refresh_serial_connection():
     Refresh the serial connection.
     return True or False
     """
+    global READ_MSGS
     try:
+        if not os.path.exists(SERIAL_PORT_NAME):
+            '''
+            This device doesn't exist ! It's disconnected or the socat service is off.
+            '''
+            return False
+        
+        # Check if the serial port for each rack is open !
+        all_open = True
         for num, msg, port in READ_MSGS:
-            if port and not port.closed:
-                try:
-                    port.close()
-                except:
-                    pass
-        # Create a new serial connection and update the READ_MSGS array.
-        porta_0 = get_serial()
+            if not port.is_open:
+                all_open = False
+        
+        if not all_open:
+            for num, msg, port in READ_MSGS:
+                if port != None:
+                    try:
+                        port.close()
+                    except:
+                        pass
 
-        for i in range(4):
-            READ_MSGS[i][2] = porta_0
+            # Create a new serial connection and update the READ_MSGS array.
+            porta_0 = get_serial()
+
+            for i in range(4):
+                READ_MSGS[i][2] = porta_0
+
         return True
+
+    # Could not find the serial device ... It's disconnencted
+    except serial.serialutil.SerialException:
+        # There's nothing to do but wait
+        return False
+
     except Exception:
         print('[ERROR] Refresh Serial Exception:\n{}'.format(traceback.format_exc()))
         return False
