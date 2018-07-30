@@ -232,16 +232,19 @@ class RF_BSSA_Driver(Driver):
 
                         # This routine reads the stream returned by the data acquisition hardware until a timeout of 100 ms (approximately) is exceeded.
                         answer = ""
-                        byte = serial_interface.read(1) 
+                        byte = (serial_interface.read(1)).decode('utf-8')
+                        
                         stop = False
                         while not stop:
-                            answer += byte.decode('utf-8')
-                            byte = serial_interface.read(1)
+                            
+                            answer += byte
+                            byte = (serial_interface.read(1)).decode('utf-8')
 
                             # byte == "" is to support direct serial connections and answer.endswith(END_OF_STREAM) is used alongside socat
                             stop = (byte == "" or answer.endswith(END_OF_STREAM))
                         
                         if SHOW_DEBUG_INFO:
+                            print('{}'.format(answer))
                             if self.oks + self.transmission_failures != 0:
                                 print("ok={}\tf={}\ts/f={}\ttout={}\tok%={}".format(self.oks, self.transmission_failures,
                                                                                 self.sec_per_f, self.timeouts,
