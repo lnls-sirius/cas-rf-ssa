@@ -91,15 +91,14 @@ def refresh_serial_connection():
     global READ_MSGS
     try:
         if not os.path.exists(SERIAL_PORT_NAME):
-            '''
-            This device doesn't exist ! It's disconnected or the socat service is off.
-            '''
+            # This device doesn't exist ! It's disconnected or the socat service is off.
+            # Will have to wait inside this loop ...
             return False
         
         # Check if the serial port for each rack is open !
         all_open = True
         for num, msg, port in READ_MSGS:
-            if not port.is_open:
+            if port == None or not port.is_open or port.portstr != SERIAL_PORT_NAME:
                 all_open = False
         
         if not all_open:
