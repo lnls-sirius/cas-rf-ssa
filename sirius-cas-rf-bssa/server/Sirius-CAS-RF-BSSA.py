@@ -3,7 +3,7 @@
  
 # Python modules required for this software
 from pcaspy import Driver, Alarm, Severity, SimpleServer
-from queue import Queue
+from queue import Queue, Full
 import serial
 
 from Calc import calc_I, calc_Pdbm, convert_adc_to_voltage, flip_low_high
@@ -19,7 +19,7 @@ from Configs import \
     refresh_serial_connection, SHOW_DEBUG_INFO, \
     SCAN_TIMER, END_OF_STREAM, ALARM_DB_FILENAME, \
     OFFSET_DB_FILENAME, READ_PARAMETERS,  TIME_RECONNECT, \
-    READ_MSG, SERIAL_PORT
+    READ_MSG, getSerialPort
 
 from pv import \
     get_bar_pv_name, \
@@ -177,10 +177,10 @@ class RF_BSSA_Driver(Driver):
 
     # This thread adds to the queue a new reading procedure once a second
     def scanThread(self):
-
-        while True:
+        while True: 
             self.queue.put(READ_PARAMETERS)
             self.event.wait(SCAN_TIMER)
+            
 
     # Raise a timeout alarm for all monitoring variables
     def raiseTimoutAlarm(self):
@@ -224,32 +224,34 @@ class RF_BSSA_Driver(Driver):
             if queue_item == READ_PARAMETERS:
                 try:
 
-                    if not SERIAL_PORT:
+                    if getSerialPort() == None:
                             ''' 
-                            "SERIAL_PORT" == None (not serial_interface) means that the serial
+                            "getSerialPort()" == None (not serial_interface) means that the serial
                             connection could not be established during the program initialization.
                             As this exception is raised, the timeout alarm is set and every x seconds, the program
                             will try to establish the required connection.
                             '''
                             raise Exception('Serial Interface == None')
                     
-                    if not  SERIAL_PORT.isOpen():
+                    if not  getSerialPort().isOpen():
                         raise Exception('Serial port not open')
                     
                     # A new request is sent to the data acquisition hardware of the solid-state
                     # amplifiers.
-                    print('{}'.format(READ_MSG))
-                    SERIAL_PORT.write(READ_MSG)
+                    if SHOW_DEBUG_INFO:
+                        print('Serial Write\t{}'.format(READ_MSG))
+                    
+                    getSerialPort().write(READ_MSG)
 
                     # This routine reads the stream returned by the data acquisition hardware until a
                     # timeout of 100 ms (approximately) is exceeded.
                     answer = ""
-                    byte = (SERIAL_PORT.read(1)).decode('utf-8')
+                    byte = (getSerialPort().read(1)).decode('utf-8')
                     stop = False
 
                     while not stop:
                         answer += byte
-                        byte = (SERIAL_PORT.read(1)).decode('utf-8')
+                        byte = (getSerialPort().read(1)).decode('utf-8')
                         
                         # The comparison =="" is used when the softare is executed
                         stop = (byte == "" or answer.endswith(END_OF_STREAM))
@@ -350,7 +352,7 @@ class RF_BSSA_Driver(Driver):
                     # Set the alarms
                     self.raiseTimoutAlarm()
                     self.updatePVs()
-
+                    #print('{}\t{}'.format(e,traceback.format_exc()))
                     while not refresh_serial_connection():
                         # Loop untill success
                         time.sleep(TIME_RECONNECT)

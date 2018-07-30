@@ -75,6 +75,9 @@ READ_MSG = "TORRE1".encode('utf-8')
 # Token that sinals the end of the stream
 END_OF_STREAM = "####FIM!;"
 
+def getSerialPort():
+    return SERIAL_PORT
+
 def refresh_serial_connection():
     """
     Refresh the serial connection.
@@ -86,6 +89,12 @@ def refresh_serial_connection():
         if not os.path.exists(SERIAL_PORT_NAME):
             # This device doesn't exist! It's disconnected or the socat service is off.
             # Will have to wait inside this loop ...
+            if SERIAL_PORT and SERIAL_PORT.is_open:
+                try:
+                    SERIAL_PORT.close()
+                except:
+                    pass
+            #print("os.path.exists(SERIAL_PORT_NAME) {}".format(os.path.exists(SERIAL_PORT_NAME)))
             return False
         
         if SERIAL_PORT:
@@ -99,6 +108,8 @@ def refresh_serial_connection():
             if not SERIAL_PORT.is_open:
                 # Create a new serial connection
                 SERIAL_PORT = get_serial()
+        else:
+            SERIAL_PORT = get_serial()
 
         return True
     except:
