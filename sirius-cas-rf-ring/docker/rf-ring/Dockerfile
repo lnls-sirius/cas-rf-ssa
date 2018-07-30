@@ -23,13 +23,6 @@ ENV EPICS_HOST_ARCH linux-x86_64
 # Pyepics libca location 
 ENV PYEPICS_LIBCA ${EPICS_BASE}/lib/${EPICS_HOST_ARCH}/libca.so
 
-
-# Socat
-ENV DEVICE_IP_ADDRESS 10.0.28.69
-ENV SOCAT_PORT 4161
-
-EXPOSE 4161
-
 WORKDIR /root/
 
 # System and service manager

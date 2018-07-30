@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Start the first process
+# Start socat detached
 ./socat.sh -D
 status=$?
 if [ $status -ne 0 ]; then
@@ -8,9 +8,10 @@ if [ $status -ne 0 ]; then
   exit $status
 fi
 
-# Start the second process
+# Start the IOC detached.
 ./Sirius-CAS-RF-RING.py -D
 
+# Every one second verify if socat is alive
 while sleep 1.; do
   ps aux |grep socat.sh |grep -q -v grep
   SOCAT_STATUS=$?
