@@ -350,7 +350,7 @@ class RF_BSSA_Driver(Driver):
                     # Set the alarms
                     self.raiseTimoutAlarm()
                     self.updatePVs()
-                     
+                    
                     while not refresh_serial_connection():
                         # Loop untill success
                         time.sleep(TIME_RECONNECT)
