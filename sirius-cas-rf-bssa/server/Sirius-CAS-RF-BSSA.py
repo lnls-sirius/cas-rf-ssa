@@ -24,56 +24,7 @@ from Configs import \
 from pv import \
     get_bar_pv_name, \
     OFFSET_PVS_DIC, ALARMS_PVS_DIC, \
-    CONF_PV, SAVE, BAR_PVS, STATE_PV
-
-# PVs related to the solid-state amplifiers
-PVs = {}
-
-# System on/off state
-PVs[STATE_PV] = {"type": "enum", "enums": ["OFF", "ON"]}
-for bar in range(1, 7):
-
-    for bar_item in range(1, 35):
-
-        # Parameters 1 and 2 of bars 2 and 5 are meaningless. So this application won't provide PVs
-        # associated with these parameters.
-        if (bar in [2, 5]) and (bar_item in [1, 2]):
-            pass
-        else:
-            PVs[get_bar_pv_name(heatsink_num=bar, reading_item_num=bar_item)] = {"type": "float", "prec": 2,
-                                                                                 "unit": "A"}
-
-    for bar_item in range(35, 39):
-        PVs[get_bar_pv_name(heatsink_num=bar, reading_item_num=bar_item)] = {"type": "float", "prec": 2, "unit": "dBm"}
-
-for bar_item in range(1, 5):
-    PVs[get_bar_pv_name(heatsink_num=9, reading_item_num=bar_item)] = {"type": "float", "prec": 2, "unit": "dBm"}
-
-PVs[OFFSET_PVS_DIC["bar_upper_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_upper_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_lower_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_lower_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["input_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["input_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["output_incident_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["output_reflected_power"]] = {"type": "float", "prec": 2, "unit": "dB"}
-
-
-PVs[ALARMS_PVS_DIC["general_power_lim_high"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["general_power_lim_low"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["inner_power_lim_high"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["inner_power_lim_low"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["current_lim_high"]] = {"type": "float", "prec": 4, "unit": "A"}
-PVs[ALARMS_PVS_DIC["current_lim_low"]] = {"type": "float", "prec": 4, "unit": "A"}
-
-PVs[CONF_PV + ":" + SAVE] = {"type": "int"}
-
-if SHOW_DEBUG_INFO:
-    print("###### PVS !!!#####")
-    for k, v in PVs.items():
-        print("{}".format(k))
-    print("###################")
-
+    CONF_PV, SAVE, BAR_PVS, STATE_PV, PVs
 
 class RF_BSSA_Driver(Driver):
     '''
