@@ -7,6 +7,7 @@ Restart=on-failure
 RestartSec=3
 Type=simple
 Environment=PYTHONPATH=/root/cas-rf/sirius-cas-rf-bssa/server
+Environment=RF_RING_SERIAL_PORT="/dev/rfBssaSerial"
 ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-bssa/server/init.sh
 StandardOutput=syslog
 StandardError=syslog

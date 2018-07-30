@@ -4,16 +4,27 @@
 # Python modules required for this software
 from pcaspy import Driver, Alarm, Severity, SimpleServer
 from queue import Queue
+import serial
 
-from Calc import calc_I, calc_Pdbm, convert_adc_to_voltage
+from Calc import calc_I, calc_Pdbm, convert_adc_to_voltage, flip_low_high
 
 import time
 import os
 import pickle
 import threading
+import traceback
 
-from Configs import *
+# It's important to import from 'Configs' before 'pv'
+from Configs import \
+    refresh_serial_connection, SHOW_DEBUG_INFO, \
+    SCAN_TIMER, END_OF_STREAM, ALARM_DB_FILENAME, \
+    OFFSET_DB_FILENAME, READ_PARAMETERS,  TIME_RECONNECT, \
+    READ_MSG, SERIAL_PORT
 
+from pv import \
+    get_bar_pv_name, \
+    OFFSET_PVS_DIC, ALARMS_PVS_DIC, \
+    CONF_PV, SAVE, BAR_PVS, STATE_PV
 
 # PVs related to the solid-state amplifiers
 PVs = {}
@@ -58,7 +69,6 @@ PVs[ALARMS_PVS_DIC["current_lim_low"]] = {"type": "float", "prec": 4, "unit": "A
 PVs[CONF_PV + ":" + SAVE] = {"type": "int"}
 
 if SHOW_DEBUG_INFO:
-    print("###################")
     print("###### PVS !!!#####")
     for k, v in PVs.items():
         print("{}".format(k))
@@ -106,7 +116,7 @@ class RF_BSSA_Driver(Driver):
             pickle.dump(self.alarm_offsets, open(ALARM_DB_FILENAME, "wb+"))
 
         # Here all PVs related to power offset parameters are initialized
-        self.resetDbParams()
+        self.resetAlarmStatus()
         self.setParam(OFFSET_PVS_DIC["bar_upper_incident_power"],
                       self.power_offsets["bar_upper_incident_power"])
         self.setParam(OFFSET_PVS_DIC["bar_upper_reflected_power"],
@@ -157,7 +167,7 @@ class RF_BSSA_Driver(Driver):
         self.process.start()
         self.scan.start()
 
-    def resetDbParams(self):
+    def resetAlarmStatus(self):
         for k, pv_name in OFFSET_PVS_DIC.items():
             self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)
             pass
@@ -172,8 +182,36 @@ class RF_BSSA_Driver(Driver):
             self.queue.put(READ_PARAMETERS)
             self.event.wait(SCAN_TIMER)
 
-    # Thread for queue processing
+    # Raise a timeout alarm for all monitoring variables
+    def raiseTimoutAlarm(self):
+        if SHOW_DEBUG_INFO:
+            self.timeouts += 1
+        for pv_key, pv_name in BAR_PVS.items():
+            if ((self.pvDB[pv_name].alarm != Alarm.TIMEOUT_ALARM) or (self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
+                # This is used only to update the PV timestamp
+                self.setParam(pv_name, self.getParam(pv_name))
+                # Then the alarm condition is set for the PV
+                self.setParamStatus(pv_name, Alarm.TIMEOUT_ALARM, Severity.INVALID_ALARM)
 
+    # Raise an invalid alarm for all monitoring variables
+    def raiseInvalidAlarm(self):
+        if SHOW_DEBUG_INFO:
+            self.transmission_failures += 1
+            self.sec_per_f = (time.time() - self.TIME_NOW) / self.transmission_failures
+
+        # If the device answered, but the received message doesn't match the
+        # expected pattern, "READ INVALID" is defined as the alarm state for all
+        # device monitoring PVs.
+        for pv_key, pv_name in BAR_PVS.items():
+            if ((self.pvDB[pv_name].alarm != Alarm.READ_ALARM) or (self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
+                # This is used only to update the PV timestamp
+                self.setParam(pv_name, self.getParam(pv_name))
+
+                # Then the alarm condition is set for the PV
+                self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.INVALID_ALARM)
+
+
+    # Thread for queue processing
     def processThread(self):
 
         # Serial interface initialization
@@ -185,22 +223,39 @@ class RF_BSSA_Driver(Driver):
             # Operation for parameters reading
             if queue_item == READ_PARAMETERS:
                 try:
+
+                    if not SERIAL_PORT:
+                            ''' 
+                            "SERIAL_PORT" == None (not serial_interface) means that the serial
+                            connection could not be established during the program initialization.
+                            As this exception is raised, the timeout alarm is set and every x seconds, the program
+                            will try to establish the required connection.
+                            '''
+                            raise Exception('Serial Interface == None')
+                    
+                    if not  SERIAL_PORT.isOpen():
+                        raise Exception('Serial port not open')
+                    
                     # A new request is sent to the data acquisition hardware of the solid-state
                     # amplifiers.
-
-                    get_serial_interface.write(READ_MSG)
+                    print('{}'.format(READ_MSG))
+                    SERIAL_PORT.write(READ_MSG)
 
                     # This routine reads the stream returned by the data acquisition hardware until a
                     # timeout of 100 ms (approximately) is exceeded.
                     answer = ""
-                    byte = get_serial_interface.read(1)
+                    byte = (SERIAL_PORT.read(1)).decode('utf-8')
                     stop = False
-                        while not stop:
-                        answer += byte.decode('utf-8')
-                        byte = get_serial_interface.read(1)
-                        stop = answer.endswith(END_OF_STREAM)
 
+                    while not stop:
+                        answer += byte
+                        byte = (SERIAL_PORT.read(1)).decode('utf-8')
+                        
+                        # The comparison =="" is used when the softare is executed
+                        stop = (byte == "" or answer.endswith(END_OF_STREAM))
+                    
                     if SHOW_DEBUG_INFO:
+                        print('({})'.format(answer))
                         if self.oks + self.transmission_failures != 0:
                             print("ok={} f={} s/f={} tout={} ok%={}").format(self.oks, self.transmission_failures,
                                                                             self.sec_per_f, self.timeouts,
@@ -210,38 +265,16 @@ class RF_BSSA_Driver(Driver):
                     # If the device didn't answer, "TIMETOUT INVALID" is defined as the alarm state for
                     # all device monitoring PVs.
                     if len(answer) == 0:
-                        if SHOW_DEBUG_INFO:
-                            self.timeouts += 1
-                        if SHOW_DEBUG_INFO:
-                            self.timeouts += 1
-                        for pv_key, pv_name in BAR_PVS.items():
-                            if ((self.pvDB[pv_name].alarm != Alarm.TIMEOUT_ALARM)
-                                    or (self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
-                                # This is used only to update the PV timestamp
-                                self.setParam(pv_name, self.getParam(pv_name))
-                                # Then the alarm condition is set for the PV
-                                self.setParamStatus(pv_name, Alarm.TIMEOUT_ALARM, Severity.INVALID_ALARM)
-                            pass
+                        # If the device didn't answer, "TIMETOUT INVALID" is defined as the alarm state for all device monitoring PVs.
+                        self.raiseTimoutAlarm()
                     else:
 
                         # Received message verification and processing
                         parameters = self.verifyStream(answer)
+
                         if not parameters:
-                            if SHOW_DEBUG_INFO:
-                                self.transmission_failures += 1
-                                self.sec_per_f = (time.time() - self.TIME_NOW) / self.transmission_failures
-
-                            # If the device answered, but the received message doesn't match the
-                            # expected pattern, "READ INVALID" is defined as the alarm state for all
-                            # device monitoring PVs.
-                            for pv_key, pv_name in BAR_PVS.items():
-                                if ((self.pvDB[pv_name].alarm != Alarm.READ_ALARM) or (
-                                        self.pvDB[pv_name].severity != Severity.INVALID_ALARM)):
-                                    # This is used only to update the PV timestamp
-                                    self.setParam(pv_name, self.getParam(pv_name))
-
-                                    # Then the alarm condition is set for the PV
-                                    self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.INVALID_ALARM)
+                            # If not, raise data invalid alarm
+                            self.raiseInvalidAlarm()
 
                         else:
                             if SHOW_DEBUG_INFO:
@@ -254,6 +287,7 @@ class RF_BSSA_Driver(Driver):
                                 for bar_item in range(1, 39):
                                     if (bar in [2, 5]) and (bar_item in [1, 2]):
                                         continue
+
                                     pv_name = get_bar_pv_name(heatsink_num=bar, reading_item_num=bar_item)
                                     new_value = parameters[base_index + bar_item]
                                     if bar_item == 35:
@@ -264,9 +298,8 @@ class RF_BSSA_Driver(Driver):
                                         new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_reflected_power"])
                                     elif bar_item == 38:
                                         new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_incident_power"])
-                                    if ((self.pvDB[pv_name].severity == Severity.INVALID_ALARM) or (
-                                            self.pvDB[pv_name].value != new_value)):
-                                        self.setParam(pv_name, new_value)
+
+                                    self.setParam(pv_name, new_value)
 
                                     if bar_item in range(1, 35):
                                         low, high = self.getParam(
@@ -301,20 +334,22 @@ class RF_BSSA_Driver(Driver):
                                     new_value += self.getParam(OFFSET_PVS_DIC["input_incident_power"])
                                 elif bar_item == 4:
                                     new_value += self.getParam(OFFSET_PVS_DIC["input_reflected_power"])
-                                if ((self.pvDB[pv_name].severity == Severity.INVALID_ALARM) or (
-                                        self.pvDB[pv_name].value != new_value)):
-                                    self.setParam(pv_name, new_value)
 
-                                    if not low < new_value < high:
-                                        self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
-                                    else:
-                                        self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)
+                                self.setParam(pv_name, new_value)
+
+                                if not low < new_value < high:
+                                    self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
+                                else:
+                                    self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)
 
                     # Finally, all connected clients are notified if something changed
                     self.updatePVs()
+
                 except:
-                    # Exception has been raised! Try to refresh the serial connection
-                    print('[ERROR] Main Loop Exception:\n{}'.format(traceback.format_exc()))
+                    # If an exception is raised here, a problem with the serial connection has happened. 
+                    # Set the alarms
+                    self.raiseTimoutAlarm()
+                    self.updatePVs()
 
                     while not refresh_serial_connection():
                         # Loop untill success

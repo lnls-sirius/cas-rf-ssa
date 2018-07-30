@@ -25,3 +25,15 @@ def calc_Pdbm(voltage):
     :return:
     """
     return (10 * math.log10((11.4*(voltage*voltage) + 1.7*voltage + 0.01)))
+
+def flip_low_high(low,high):
+    """
+    Flip if needed
+    return low, high
+    """
+    if low > high:
+        aux = low
+        low = high
+        high = aux
+    
+    return low, high
