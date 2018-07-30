@@ -18,74 +18,15 @@ import time
 import os
 import pickle
 import threading
+ 
+# This must be imported before pv.py !
+from Configs import SHOW_DEBUG_INFO, READ_MSGS, \
+    DB_FILENAME, ALARM_DB_FILENAME, END_OF_STREAM, \
+    READ_PARAMETERS, SCAN_TIMER, TIME_RECONNECT, refresh_serial_connection
+    
 
-from Configs import *
-
-# PVs related to the solid-state amplifiers
-PVs = {}
-
-for rack_num in range(1, 5):
-    # System on/off state for each rack !
-    PVs[get_state_pv(rack_num)] = {"type": "enum", "enums": ["OFF", "ON"]}
-
-    if rack_num == 1:
-        min, max = 1, 3
-    elif rack_num == 2:
-        min, max = 3, 5
-    elif rack_num == 3:
-        min, max = 5, 7
-    else:
-        min, max = 7, 9
-
-    for heatsink in range(min, max):
-        for reading in range(1, 35):
-            PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=heatsink, reading_item_num=reading)] = {
-                "type": "float",
-                "prec": 4, "unit": "A",
-                "MDEL": -1}
-
-        for reading in range(35, 39):
-            PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=heatsink, reading_item_num=reading)] = {
-                "type": "float",
-                "prec": 4,
-                "unit": "dBm",
-                "MDEL": -1}
-
-    for reading in range(1, 5):
-        PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=9, reading_item_num=reading)] = {"type": "float",
-                                                                                                  "prec": 4,
-                                                                                                  "unit": "dBm",
-                                                                                                  "MDEL": -1}
-
-if SHOW_DEBUG_INFO:
-    print("#########################################")
-    print("############## PVS ######################")
-    for k, v in PVs.items():
-        print("{}".format(k))
-
-    print("#########################################")
-
-
-# Offset PVs
-PVs[OFFSET_PVS_DIC["bar_upper_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_upper_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_lower_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["bar_lower_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["input_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["input_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["output_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[OFFSET_PVS_DIC["output_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
-
-# Alarm Limit PVs
-PVs[ALARMS_PVS_DIC["general_power_lim_high"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["general_power_lim_low"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["inner_power_lim_high"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["inner_power_lim_low"]] = {"type": "float", "prec": 4, "unit": "dB"}
-PVs[ALARMS_PVS_DIC["current_lim_high"]] = {"type": "float", "prec": 4, "unit": "A"}
-PVs[ALARMS_PVS_DIC["current_lim_low"]] = {"type": "float", "prec": 4, "unit": "A"}
-
-
-PVs[CONF_PV + ":" + SAVE] = {"type": "int"}
+from pv import OFFSET_CONFIG_KEY,OFFSET_PVS_DIC, ALARMS_PVS_DIC, CONF_PV, STATE_PVS, \
+    get_state_pv, get_heatsink_pv_name, RACK_PVS, SAVE, PVs
 
 
 class RF_BSSA_Driver(Driver):
