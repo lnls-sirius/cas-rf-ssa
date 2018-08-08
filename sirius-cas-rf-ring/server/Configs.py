@@ -37,7 +37,7 @@ ALARM_DB_FILENAME = "alarms_parameters.db"
 TIME_RECONNECT = 10.
 
 # Time between scan requests
-SCAN_TIMER = 5.
+SCAN_TIMER = 1.
 
 
 BAUD_RATE = 500000

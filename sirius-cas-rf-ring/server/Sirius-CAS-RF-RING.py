@@ -180,7 +180,7 @@ class RF_BSSA_Driver(Driver):
                             
                             answer += byte
                             byte = (serial_interface.read(1)).decode('utf-8')
-
+                            #print('{}'.format(byte))
                             # byte == "" is to support direct serial connections and answer.endswith(END_OF_STREAM) is used alongside socat
                             stop = (byte == "" or answer.endswith(END_OF_STREAM))
                         
@@ -284,8 +284,10 @@ class RF_BSSA_Driver(Driver):
                                     else:
                                         self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)   
                     
-                    # Finally, all connected clients are notified if something changed
-                    self.updatePVs()
+                        # Finally, all connected clients are notified if something changed
+                        #print('antes')
+                        self.updatePVs()
+                        #print('depois')
 
                 except:
                     # Set the alarms
@@ -294,6 +296,7 @@ class RF_BSSA_Driver(Driver):
                     
                     while not refresh_serial_connection():
                         # Loop untill success
+                        #print('INdevido')
                         time.sleep(TIME_RECONNECT)
                     
 
