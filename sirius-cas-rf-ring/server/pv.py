@@ -131,14 +131,24 @@ for rack_num in range(1, 5):
 
         for reading_item_num in range(35, 39):
             # Retornar Potencia
+            # if reading_item_num == 35:
+            #     prop = "PwrRevBot-Mon"
+            # elif reading_item_num == 36:
+            #     prop = "PwrFwdBot-Mon"
+            # elif reading_item_num == 37:
+            #     prop = "PwrRevTop-Mon"
+            # else:
+            #     prop = "PwrFwdTop-Mon"
+
+            # Alterações dia 08/08
             if reading_item_num == 35:
-                prop = "PwrRevBot-Mon"
-            elif reading_item_num == 36:
-                prop = "PwrFwdBot-Mon"
-            elif reading_item_num == 37:
-                prop = "PwrRevTop-Mon"
-            else:
                 prop = "PwrFwdTop-Mon"
+            elif reading_item_num == 36:
+                prop = "PwrRevTop-Mon"
+            elif reading_item_num == 37:
+                prop = "PwrFwdBot-Mon"
+            else:
+                prop = "PwrRevBot-Mon"
 
             RACK_PVS[str(rack_num) + ":" + str(heatsink_num) + ":" + str(reading_item_num)] = \
                 "{0}:{1}-{2}-{3}{4:0>2}:{5}".format(SEC_SUB_KEY, DIS, DEV_POWER, HEATSINK, heatsink_num, prop)
