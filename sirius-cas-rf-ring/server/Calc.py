@@ -8,7 +8,7 @@ def calc_I(voltage):
     :param voltage:
     :return:
     """
-    return (4.8321*voltage - 2.4292)
+    return (4.8321*voltage - 2.4292)*1.09
 
 def convert_adc_to_voltage(adc_code):
     """
