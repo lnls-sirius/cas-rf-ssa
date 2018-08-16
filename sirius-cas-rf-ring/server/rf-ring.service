@@ -6,7 +6,7 @@ Restart=always
 RestartSec=3
 Type=simple
 Environment=PYTHONPATH=/root/cas-rf/sirius-cas-rf-ring/server
-Environment=RF_RING_SERIAL_PORT="/dev/tty/USB0"
+Environment=RF_RING_SERIAL_PORT=/dev/ttyUSB0
 ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-ring/server/init.sh
 StandardOutput=syslog
 StandardError=syslog

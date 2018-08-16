@@ -1,5 +1,33 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+
+class AtomicInteger():
+    def __init__(self, value=0):
+        self._value = value
+        self._lock = threading.Lock()
+
+    def inc(self):
+        with self._lock:
+            self._value += 1
+            return self._value
+
+    def dec(self):
+        with self._lock:
+            self._value -= 1
+            return self._value
+
+
+    @property
+    def value(self):
+        with self._lock:
+            return self._value
+
+    @value.setter
+    def value(self, v):
+        with self._lock:
+            self._value = v
+            return self._value
+
 """
 SIRIUS-CAS-RF-RING
 
@@ -18,6 +46,9 @@ import time
 import os
 import pickle
 import threading
+
+import datetime
+
  
 # This must be imported before pv.py !
 from Configs import SHOW_DEBUG_INFO, READ_MSGS, \
@@ -25,9 +56,11 @@ from Configs import SHOW_DEBUG_INFO, READ_MSGS, \
     READ_PARAMETERS, SCAN_TIMER, TIME_RECONNECT, refresh_serial_connection
     
 
+
 from pv import OFFSET_CONFIG_KEY,OFFSET_PVS_DIC, ALARMS_PVS_DIC, CONF_PV, STATE_PVS, \
     get_state_pv, get_heatsink_pv_name, RACK_PVS, SAVE, PVs
 
+queue_counter = AtomicInteger()
 
 class RF_BSSA_Driver(Driver):
     """
@@ -110,11 +143,14 @@ class RF_BSSA_Driver(Driver):
         self.process.start()
         self.scan.start()
 
+        
+
  
     # This thread adds to the queue a new reading procedure once a second
     def scanThread(self):
         while True:
             self.queue.put(READ_PARAMETERS)
+            # print('Inc={}'.format(queue_counter.inc()))
             self.event.wait(SCAN_TIMER)
  
     # Raise a timeout alarm for all monitoring variables
@@ -149,8 +185,10 @@ class RF_BSSA_Driver(Driver):
     def processThread(self):
         while True:
 
+            # tini = datetime.datetime.now()
             # Here the next operation in queue is obtained and processed
             queue_item = self.queue.get(block=True)
+            # print('Dec={}'.format(queue_counter.dec()))
 
             # Operation for parameters reading
             if queue_item == READ_PARAMETERS:
@@ -168,11 +206,11 @@ class RF_BSSA_Driver(Driver):
 
                         # A new request is sent to the data acquisition hardware of the solid-state amplifiers.
                         if SHOW_DEBUG_INFO:
-                            print("Serial Write {}".format(rack_message))
+                           print("Serial Write {}".format(rack_message))
                         serial_interface.write(rack_message)
 
                         # This routine reads the stream returned by the data acquisition hardware until a timeout of 100 ms (approximately) is exceeded.
-                        answer = ""
+                        answer = ""                                                                                                                                                                                                                             
                         byte = (serial_interface.read(1)).decode('utf-8')
                         
                         stop = False
@@ -180,8 +218,8 @@ class RF_BSSA_Driver(Driver):
                             
                             answer += byte
                             byte = (serial_interface.read(1)).decode('utf-8')
-                            #print('{}'.format(byte))
                             # byte == "" is to support direct serial connections and answer.endswith(END_OF_STREAM) is used alongside socat
+                            #stop = (byte == "" or answer.endswith(END_OF_STREAM))
                             stop = (byte == "" or answer.endswith(END_OF_STREAM))
                         
                         if SHOW_DEBUG_INFO:
@@ -225,32 +263,54 @@ class RF_BSSA_Driver(Driver):
                                         pv_name = get_heatsink_pv_name(rack_num=rack_message_num, heatsink_num=heatsink, reading_item_num=bar_item)
                                         new_value = parameters[base_index + bar_item]
                                         if bar_item == 35:
-                                            new_value += self.getParam(OFFSET_PVS_DIC["bar_lower_reflected_power"])
-                                        elif bar_item == 36:
-                                            new_value += self.getParam(OFFSET_PVS_DIC["bar_lower_incident_power"])
-                                        elif bar_item == 37:
-                                            new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_reflected_power"])
-                                        elif bar_item == 38:
                                             new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_incident_power"])
+                                            #new_value += self.getParam(OFFSET_PVS_DIC["bar_lower_reflected_power"])
+                                        elif bar_item == 36:
+                                            new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_reflected_power"])
+                                            #new_value += self.getParam(OFFSET_PVS_DIC["bar_lower_incident_power"])
+                                        elif bar_item == 37:
+                                            new_value += self.getParam(OFFSET_PVS_DIC["bar_lower_incident_power"])
+                                            #new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_reflected_power"])
+                                        elif bar_item == 38:
+                                            new_value += self.getParam(OFFSET_PVS_DIC["bar_lower_reflected_power"])
+                                            #new_value += self.getParam(OFFSET_PVS_DIC["bar_upper_incident_power"])
                                         
+                                        if ((self.pvDB[pv_name].severity == Severity.INVALID_ALARM) or (self.pvDB[pv_name].value != new_value)):
+                                            
+                                            self.setParam(pv_name, new_value)
                                         
-                                        self.setParam(pv_name, new_value)
-                                    
-                                        # Current Alarm
-                                        if bar_item in range(1, 35):
-                                            low, high = self.getParam(
-                                                ALARMS_PVS_DIC["current_lim_low"]), self.getParam(ALARMS_PVS_DIC["current_lim_high"])
-                                        # Power Alarm
-                                        else:
-                                            low, high = self.getParam(ALARMS_PVS_DIC["inner_power_lim_low"]), self.getParam(ALARMS_PVS_DIC["inner_power_lim_high"])
-                                        
-                                        low, high = flip_low_high(low, high)
+                                            # Current Alarm
+                                            if bar_item in range(1, 35):
+                                                low, high = self.getParam(
+                                                    ALARMS_PVS_DIC["current_lim_low"]), self.getParam(ALARMS_PVS_DIC["current_lim_high"])
+                                            # Power Alarm
+                                            else:
+                                                low, high = self.getParam(ALARMS_PVS_DIC["inner_power_lim_low"]), self.getParam(ALARMS_PVS_DIC["inner_power_lim_high"])
+                                            
+                                            low, high = flip_low_high(low, high)
 
-                                        # Set or reset the alarm status.
-                                        if (new_value < low ) or (new_value > high):
-                                            self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
-                                        else:
-                                            self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)
+                                            # Set or reset the alarm status.
+                                            if (new_value < low ) or (new_value > high):
+                                                self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
+                                            else:
+                                                self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)
+                                        # self.setParam(pv_name, new_value)
+                                    
+                                        # # Current Alarm
+                                        # if bar_item in range(1, 35):
+                                        #     low, high = self.getParam(
+                                        #         ALARMS_PVS_DIC["current_lim_low"]), self.getParam(ALARMS_PVS_DIC["current_lim_high"])
+                                        # # Power Alarm
+                                        # else:
+                                        #     low, high = self.getParam(ALARMS_PVS_DIC["inner_power_lim_low"]), self.getParam(ALARMS_PVS_DIC["inner_power_lim_high"])
+                                        
+                                        # low, high = flip_low_high(low, high)
+
+                                        # # Set or reset the alarm status.
+                                        # if (new_value < low ) or (new_value > high):
+                                        #     self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
+                                        # else:
+                                        #     self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)
                                     bar_aux += 1
 
                                 for bar_item in range(1, 5):
@@ -275,19 +335,28 @@ class RF_BSSA_Driver(Driver):
                                     elif bar_item == 4:
                                         new_value += self.getParam(OFFSET_PVS_DIC["input_reflected_power"])
                                     
-                                
-                                    self.setParam(pv_name, new_value)
+                                    if ((self.pvDB[pv_name].severity == Severity.INVALID_ALARM) or (self.pvDB[pv_name].value != new_value)):
 
-                                    # Set or reset the alarm status
-                                    if  (new_value < low ) or (new_value > high):
-                                        self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
-                                    else:
-                                        self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM)   
+                                        self.setParam(pv_name, new_value)
+                                        # Set or reset the alarm status
+                                        if  (new_value < low ) or (new_value > high):
+                                            self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
+                                        else:
+                                            self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM) 
+                                        
+
+
+                                    # self.setParam(pv_name, new_value)
+
+                                    # # Set or reset the alarm status
+                                    # if  (new_value < low ) or (new_value > high):
+                                    #     self.setParamStatus(pv_name, Alarm.READ_ALARM, Severity.MAJOR_ALARM)
+                                    # else:
+                                    #     self.setParamStatus(pv_name, Alarm.NO_ALARM, Severity.NO_ALARM) 
+                                      
                     
                         # Finally, all connected clients are notified if something changed
-                        #print('antes')
                         self.updatePVs()
-                        #print('depois')
 
                 except:
                     # Set the alarms
@@ -296,9 +365,9 @@ class RF_BSSA_Driver(Driver):
                     
                     while not refresh_serial_connection():
                         # Loop untill success
-                        #print('INdevido')
                         time.sleep(TIME_RECONNECT)
-                    
+            
+            # print('t={}'.format(datetime.datetime.now() - tini))
 
     # This thread is used to save new offset parameters to the database (.db files)
     def saveThread(self):
@@ -349,19 +418,31 @@ class RF_BSSA_Driver(Driver):
             return []
 
         # Some known characters in a healthy stream
-        if stream[8] != ";" or stream[3] != str(rack_message_num) or (
-                stream[3] != "1" and stream[3] != "2" and stream[3] != "3" and stream[3] != "4"):
-            return []
+        # if stream[8] != ";" or stream[3] != str(rack_message_num) or (
+        #         stream[3] != "1" and stream[3] != "2" and stream[3] != "3" and stream[3] != "4"):
+        #     return []
+        # else:
+        #     if stream[7] == "0":
+        #         parameters_list.append(0)
+        #     elif stream[7] == "1":
+        #         parameters_list.append(1)
+        #     else:
+        #         return []
+        # if stream[8] != ";" or stream[3] != str(rack_message_num) or (
+        #         stream[3] != "1" and stream[3] != "2" and stream[3] != "3" and stream[3] != "4"):
+        #     return []
+        # else:
+        if stream[7] == "0":
+            parameters_list.append(0)
+        elif stream[7] == "1":
+            parameters_list.append(1)
         else:
-            if stream[7] == "0":
-                parameters_list.append(0)
-            elif stream[7] == "1":
-                parameters_list.append(1)
-            else:
-                return []
+            return []
 
         # The last token contains a signaling message
-        if stream[-9:] != END_OF_STREAM:
+        # if stream[-9:] != END_OF_STREAM:
+            # return []
+        if not stream.endswith(END_OF_STREAM):
             return []
 
         # Here all the other tokens of the stream are processed

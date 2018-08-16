@@ -8,6 +8,8 @@ import traceback
 import os  as os
 import sys as sys
 import time
+ 
+
 
 # Load the serial port name from the enviroment. If it's not set uses the default USB0 connection.
 if "RF_RING_SERIAL_PORT" in os.environ:  
@@ -36,12 +38,12 @@ ALARM_DB_FILENAME = "alarms_parameters.db"
 # Time between attempts to reconnect the serial port
 TIME_RECONNECT = 10.
 
-# Time between scan requests
-SCAN_TIMER = 1.
+# Time between scan requests, a single scan is responsible for all racks
+SCAN_TIMER = 3.7
 
 
 BAUD_RATE = 500000
-TIMEOUT = 2.
+TIMEOUT = .5
 STOP_BITS = serial.STOPBITS_ONE
 PARITY = serial.PARITY_NONE
 BYTE_SIZE = serial.EIGHTBITS
@@ -77,7 +79,7 @@ READ_MSGS = \
      [4, "RACK4".encode('utf-8'), SERIAL_PORT]]
 
 # A token used on the consumer thread to request readings
-READ_PARAMETERS = "READ_PARAMETERS"
+READ_PARAMETERS = "R"
 
 # Token that sinals the end of the stream
 END_OF_STREAM = "####FIM!;"
