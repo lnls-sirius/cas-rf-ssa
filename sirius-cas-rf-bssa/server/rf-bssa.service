@@ -1,17 +1,13 @@
 [Unit]
-Description=RF Bssa Data Acquisition
-After=rf-bssa-socat.service
+Description=RF Booster SSA Data Acquisition
 
 [Service]
-Restart=on-failure
+Restart=always
 RestartSec=3
 Type=simple
 Environment=PYTHONPATH=/root/cas-rf/sirius-cas-rf-bssa/server
-Environment=RF_RING_SERIAL_PORT="/dev/rfBssaSerial"
+Environment=RF_BSSA_SERIAL_PORT=/dev/ttyUSB0
 ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-bssa/server/init.sh
 StandardOutput=syslog
 StandardError=syslog
-
-[Install]
-WantedBy=multi-user.target
-
+ 

@@ -210,10 +210,9 @@ class RF_BSSA_Driver(Driver):
                     if SHOW_DEBUG_INFO:
                         print('({})'.format(answer))
                         if self.oks + self.transmission_failures != 0:
-                            print("ok={} f={} s/f={} tout={} ok%={}").format(self.oks, self.transmission_failures,
+                            print("ok={} f={} s/f={} tout={} ok%={}".format(self.oks, self.transmission_failures,
                                                                             self.sec_per_f, self.timeouts,
-                                                                            self.oks * 100 / (
-                                                                                    self.oks + self.transmission_failures))
+                                                                            self.oks * 100 / (self.oks + self.transmission_failures)))
 
                     # If the device didn't answer, "TIMETOUT INVALID" is defined as the alarm state for
                     # all device monitoring PVs.
@@ -299,11 +298,11 @@ class RF_BSSA_Driver(Driver):
                     self.updatePVs()
 
                 except:
+                    
                     # If an exception is raised here, a problem with the serial connection has happened. 
                     # Set the alarms
                     self.raiseTimoutAlarm()
                     self.updatePVs()
-                    #print('{}\t{}'.format(e,traceback.format_exc()))
                     while not refresh_serial_connection():
                         # Loop untill success
                         time.sleep(TIME_RECONNECT)

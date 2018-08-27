@@ -34,7 +34,7 @@ ALARM_DB_FILENAME = "alarms_parameters.db"
     Serial Connection
 '''
 TIME_RECONNECT = 3.0
-SCAN_TIMER = 1 
+SCAN_TIMER = 1. 
 
 BAUD_RATE = 500000
 TIMEOUT = .10
@@ -96,22 +96,30 @@ def refresh_serial_connection():
                     pass
             #print("os.path.exists(SERIAL_PORT_NAME) {}".format(os.path.exists(SERIAL_PORT_NAME)))
             return False
-        
-        if SERIAL_PORT:
-            if  SERIAL_PORT.portstr != SERIAL_PORT_NAME:
-                # The wrong port !
-                try:
-                    SERIAL_PORT.close()
-                except:
-                    pass
-        
-            if not SERIAL_PORT.is_open:
-                # Create a new serial connection
+
+        if SERIAL_PORT == None or not SERIAL_PORT.is_open or SERIAL_PORT.portstr != SERIAL_PORT_NAME:
+                
                 SERIAL_PORT = get_serial()
-        else:
-            SERIAL_PORT = get_serial()
+        
+        # if SERIAL_PORT:
+        #     if  SERIAL_PORT.portstr != SERIAL_PORT_NAME:
+        #         # The wrong port !
+        #         try:
+        #             SERIAL_PORT.close()
+        #         except:
+        #             pass
+        
+        #     if not SERIAL_PORT.is_open:
+        #         # Create a new serial connection
+        #         SERIAL_PORT = get_serial()
+        # else:
+        #     SERIAL_PORT = get_serial()
 
         return True
+        # Could not find the serial device ... It's disconnencted
+    except serial.serialutil.SerialException:
+        # There's nothing to do but wait
+        return False
     except:
         print('[ERROR] Refresh Serial Exception:\n{}'.format(traceback.format_exc()))
         return False

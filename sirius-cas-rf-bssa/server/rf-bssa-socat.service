@@ -2,12 +2,13 @@
 Description=Initialize the serial port bind. Server side.
 
 [Service]
-Restart=on-failure
+Restart=always
 RestartSec=3
 Type=simple
 ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-bssa/server/socat.sh
 Environment=DEVICE_IP_ADDRESS=10.0.28.69
-Environment=SOCAT_PORT=4162
+Environment=SOCAT_PORT=4161
+Environment=RF_RING_SERIAL_PORT="/dev/rfBssaSerial"
 StandardOutput=syslog
 StandardError=syslog
 
