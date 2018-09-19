@@ -70,7 +70,8 @@ except:
 READ_PARAMETERS = "READ_PARAMETERS"
 
 # Read Command
-READ_MSG = "TORRE1".encode('utf-8')
+READ_MSG = "TORRE" + os.environ.get("TOWER_NUM", "1")
+READ_MSG = READ_MSG.encode('utf-8')
 
 # Token that sinals the end of the stream
 END_OF_STREAM = "####FIM!;"
