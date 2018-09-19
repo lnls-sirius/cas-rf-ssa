@@ -5,7 +5,7 @@ from Configs import SHOW_DEBUG_INFO as SHOW_DEBUG_INFO
 '''
     PVs naming configurations
 '''
-SEC_SUB_KEY = "RF-BO"
+SEC_SUB_KEY = "RA-ToBo"
 DIS = "RF"
 DEV_STATUS = "SSAmpTower"
 DEV_CURRENT = "SSAmp"
@@ -64,13 +64,13 @@ for heatsink_num in range(1, 7):
         # Retornar Potencia
         prop = ""
         if reading_item_num == 35:
-            prop = "BotPwrRev-Mon"
+            prop = "PwrRevBot-Mon"
         elif reading_item_num == 36:
-            prop = "BotPwrFwd-Mon"
+            prop = "PwrFwdBot-Mon"
         elif reading_item_num == 37:
-            prop = "TopPwrRev-Mon"
+            prop = "PwrRevTop-Mon"
         else:
-            prop = "TopPwrFwd-Mon"
+            prop = "PwrFwdTop-Mon"
 
         BAR_PVS[str(heatsink_num) + ":" + str(reading_item_num)] = \
             "{0}:{1}-{2}-{3}{4:0>2}:{5}".format(SEC_SUB_KEY, DIS, DEV_POWER, BAR, heatsink_num, prop)
@@ -83,17 +83,17 @@ for reading_item_num in range(1, 5):
     if reading_item_num == 1 or reading_item_num == 2:
         if reading_item_num % 2 == 0:
             gen_pv_aux = \
-                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + "-" + "OutPwr" + ":" + "PwrFwd-Mon"
+                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + ":PwrFwdOut-Mon"
         else:
             gen_pv_aux = \
-                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + "-" + "OutPwr" + ":" + "PwrRev-Mon"
+                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + ":PwrRevOut-Mon"
     else:
         if reading_item_num % 2 == 0:
             gen_pv_aux = \
-                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + "-" + "InPwr" + ":" + "PwrFwd-Mon"
+                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + ":PwrFwdIn-Mon"
         else:
             gen_pv_aux = \
-                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + "-" + "InPwr" + ":" + "PwrRev-Mon"
+                SEC_SUB_KEY + ":" + DIS + "-" + DEV_GENERAL_POWER + ":PwrRevIn-Mon"
 
     BAR_PVS["9" + ":" + str(reading_item_num)] = gen_pv_aux
     if SHOW_DEBUG_INFO:

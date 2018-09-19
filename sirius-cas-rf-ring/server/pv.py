@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+from os import environ
 from Configs import SHOW_DEBUG_INFO as SHOW_DEBUG_INFO
-
-
 
 #########################################################
 #########################################################
 '''
     PVs naming configurations
 '''
-SEC_SUB_KEY = "RA-ToSIA01"
+SEC_SUB_KEY = environ.get("SEC_SUB_KEY","RA-ToSIA01")
 DIS = "RF"
 DEV_STATUS = "SSAmpTower"
 DEV_CURRENT = "SSAmp"
