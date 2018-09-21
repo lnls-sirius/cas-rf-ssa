@@ -12,3 +12,5 @@ ExecStart=/bin/bash /root/cas-rf/sirius-cas-rf-bssa/server/init.sh
 StandardOutput=syslog
 StandardError=syslog
  
+[Install]
+WantedBy=multi-user.target
