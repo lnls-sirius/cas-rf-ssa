@@ -472,9 +472,9 @@ class RF_BSSA_Driver(Driver):
                         print('[ERROR] Verify Stream Exception:\n{}'.format('not chunk or len(chunk) != 8'))
                         return []
 
-                    if chunk[0] != '1':
-                        # Must start with '1'
-                        print('[ERROR] Verify Stream Exception:\n{}'.format('chunk[0] != \'1\''))
+                    if chunk[0] != '1' and chunk[0] != '2':
+                        # Must start with '1' or '2'
+                        print('[ERROR] Verify Stream Exception:\n{}'.format('chunk[0] != \'1\' and chunk[0] != \'2\' '))
                         return []
 
                     bar_num = int(chunk[1])
