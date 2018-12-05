@@ -327,13 +327,13 @@ class RF_BSSA_Driver(Driver):
 
                                     # Adding the required offsets
                                     if bar_item == 1:
-                                        new_value += self.getParam(OFFSET_PVS_DIC["output_incident_power"])
-                                    elif bar_item == 2:
-                                        new_value += self.getParam(OFFSET_PVS_DIC["output_reflected_power"])
-                                    elif bar_item == 3:
                                         new_value += self.getParam(OFFSET_PVS_DIC["input_incident_power"])
-                                    elif bar_item == 4:
+                                    elif bar_item == 2:
                                         new_value += self.getParam(OFFSET_PVS_DIC["input_reflected_power"])
+                                    elif bar_item == 3:
+                                        new_value += self.getParam(OFFSET_PVS_DIC["output_incident_power"])
+                                    elif bar_item == 4:
+                                        new_value += self.getParam(OFFSET_PVS_DIC["output_reflected_power"])
                                     
                                     if ((self.pvDB[pv_name].severity == Severity.INVALID_ALARM) or (self.pvDB[pv_name].value != new_value)):
 
