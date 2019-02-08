@@ -13,7 +13,7 @@ def calc_I(voltage):
 def convert_adc_to_voltage(adc_code):
     """
     Convert from adc values (4095) to voltage readings
-    :param adc_code: 
+    :param adc_code:
     :return:
     """
     return (adc_code / 4095.0) * 5.0
@@ -25,7 +25,7 @@ def calc_Pdbm(voltage):
     :return:
     """
     return (10 * math.log10((11.4*(voltage*voltage) + 1.7*voltage + 0.01)))
-    
+
 def flip_low_high(low,high):
     """
     Flip if needed
@@ -35,5 +35,5 @@ def flip_low_high(low,high):
         aux = low
         low = high
         high = aux
-    
+
     return low, high
