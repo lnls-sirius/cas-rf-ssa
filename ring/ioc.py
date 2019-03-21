@@ -29,13 +29,6 @@ from Configs import SHOW_DEBUG_INFO, READ_MSGS, \
 from pv import OFFSET_CONFIG_KEY, OFFSET_PVS_DIC, ALARMS_PVS_DIC, CONF_PV, STATE_PVS, \
     get_state_pv, get_heatsink_pv_name, RACK_PVS, SAVE, PVs, get_rack_pvs
 
-class IOCConnection():
-    def __init__(self):
-        pass
-
-    def get_answer(self, message):
-        pass
-
 class RF_BSSA_Driver(Driver):
     """ pcaspy driver class for this application """
     def __init__(self):
