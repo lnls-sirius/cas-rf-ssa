@@ -26,11 +26,6 @@ parser.add_argument("--baudrate", "-b", default=500000, type=int, help='Serial p
 parser.add_argument("--device", "-dev", default='/dev/ttyUSB0', help='Serial comm device.', dest="device")
 parser.add_argument("--timeout","-t", default=0.1, type=float, help='Serial port timeout.', dest="timeout")
 
-# TCP Socket
-parser.add_argument("--tcp", help='TCP Server communication.', action='store_true', dest="tcp")
-parser.add_argument("--port","-p", default=4161, type=int, help='TCP Server port.', dest="port")
-parser.add_argument("--zero-bytes","-zb", default='ZB', help='What to expect from TCP recv() when a zero lengh response is returned from the serial port.', dest='zb')
-
 args = parser.parse_args()
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)-15s [%(levelname)s] %(message)s',
@@ -40,7 +35,6 @@ logger = logging.getLogger()
 # Paths
 db_dir = os.path.join(dir_name, 'db')
 if not os.path.isdir(db_dir):
-    print(db_dir)
     os.makedirs(db_dir)
 
 OFFSET_DB = os.path.join(db_dir, 'offset_parameters.db')
