@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
- 
+
 # Python modules required for this software
 from pcaspy import Driver, Alarm, Severity, SimpleServer
 from queue import Queue, Full
@@ -128,10 +128,10 @@ class RF_BSSA_Driver(Driver):
 
     # This thread adds to the queue a new reading procedure once a second
     def scanThread(self):
-        while True: 
+        while True:
             self.queue.put(READ_PARAMETERS)
             self.event.wait(SCAN_TIMER)
-            
+
 
     # Raise a timeout alarm for all monitoring variables
     def raiseTimoutAlarm(self):
@@ -176,22 +176,22 @@ class RF_BSSA_Driver(Driver):
                 try:
 
                     if getSerialPort() == None:
-                            ''' 
+                            '''
                             "getSerialPort()" == None (not serial_interface) means that the serial
                             connection could not be established during the program initialization.
                             As this exception is raised, the timeout alarm is set and every x seconds, the program
                             will try to establish the required connection.
                             '''
                             raise Exception('Serial Interface == None')
-                    
+
                     if not  getSerialPort().isOpen():
                         raise Exception('Serial port not open')
-                    
+
                     # A new request is sent to the data acquisition hardware of the solid-state
                     # amplifiers.
                     if SHOW_DEBUG_INFO:
                         print('Serial Write\t{}'.format(READ_MSG))
-                    
+
                     getSerialPort().write(READ_MSG)
 
                     # This routine reads the stream returned by the data acquisition hardware until a
@@ -203,10 +203,10 @@ class RF_BSSA_Driver(Driver):
                     while not stop:
                         answer += byte
                         byte = (getSerialPort().read(1)).decode('utf-8')
-                        
+
                         # The comparison =="" is used when the softare is executed
                         stop = (byte == "" or answer.endswith(END_OF_STREAM))
-                    
+
                     if SHOW_DEBUG_INFO:
                         print('({})'.format(answer))
                         if self.oks + self.transmission_failures != 0:
@@ -237,8 +237,8 @@ class RF_BSSA_Driver(Driver):
                             for bar in range(1, 7):
                                 base_index = ((bar - 1) * 38)
                                 for bar_item in range(1, 39):
-                                    if (bar in [2, 5]) and (bar_item in [1, 2]):
-                                        continue
+                                    #if (bar in [2, 5]) and (bar_item in [1, 2]):
+                                    #    continue
 
                                     pv_name = get_bar_pv_name(heatsink_num=bar, reading_item_num=bar_item)
                                     new_value = parameters[base_index + bar_item]
@@ -274,7 +274,7 @@ class RF_BSSA_Driver(Driver):
 
                                 low, high = self.getParam(ALARMS_PVS_DIC["general_power_lim_low"]), self.getParam(
                                     ALARMS_PVS_DIC["general_power_lim_high"])
-                                
+
                                 low, high = flip_low_high(low,high)
 
                                 new_value = parameters[(-1) * bar_item]
@@ -298,8 +298,8 @@ class RF_BSSA_Driver(Driver):
                     self.updatePVs()
 
                 except:
-                    
-                    # If an exception is raised here, a problem with the serial connection has happened. 
+
+                    # If an exception is raised here, a problem with the serial connection has happened.
                     # Set the alarms
                     self.raiseTimoutAlarm()
                     self.updatePVs()
@@ -397,7 +397,7 @@ class RF_BSSA_Driver(Driver):
                     if adc_code > 4095 or adc_code < 0:
                         print('[ERROR] Verify Stream Exception:\n{}'.format('adc_code > 4095'))
                         return []
-                    
+
                     # Raw to voltage
                     voltage = convert_adc_to_voltage(adc_code=adc_code)
 
