@@ -156,22 +156,19 @@ for rack_num in range(1, 5):
             PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=heatsink, reading_item_num=reading)] = {
                 "type": "float",
                 "prec": 4,
-                "unit": "A",
-                "MDEL": -1}
+                "unit": "A"}
 
         for reading in range(35, 39):
             PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=heatsink, reading_item_num=reading)] = {
                 "type": "float",
                 "prec": 4,
-                "unit": "dBm",
-                "MDEL": -1}
+                "unit": "dBm"}
 
     for reading in range(1, 5):
         PVs[get_heatsink_pv_name(rack_num=rack_num, heatsink_num=9, reading_item_num=reading)] = {
             "type": "float",
             "prec": 4,
-            "unit": "dBm",
-            "MDEL": -1}
+            "unit": "dBm"}
 # Offset PVs
 PVs[OFFSET_PVS_DIC["bar_upper_incident_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
 PVs[OFFSET_PVS_DIC["bar_upper_reflected_power"]] = {"type": "float", "prec": 4, "unit": "dB"}
