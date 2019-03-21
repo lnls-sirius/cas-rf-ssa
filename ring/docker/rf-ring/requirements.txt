@@ -1,2 +1,0 @@
-pcaspy==0.7.1
-pyserial==3.4
