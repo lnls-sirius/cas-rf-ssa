@@ -1,7 +1,7 @@
 
 PREFIX ?= /usr/local
 
-SOCAT_SERVICE_NAME = rf-ring-socat
+SOCAT_SERVICE_NAME = rf-ring
 SOCAT_SRC_SERVICE_FILE = ${SOCAT_SERVICE_NAME}.service
 
 SERVICE_NAME = rf-ring
