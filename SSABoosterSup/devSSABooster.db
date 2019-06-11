@@ -1,0 +1,74 @@
+record(waveform, "$(P)$(R)RawData-Mon"){
+    field(PINI, "YES")
+    field(DESC, "SSA Data")
+    field(SCAN, "2 second")
+    field(DTYP, "stream")
+    field(INP,  "@devSSABooster.proto getData(TORRE1) $(PORT) $(A)")
+    field(FTVL, "STRING")
+    field(NELM, "310")
+}
+
+record(scalcout, "$(P)$(R)EOMCheck"){
+    field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[309] CP MSS")
+    field(INBB, "$(P)$(R)EOMCheck.STAT CP")
+}
+
+#V->I   return (4.8321*voltage - 2.4292)
+#V->dBm return (10 * math.log10((11.4*(voltage*voltage) + 1.7*voltage + 0.01)))
+
+record(scalcout, "$(P)$(R)Enable"){
+    field(CALC, "AA[7,7]")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[0] CP MSS")
+}
+
+record(ao, "$(P)$(R)OFS"){
+    field(PINI, "YES")
+    field(EGU,  "")
+}
+
+record(ao, "$(P)$(R)H"){
+    field(PINI, "YES")
+    field(EGU,  "")
+}
+
+record(calcout, "$(P)$(R)I_HIHI"){
+    field(CALC, "A")
+    field(INPA, "$(P)$(R)H CP")
+
+    field(OUT, "$(P)$(R)I.HIHI")
+}
+
+record(scalcout, "$(P)$(R)V"){
+    field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[1] CP MSS")
+
+    field(EGU,  "V")
+}
+
+record(calc, "$(P)$(R)I"){
+    field(CALC, "(4.8321*A -2.4292) + B")
+    field(INPA, "$(P)$(R)V CP MSS")
+    field(INPB, "$(P)$(R)OFS CP ")
+
+    field(EGU,  "A")
+
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "MINOR")
+    field(LLSV, "MAJOR")
+
+}
+
+record(calc, "$(P)$(R)dBm"){
+    field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
+    field(INPA, "$(P)$(R)V CP MSS")
+    field(INPB, "$(P)$(R)OFS CP ")
+
+    field(EGU,  "dBm")
+
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "MINOR")
+    field(LLSV, "MAJOR")
+}
