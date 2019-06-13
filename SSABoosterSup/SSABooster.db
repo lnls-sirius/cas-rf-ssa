@@ -17,101 +17,121 @@ record(scalcout, "$(P)$(R)EOMCheck"){
 record(ao, "RA-ToBO:AlarmConfig:GeneralPowerLimHiHi"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:GeneralPowerLimHigh"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:GeneralPowerLimLow"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:GeneralPowerLimLoLo"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:InnerPowerLimHiHi"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:InnerPowerLimHigh"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:InnerPowerLimLow"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:InnerPowerLimLoLo"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:CurrentLimHiHi"){
     field(PINI, "YES")
     field(EGU,  "A")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:CurrentLimHigh"){
     field(PINI, "YES")
     field(EGU,  "A")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:CurrentLimLow"){
     field(PINI, "YES")
     field(EGU,  "A")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:AlarmConfig:CurrentLimLoLo"){
     field(PINI, "YES")
     field(EGU,  "A")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:UpperIncidentPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:UpperReflectedPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:LowerIncidentPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:LowerReflectedPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:InputIncidentPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:InputReflectedPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:OutputIncidentPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(ao, "RA-ToBO:OffsetConfig:OutputReflectedPower"){
     field(PINI, "YES")
     field(EGU,  "dBm")
+    field(PREC, "2")
 }
 
 record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrDC-Cmd"){
