@@ -20,7 +20,6 @@ record(scalcout, "$(P)$(R)EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[309] CP MSS")
     field(INBB, "$(P)$(R)EOMCheck.STAT CP")
-#    field(DESC, "${D}")
 }''')
 
 pwr_sts = Template('''

@@ -1,10 +1,9 @@
-
 record(waveform, "$(P)$(R)RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
     field(SCAN, "2 second")
     field(DTYP, "stream")
-    field(INP,  "@SSABooster.proto getData($(TORRE=TORRE1)) $(PORT) $(A)")
+    field(INP,  "@SSABooster.proto getData($(TORRE=TORRE1)) $(PORT)")
     field(FTVL, "STRING")
     field(NELM, "310")
 }
@@ -13,7 +12,6 @@ record(scalcout, "$(P)$(R)EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[309] CP MSS")
     field(INBB, "$(P)$(R)EOMCheck.STAT CP")
-#    field(DESC, "${D}")
 }
 record(ao, "RA-ToBO:AlarmConfig:GeneralPowerLimHihi"){
     field(PINI, "YES")
