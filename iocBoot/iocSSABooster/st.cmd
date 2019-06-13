@@ -9,7 +9,7 @@ dbLoadDatabase "dbd/SSA.dbd"
 SSA_registerRecordDeviceDriver pdbbase
 
 drvAsynSerialPortConfigure("L0", "/dev/ttyUSB0")
-asynSetOption("L0", 0, "baud", "115200")
+asynSetOption("L0", 0, "baud", "500000")
 
 epicsEnvSet("P","RA-ToBO")
 epicsEnvSet("R",":")
