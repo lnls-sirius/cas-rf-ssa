@@ -94,7 +94,7 @@ record(calc, "${PV}"){
 
     field(EGU,  "A")
     field(DESC, "${D}")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -156,6 +156,7 @@ record(calc, "${PV}"){
 
     field(EGU,  "dBm")
     field(DESC, "${D}")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
