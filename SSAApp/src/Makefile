@@ -19,6 +19,7 @@ SSA_DBD += asSupport.dbd
 SSA_DBD += calcSupport.dbd
 SSA_DBD += asyn.dbd
 SSA_DBD += stream.dbd
+SSA_DBD += drvAsynSerialPort.dbd
 SSA_DBD += drvAsynIPPort.dbd
  
 SSA_LIBS += autosave
