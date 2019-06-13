@@ -22,3 +22,15 @@ RA-ToBO:AlarmConfig:CurrentLimHihi
 RA-ToBO:AlarmConfig:CurrentLimHigh
 RA-ToBO:AlarmConfig:CurrentLimLow
 RA-ToBO:AlarmConfig:CurrentLimLolo
+RA-ToBO:AlarmConfig:GeneralPowerLimHihi
+RA-ToBO:AlarmConfig:GeneralPowerLimHigh
+RA-ToBO:AlarmConfig:GeneralPowerLimLow
+RA-ToBO:AlarmConfig:GeneralPowerLimLoLo
+RA-ToBO:AlarmConfig:InnerPowerLimHihi
+RA-ToBO:AlarmConfig:InnerPowerLimHigh
+RA-ToBO:AlarmConfig:InnerPowerLimLow
+RA-ToBO:AlarmConfig:InnerPowerLimLolo
+RA-ToBO:AlarmConfig:CurrentLimHihi
+RA-ToBO:AlarmConfig:CurrentLimHigh
+RA-ToBO:AlarmConfig:CurrentLimLow
+RA-ToBO:AlarmConfig:CurrentLimLolo

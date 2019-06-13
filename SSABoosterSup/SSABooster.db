@@ -1,9 +1,10 @@
+
 record(waveform, "$(P)$(R)RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
     field(SCAN, "2 second")
     field(DTYP, "stream")
-    field(INP,  "@SSABooster.proto getData($(TORRE=TORRE1)) $(PORT)")
+    field(INP,  "@SSABooster.proto getData($(TORRE=TORRE1)) $(PORT) $(A)")
     field(FTVL, "STRING")
     field(NELM, "310")
 }
@@ -159,7 +160,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -207,7 +208,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -255,7 +256,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -303,7 +304,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -351,7 +352,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M03:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -399,7 +400,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -447,7 +448,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -495,7 +496,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -543,7 +544,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -591,7 +592,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -639,7 +640,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -687,7 +688,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -735,7 +736,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -783,7 +784,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -831,7 +832,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -879,7 +880,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -927,7 +928,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -975,7 +976,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1023,7 +1024,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1071,7 +1072,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1119,7 +1120,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M11:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1167,7 +1168,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M11:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1215,7 +1216,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1263,7 +1264,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1311,7 +1312,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1359,7 +1360,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1407,7 +1408,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1455,7 +1456,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1503,7 +1504,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1551,7 +1552,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1599,7 +1600,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1647,7 +1648,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1695,7 +1696,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1743,7 +1744,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H01M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -1792,6 +1793,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H01:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -1841,6 +1843,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H01:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -1890,6 +1893,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H01:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -1939,6 +1943,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H01:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -1987,7 +1992,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2035,7 +2040,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2083,7 +2088,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2131,7 +2136,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2179,7 +2184,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M03:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2227,7 +2232,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2275,7 +2280,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2323,7 +2328,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2371,7 +2376,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2419,7 +2424,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2467,7 +2472,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2515,7 +2520,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2563,7 +2568,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2611,7 +2616,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2659,7 +2664,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2707,7 +2712,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2755,7 +2760,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2803,7 +2808,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2851,7 +2856,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2899,7 +2904,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2947,7 +2952,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -2995,7 +3000,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3043,7 +3048,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3091,7 +3096,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3139,7 +3144,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3187,7 +3192,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3235,7 +3240,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3283,7 +3288,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3331,7 +3336,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3379,7 +3384,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3427,7 +3432,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3475,7 +3480,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3523,7 +3528,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3571,7 +3576,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3620,6 +3625,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H02:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -3669,6 +3675,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H02:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -3718,6 +3725,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H02:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -3767,6 +3775,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H02:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -3815,7 +3824,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3863,7 +3872,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3911,7 +3920,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -3959,7 +3968,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4007,7 +4016,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4055,7 +4064,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4103,7 +4112,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4151,7 +4160,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4199,7 +4208,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4247,7 +4256,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4295,7 +4304,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4343,7 +4352,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4391,7 +4400,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4439,7 +4448,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4487,7 +4496,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4535,7 +4544,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4583,7 +4592,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4631,7 +4640,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4679,7 +4688,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4727,7 +4736,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4775,7 +4784,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4823,7 +4832,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4871,7 +4880,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4919,7 +4928,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -4967,7 +4976,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5015,7 +5024,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5063,7 +5072,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5111,7 +5120,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5159,7 +5168,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5207,7 +5216,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5255,7 +5264,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5303,7 +5312,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5351,7 +5360,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5399,7 +5408,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5448,6 +5457,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H03:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -5497,6 +5507,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H03:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -5546,6 +5557,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H03:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -5595,6 +5607,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H03:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -5643,7 +5656,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5691,7 +5704,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5739,7 +5752,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5787,7 +5800,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5835,7 +5848,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M03:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5883,7 +5896,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5931,7 +5944,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -5979,7 +5992,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6027,7 +6040,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6075,7 +6088,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6123,7 +6136,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6171,7 +6184,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6219,7 +6232,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6267,7 +6280,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6315,7 +6328,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6363,7 +6376,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6411,7 +6424,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6459,7 +6472,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6507,7 +6520,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6555,7 +6568,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6603,7 +6616,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6651,7 +6664,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6699,7 +6712,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6747,7 +6760,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6795,7 +6808,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6843,7 +6856,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6891,7 +6904,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6939,7 +6952,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -6987,7 +7000,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7035,7 +7048,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7083,7 +7096,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7131,7 +7144,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7179,7 +7192,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7227,7 +7240,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7276,6 +7289,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H04:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -7325,6 +7339,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H04:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -7374,6 +7389,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H04:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -7423,6 +7439,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H04:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -7471,7 +7488,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7519,7 +7536,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7567,7 +7584,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7615,7 +7632,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7663,7 +7680,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M03:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7711,7 +7728,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7759,7 +7776,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7807,7 +7824,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7855,7 +7872,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7903,7 +7920,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7951,7 +7968,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -7999,7 +8016,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8047,7 +8064,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8095,7 +8112,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8143,7 +8160,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8191,7 +8208,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8239,7 +8256,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8287,7 +8304,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8335,7 +8352,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8383,7 +8400,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8431,7 +8448,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8479,7 +8496,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8527,7 +8544,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8575,7 +8592,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8623,7 +8640,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8671,7 +8688,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8719,7 +8736,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8767,7 +8784,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8815,7 +8832,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8863,7 +8880,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8911,7 +8928,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -8959,7 +8976,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9007,7 +9024,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9055,7 +9072,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9104,6 +9121,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H05:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -9153,6 +9171,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H05:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -9202,6 +9221,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H05:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -9251,6 +9271,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H05:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -9299,7 +9320,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9347,7 +9368,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9395,7 +9416,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9443,7 +9464,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9491,7 +9512,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M03:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9539,7 +9560,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9587,7 +9608,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9635,7 +9656,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9683,7 +9704,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9731,7 +9752,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9779,7 +9800,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9827,7 +9848,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9875,7 +9896,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9923,7 +9944,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -9971,7 +9992,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10019,7 +10040,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10067,7 +10088,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10115,7 +10136,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10163,7 +10184,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10211,7 +10232,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10259,7 +10280,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10307,7 +10328,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10355,7 +10376,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10403,7 +10424,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10451,7 +10472,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10499,7 +10520,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10547,7 +10568,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10595,7 +10616,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10643,7 +10664,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10691,7 +10712,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10739,7 +10760,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10787,7 +10808,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10835,7 +10856,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10883,7 +10904,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -10932,6 +10953,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H06:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -10981,6 +11003,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H06:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -11030,6 +11053,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H06:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -11079,6 +11103,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H06:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -11127,7 +11152,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11175,7 +11200,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11223,7 +11248,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11271,7 +11296,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11319,7 +11344,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M03:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11367,7 +11392,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11415,7 +11440,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11463,7 +11488,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11511,7 +11536,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11559,7 +11584,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11607,7 +11632,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11655,7 +11680,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11703,7 +11728,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11751,7 +11776,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11799,7 +11824,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11847,7 +11872,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11895,7 +11920,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11943,7 +11968,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -11991,7 +12016,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12039,7 +12064,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12087,7 +12112,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12135,7 +12160,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12183,7 +12208,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12231,7 +12256,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12279,7 +12304,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12327,7 +12352,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12375,7 +12400,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12423,7 +12448,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12471,7 +12496,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12519,7 +12544,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12567,7 +12592,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12615,7 +12640,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12663,7 +12688,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12711,7 +12736,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -12760,6 +12785,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H07:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -12809,6 +12835,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H07:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -12858,6 +12885,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H07:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -12907,6 +12935,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H07:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -12955,7 +12984,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 1")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13003,7 +13032,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 2")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13051,7 +13080,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M02:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 3")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13099,7 +13128,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M02:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 4")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13147,7 +13176,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M03:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 5")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13195,7 +13224,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M03:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 6")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13243,7 +13272,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M04:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 7")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13291,7 +13320,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M04:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 8")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13339,7 +13368,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M05:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 9")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13387,7 +13416,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M05:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 10")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13435,7 +13464,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M06:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 11")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13483,7 +13512,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M06:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 12")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13531,7 +13560,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M07:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 13")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13579,7 +13608,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M07:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 14")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13627,7 +13656,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M08:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 15")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13675,7 +13704,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M08:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 16")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13723,7 +13752,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M09:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 17")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13771,7 +13800,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M09:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 18")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13819,7 +13848,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M10:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 19")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13867,7 +13896,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M10:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 20")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13915,7 +13944,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -13963,7 +13992,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14011,7 +14040,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M12:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 23")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14059,7 +14088,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M12:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 24")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14107,7 +14136,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M13:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 25")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14155,7 +14184,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M13:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 26")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14203,7 +14232,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M14:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 27")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14251,7 +14280,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M14:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 28")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14299,7 +14328,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M15:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 29")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14347,7 +14376,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M15:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 30")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14395,7 +14424,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M16:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 31")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14443,7 +14472,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M16:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 32")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14491,7 +14520,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M17:Current1-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 33")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14539,7 +14568,7 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M17:Current2-Mon"){
 
     field(EGU,  "A")
     field(DESC, "Corrente 34")
-
+    field(PREC, "2")
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
@@ -14588,6 +14617,7 @@ record(calc, "RA-ToBO:RF-HeatSInk-H08:PwrRevBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -14637,6 +14667,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H08:PwrFwdBot-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -14686,6 +14717,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H08:PwrRevTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -14735,6 +14767,7 @@ record(calc, "RA-ToBO:RF-HeatSink-H08:PwrFwdTop-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -14784,6 +14817,7 @@ record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -14833,6 +14867,7 @@ record(calc, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -14882,6 +14917,7 @@ record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
@@ -14931,6 +14967,7 @@ record(calc, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon"){
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
+    field(PREC, "2")
 
     field(HHSV, "MAJOR")
     field(HSV,  "MINOR")
