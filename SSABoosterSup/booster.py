@@ -33,6 +33,7 @@ ofs = Template('''
 record(ao, "${PV}"){
     field(PINI, "YES")
     field(EGU,  "${EGU}")
+    field(PREC, "2")
 }
 ''')
 
@@ -40,6 +41,7 @@ alarm = Template('''
 record(ao, "${PV}"){
     field(PINI, "YES")
     field(EGU,  "${EGU}")
+    field(PREC, "2")
 }
 ''')
 
@@ -196,20 +198,20 @@ if __name__ == '__main__':
     db += raw_data.safe_substitute()
 
     # Alarms
-    GENERAL_POWER_HIHI  = ':AlarmConfig:GeneralPowerLimHihi'
+    GENERAL_POWER_HIHI  = ':AlarmConfig:GeneralPowerLimHiHi'
     GENERAL_POWER_HIGH  = ':AlarmConfig:GeneralPowerLimHigh'
     GENERAL_POWER_LOW   = ':AlarmConfig:GeneralPowerLimLow'
     GENERAL_POWER_LOLO  = ':AlarmConfig:GeneralPowerLimLoLo'
 
-    INNER_POWER_HIHI    = ':AlarmConfig:InnerPowerLimHihi'
+    INNER_POWER_HIHI    = ':AlarmConfig:InnerPowerLimHiHi'
     INNER_POWER_HIGH    = ':AlarmConfig:InnerPowerLimHigh'
     INNER_POWER_LOW     = ':AlarmConfig:InnerPowerLimLow'
-    INNER_POWER_LOLO    = ':AlarmConfig:InnerPowerLimLolo'
+    INNER_POWER_LOLO    = ':AlarmConfig:InnerPowerLimLoLo'
 
-    CURRENT_HIHI        = ':AlarmConfig:CurrentLimHihi'
+    CURRENT_HIHI        = ':AlarmConfig:CurrentLimHiHi'
     CURRENT_HIGH        = ':AlarmConfig:CurrentLimHigh'
     CURRENT_LOW         = ':AlarmConfig:CurrentLimLow'
-    CURRENT_LOLO        = ':AlarmConfig:CurrentLimLolo'
+    CURRENT_LOLO        = ':AlarmConfig:CurrentLimLoLo'
 
 
     db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + GENERAL_POWER_HIHI, 'EGU': 'dBm'}) 
