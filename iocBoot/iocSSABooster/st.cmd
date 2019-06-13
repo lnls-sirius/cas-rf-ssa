@@ -15,7 +15,7 @@ epicsEnvSet("P","RA-ToBO")
 epicsEnvSet("R",":")
 
 dbLoadRecords("db/SSABoosterAutosave.db","P=$(P),R=$(R)")
-dbLoadRecords("db/SSABooster.db","P=$(P),R=$(R),TORRE=TORRE1,PORT=L0")
+dbLoadRecords("db/SSABooster.db","P=$(P),R=$(R),TORRE=TORRE1,PORT=L0,A=0")
 
 # Offsets
 set_pass0_restoreFile("autosave/SSABooster/$(P)$(R)Offsets.sav")
