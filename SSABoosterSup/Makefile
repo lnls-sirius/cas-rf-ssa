@@ -19,11 +19,11 @@ install-dependencies:
 
 	#SSABoosterAlarms.req: ssaBooster.db
 	cat $(TOP)/SSABoosterSup/SSABooster.db | grep record | grep AlarmConfig | grep -Po  '(?<=")(.*?)(?="\){)'\
-		>>$(TOP)/SSABoosterSup/SSABoosterAlarms.req
+		>$(TOP)/SSABoosterSup/SSABoosterAlarms.req
 
 	#SSABoosterOffsets.req: ssaBooster.db
 	cat $(TOP)/SSABoosterSup/SSABooster.db | grep record | grep OffsetConfig | grep -Po  '(?<=")(.*?)(?="\){)'\
-		>>$(TOP)/SSABoosterSup/SSABoosterOffsets.req
+		>$(TOP)/SSABoosterSup/SSABoosterOffsets.req
 
 #=======================================
 include $(TOP)/configure/RULES
