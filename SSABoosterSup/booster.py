@@ -62,31 +62,27 @@ record(scalcout, "${PV}_v"){
     field(EGU,  "V")
 }
 
-record(calcout, "${PV}_HIHI"){
-    field(CALC, "A")
-    field(INPA, "${HIHI} CP")
-
+record(ao, "${PV}_HIHI"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${HIHI} CP")
     field(OUT, "${PV}.HIHI")
 }
 
-record(calcout, "${PV}_HIGH"){
-    field(CALC, "A")
-    field(INPA, "${HIGH} CP")
-
+record(ao, "${PV}_HIGH"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${HIGH} CP")
     field(OUT, "${PV}.HIGH")
 }
 
-record(calcout, "${PV}_LOW"){
-    field(CALC, "A")
-    field(INPA, "${LOW} CP")
-
+record(ao, "${PV}_LOW"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${LOW} CP")
     field(OUT, "${PV}.LOW")
 }
 
-record(calcout, "${PV}_LOLO"){
-    field(CALC, "A")
-    field(INPA, "${LOLO} CP")
-
+record(ao, "${PV}_LOLO"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${LOLO} CP")
     field(OUT, "${PV}.LOLO")
 }
 
@@ -123,31 +119,27 @@ record(scalcout, "${PV}_v"){
     field(EGU,  "V")
 }
 
-record(calcout, "${PV}_HIHI"){
-    field(CALC, "A")
-    field(INPA, "${HIHI} CP")
-
+record(ao, "${PV}_HIHI"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${HIHI} CP")
     field(OUT, "${PV}.HIHI")
 }
 
-record(calcout, "${PV}_HIGH"){
-    field(CALC, "A")
-    field(INPA, "${HIGH} CP")
-
+record(ao, "${PV}_HIGH"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${HIGH} CP")
     field(OUT, "${PV}.HIGH")
 }
 
-record(calcout, "${PV}_LOW"){
-    field(CALC, "A")
-    field(INPA, "${LOW} CP")
-
+record(ao, "${PV}_LOW"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${LOW} CP")
     field(OUT, "${PV}.LOW")
 }
 
-record(calcout, "${PV}_LOLO"){
-    field(CALC, "A")
-    field(INPA, "${LOLO} CP")
-
+record(ao, "${PV}_LOLO"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${LOLO} CP")
     field(OUT, "${PV}.LOLO")
 }
 
@@ -214,7 +206,7 @@ if __name__ == '__main__':
     CURRENT_LOLO        = ':AlarmConfig:CurrentLimLoLo'
 
 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + GENERAL_POWER_HIHI, 'EGU': 'dBm'}) 
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + GENERAL_POWER_HIHI, 'EGU': 'dBm'})
     db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + GENERAL_POWER_HIGH, 'EGU': 'dBm'})
     db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + GENERAL_POWER_LOW , 'EGU': 'dBm'})
     db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + GENERAL_POWER_LOLO, 'EGU': 'dBm'})
@@ -242,16 +234,16 @@ if __name__ == '__main__':
     OUTPUT_INCIDENT     = ":OffsetConfig:OutputIncidentPower"
     OUTPUT_REFLECTED    = ":OffsetConfig:OutputReflectedPower"
 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_UPPER_INCIDENT , 'EGU': 'dBm'}) 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_UPPER_REFLECTED, 'EGU': 'dBm'}) 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_LOWER_INCIDENT , 'EGU': 'dBm'}) 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_LOWER_REFLECTED, 'EGU': 'dBm'}) 
-                                                                                                    
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + INPUT_INCIDENT     , 'EGU': 'dBm'}) 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + INPUT_REFLECTED    , 'EGU': 'dBm'}) 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + OUTPUT_INCIDENT    , 'EGU': 'dBm'}) 
-    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + OUTPUT_REFLECTED   , 'EGU': 'dBm'}) 
- 
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_UPPER_INCIDENT , 'EGU': 'dBm'})
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_UPPER_REFLECTED, 'EGU': 'dBm'})
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_LOWER_INCIDENT , 'EGU': 'dBm'})
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + BAR_LOWER_REFLECTED, 'EGU': 'dBm'})
+
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + INPUT_INCIDENT     , 'EGU': 'dBm'})
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + INPUT_REFLECTED    , 'EGU': 'dBm'})
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + OUTPUT_INCIDENT    , 'EGU': 'dBm'})
+    db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + OUTPUT_REFLECTED   , 'EGU': 'dBm'})
+
     # Readings
     for e in entries:
         if e.Tower != '1':
