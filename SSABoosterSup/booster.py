@@ -66,24 +66,32 @@ record(ao, "${PV}_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "${HIHI} CP")
     field(OUT, "${PV}.HIHI")
+
+    field(FLNK, "${PV}")
 }
 
 record(ao, "${PV}_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "${HIGH} CP")
     field(OUT, "${PV}.HIGH")
+
+    field(FLNK, "${PV}")
 }
 
 record(ao, "${PV}_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "${LOW} CP")
     field(OUT, "${PV}.LOW")
+
+    field(FLNK, "${PV}")
 }
 
 record(ao, "${PV}_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "${LOLO} CP")
     field(OUT, "${PV}.LOLO")
+
+    field(FLNK, "${PV}")
 }
 
 record(calc, "${PV}"){
@@ -123,24 +131,32 @@ record(ao, "${PV}_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "${HIHI} CP")
     field(OUT, "${PV}.HIHI")
+
+    field(FLNK, "${PV}")
 }
 
 record(ao, "${PV}_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "${HIGH} CP")
     field(OUT, "${PV}.HIGH")
+
+    field(FLNK, "${PV}")
 }
 
 record(ao, "${PV}_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "${LOW} CP")
     field(OUT, "${PV}.LOW")
+
+    field(FLNK, "${PV}")
 }
 
 record(ao, "${PV}_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "${LOLO} CP")
     field(OUT, "${PV}.LOLO")
+
+    field(FLNK, "${PV}")
 }
 
 record(calc, "${PV}"){
