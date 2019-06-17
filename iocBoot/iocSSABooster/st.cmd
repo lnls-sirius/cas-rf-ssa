@@ -18,12 +18,12 @@ dbLoadRecords("db/SSABoosterAutosave.db","P=$(P),R=$(R)")
 dbLoadRecords("db/SSABooster.db","P=$(P),R=$(R),TORRE=TORRE1,PORT=L0,A=0")
 
 # Offsets
-set_pass0_restoreFile("autosave/SSABooster/$(P)$(R)Offsets.sav")
-set_pass1_restoreFile("autosave/SSABooster/$(P)$(R)Offsets.sav")
+set_pass0_restoreFile("autosave/SSABooster/$(P)Offsets.sav")
+set_pass1_restoreFile("autosave/SSABooster/$(P)Offsets.sav")
 
 # Alarms
-set_pass0_restoreFile("autosave/SSABooster/$(P)$(R)Alarms.sav")
-set_pass1_restoreFile("autosave/SSABooster/$(P)$(R)Alarms.sav")
+set_pass0_restoreFile("autosave/SSABooster/$(P)Alarms.sav")
+set_pass1_restoreFile("autosave/SSABooster/$(P)Alarms.sav")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
