@@ -1,10 +1,10 @@
 record(stringin, "$(P)$(R)AlarmsSaveName"){
-    field(VAL,  "autosave/SSABooster/$(P)Alarms.sav")
+    field(VAL,  "$(P)Alarms.sav")
     field(PINI, "YES")
     field(DESC, "Autosave DRVL and DRVL destination file")
 }
 record(stringin, "$(P)$(R)OffsetsSaveName"){
-    field(VAL,  "autosave/SSABooster/$(P)Offsets.sav")
+    field(VAL,  "$(P)Offsets.sav")
     field(PINI, "YES")
     field(DESC, "Autosave destination file")
 }

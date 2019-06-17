@@ -2,7 +2,7 @@
 record(waveform, "$(P)$(R)RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
-    field(SCAN, "2 second")
+    field(SCAN, "1 second")
     field(DTYP, "stream")
     field(INP,  "@SSABooster.proto getData($(TORRE=TORRE1)) $(PORT) $(A)")
     field(FTVL, "STRING")

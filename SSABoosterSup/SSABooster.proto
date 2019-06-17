@@ -2,7 +2,7 @@ ReplyTimeout=1000;
 ReadTimeout=1000;
 
 getData {
-    MaxInput = 2970;
+    MaxInput = 2790;
     separator=';';
     ExtraInput=Ignore;
     out "\$1";
