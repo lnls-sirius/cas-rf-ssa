@@ -1,0 +1,10 @@
+ReplyTimeout=1000;
+ReadTimeout=1000;
+MaxInput=738;
+ExtraInput=Error;
+
+getData {
+    separator=';';
+    out "\$1";
+    in  "%8s";
+}
