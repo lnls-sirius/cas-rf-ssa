@@ -42,7 +42,7 @@ make install-dependencies
 cd ..
 make
 ```
-Copy the correct service from `scripts`
+Copy the correct service from `services`
 ```
 cp services/<SERVICE> /etc/systemd/system
 systemctl daemon-reload
