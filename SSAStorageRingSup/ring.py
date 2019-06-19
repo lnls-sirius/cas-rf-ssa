@@ -17,9 +17,9 @@ record(waveform, "$(P)$(R)${RACK}RawData-Mon"){
     field(NELM, "82")
 }
 
-record(scalcout, "$(P)$(R)EOMCheck"){
+record(scalcout, "$(P)$(R)${RACK}EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
-    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[309] CP MSS")
+    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[81] CP MSS")
     field(INBB, "$(P)$(R)EOMCheck.STAT CP")
 }''')
 
@@ -55,6 +55,39 @@ record(ao, "${PV}"){
 }
 ''')
 
+alarm_record = Template('''
+record(ao, "${PV}_HIHI"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${HIHI} CP")
+    field(OUT, "${PV}.HIHI")
+
+    field(FLNK, "${PV}")
+}
+
+record(ao, "${PV}_HIGH"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${HIGH} CP")
+    field(OUT, "${PV}.HIGH")
+
+    field(FLNK, "${PV}")
+}
+
+record(ao, "${PV}_LOW"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${LOW} CP")
+    field(OUT, "${PV}.LOW")
+
+    field(FLNK, "${PV}")
+}
+
+record(ao, "${PV}_LOLO"){
+    field(OMSL, "closed_loop")
+    field(DOL, "${LOLO} CP")
+    field(OUT, "${PV}.LOLO")
+
+    field(FLNK, "${PV}")
+}
+''')
 
 """
 :param PV:      PV name
@@ -71,34 +104,6 @@ record(scalcout, "${PV}_v"){
     field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[${N}] CP MSS")
 
     field(EGU,  "V")
-}
-
-record(calcout, "${PV}_HIHI"){
-    field(CALC, "A")
-    field(INPA, "${HIHI} CP")
-
-    field(OUT, "${PV}.HIHI")
-}
-
-record(calcout, "${PV}_HIGH"){
-    field(CALC, "A")
-    field(INPA, "${HIGH} CP")
-
-    field(OUT, "${PV}.HIGH")
-}
-
-record(calcout, "${PV}_LOW"){
-    field(CALC, "A")
-    field(INPA, "${LOW} CP")
-
-    field(OUT, "${PV}.LOW")
-}
-
-record(calcout, "${PV}_LOLO"){
-    field(CALC, "A")
-    field(INPA, "${LOLO} CP")
-
-    field(OUT, "${PV}.LOLO")
 }
 
 record(calc, "${PV}"){
@@ -133,34 +138,6 @@ record(scalcout, "${PV}_v"){
     field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[${N}] CP MSS")
 
     field(EGU,  "V")
-}
-
-record(calcout, "${PV}_HIHI"){
-    field(CALC, "A")
-    field(INPA, "${HIHI} CP")
-
-    field(OUT, "${PV}.HIHI")
-}
-
-record(calcout, "${PV}_HIGH"){
-    field(CALC, "A")
-    field(INPA, "${HIGH} CP")
-
-    field(OUT, "${PV}.HIGH")
-}
-
-record(calcout, "${PV}_LOW"){
-    field(CALC, "A")
-    field(INPA, "${LOW} CP")
-
-    field(OUT, "${PV}.LOW")
-}
-
-record(calcout, "${PV}_LOLO"){
-    field(CALC, "A")
-    field(INPA, "${LOLO} CP")
-
-    field(OUT, "${PV}.LOLO")
 }
 
 record(calc, "${PV}"){
@@ -202,10 +179,11 @@ if __name__ == '__main__':
     sheet_file = '../documentation/SSAStorageRing/Variáveis Aquisição Anel.xlsx'
 
     entries = []
+    db = ''
 
     for i in range(1,5):
         rack, sheet_name  ='RACK{}'.format(i), 'Rack{}'.format(i)
-        sheet = pandas.read_excel(sheet_file, sheet_name=sheet_name, dtype=str, nrows=82, parse_cols='A:M')
+        sheet = pandas.read_excel(sheet_file, sheet_name=sheet_name, dtype=str)
         sheet = sheet.replace('nan', '')
 
         for index, row in sheet.iterrows():
@@ -214,8 +192,7 @@ if __name__ == '__main__':
 
             entries.append(Data(index, row, rack))
 
-    db = ''
-    db += raw_data.safe_substitute()
+        db += raw_data.safe_substitute(RACK=rack)
 
     # Alarms
     GENERAL_POWER_HIHI  = ':AlarmConfig:GeneralPowerLimHiHi'
@@ -272,13 +249,12 @@ if __name__ == '__main__':
 
     # Readings
     for e in entries:
-        #if e.Tower != '1':
-        #    continue
 
         kwargs = {}
         kwargs['PV']    = e.Device
         kwargs['N']     = e.index
         kwargs['D']     = e.Indicative
+        kwargs['RACK']  = e.rack
 
         if e.index == 0:
             db += pwr_sts.safe_substitute(**kwargs)
@@ -299,6 +275,7 @@ if __name__ == '__main__':
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + GENERAL_POWER_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + GENERAL_POWER_LOW
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + GENERAL_POWER_LOLO
+            db += alarm_record.safe_substitute(**kwargs)
             db += power.safe_substitute(**kwargs)
             continue
 
@@ -308,6 +285,7 @@ if __name__ == '__main__':
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + CURRENT_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + CURRENT_LOW
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + CURRENT_LOLO
+            db += alarm_record.safe_substitute(**kwargs)
             db += current.safe_substitute(**kwargs)
             continue
 
@@ -326,6 +304,7 @@ if __name__ == '__main__':
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + INNER_POWER_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + INNER_POWER_LOW
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + INNER_POWER_LOLO
+            db += alarm_record.safe_substitute(**kwargs)
             db += power.safe_substitute(**kwargs)
             continue
 
