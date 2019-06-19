@@ -9,7 +9,7 @@ raw_data = Template('''
 record(waveform, "$(P)$(R)RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
-    field(SCAN, "2 second")
+    field(SCAN, "1 second")
     field(DTYP, "stream")
     field(INP,  "@SSABooster.proto getData($(TORRE=TORRE1)) $(PORT) $(A)")
     field(FTVL, "STRING")
@@ -45,23 +45,7 @@ record(ao, "${PV}"){
 }
 ''')
 
-
-"""
-:param PV:      PV name
-:param HIHI:    Alarm PV name
-:param HIGH:    Alarm PV name
-:param D:       Description text
-:param OFS:     Offset PV name
-:param N:       Reading block number
-"""
-current = Template('''
-record(scalcout, "${PV}_v"){
-    field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[${N}] CP MSS")
-
-    field(EGU,  "V")
-}
-
+alarm_record = Template('''
 record(ao, "${PV}_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "${HIHI} CP")
@@ -92,6 +76,23 @@ record(ao, "${PV}_LOLO"){
     field(OUT, "${PV}.LOLO")
 
     field(FLNK, "${PV}")
+}
+''')
+
+"""
+:param PV:      PV name
+:param HIHI:    Alarm PV name
+:param HIGH:    Alarm PV name
+:param D:       Description text
+:param OFS:     Offset PV name
+:param N:       Reading block number
+"""
+current = Template('''
+record(scalcout, "${PV}_v"){
+    field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[${N}] CP MSS")
+
+    field(EGU,  "V")
 }
 
 record(calc, "${PV}"){
@@ -125,38 +126,6 @@ record(scalcout, "${PV}_v"){
     field(INAA, "$(P)$(R)RawData-Mon.VAL[${N}] CP MSS")
 
     field(EGU,  "V")
-}
-
-record(ao, "${PV}_HIHI"){
-    field(OMSL, "closed_loop")
-    field(DOL, "${HIHI} CP")
-    field(OUT, "${PV}.HIHI")
-
-    field(FLNK, "${PV}")
-}
-
-record(ao, "${PV}_HIGH"){
-    field(OMSL, "closed_loop")
-    field(DOL, "${HIGH} CP")
-    field(OUT, "${PV}.HIGH")
-
-    field(FLNK, "${PV}")
-}
-
-record(ao, "${PV}_LOW"){
-    field(OMSL, "closed_loop")
-    field(DOL, "${LOW} CP")
-    field(OUT, "${PV}.LOW")
-
-    field(FLNK, "${PV}")
-}
-
-record(ao, "${PV}_LOLO"){
-    field(OMSL, "closed_loop")
-    field(DOL, "${LOLO} CP")
-    field(OUT, "${PV}.LOLO")
-
-    field(FLNK, "${PV}")
 }
 
 record(calc, "${PV}"){
@@ -289,6 +258,7 @@ if __name__ == '__main__':
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + GENERAL_POWER_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + GENERAL_POWER_LOW
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + GENERAL_POWER_LOLO
+            db += alarm_record.safe_substitute(**kwargs)
             db += power.safe_substitute(**kwargs)
             continue
 
@@ -298,6 +268,7 @@ if __name__ == '__main__':
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + CURRENT_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + CURRENT_LOW
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + CURRENT_LOLO
+            db += alarm_record.safe_substitute(**kwargs)
             db += current.safe_substitute(**kwargs)
             continue
 
@@ -316,6 +287,7 @@ if __name__ == '__main__':
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + INNER_POWER_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + INNER_POWER_LOW
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + INNER_POWER_LOLO
+            db += alarm_record.safe_substitute(**kwargs)
             db += power.safe_substitute(**kwargs)
             continue
 
