@@ -1,8 +1,0 @@
-epicsEnvSet("IOC","iocSSAStorageRing")
-epicsEnvSet("TOP","/root/cas-rf-ssa")
-epicsEnvSet("STREAM_PROTOCOL_PATH","/root/cas-rf-ssa/db")
-epicsEnvSet("ASYN","/opt/epics-R3.15.5/modules/asyn4-35")
-epicsEnvSet("AUTOSAVE","/opt/epics-R3.15.5/modules/autosave-R5-9")
-epicsEnvSet("CALC","/opt/epics-R3.15.5/modules/synApps/calc-R3-7-1")
-epicsEnvSet("STREAM","/opt/epics-R3.15.5/modules/StreamDevice-2.8.8")
-epicsEnvSet("EPICS_BASE","/opt/epics-R3.15.5/base")
