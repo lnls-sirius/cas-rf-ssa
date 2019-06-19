@@ -17,16 +17,18 @@ Author: Claudio Carneiro
     </li>
     <li>
         Software requirements:<br>
-        
-        |Module|Value|
-        |:----:|:---:|
-        |ASYN|/opt/epics-R3.15.5/modules/asyn4-35|
-        |AUTOSAVE|/opt/epics-R3.15.5/modules/autosave-R5-9|
-        |CALC|/opt/epics-R3.15.5/modules/synApps/calc-R3-7-1|
-        |STREAM|/opt/epics-R3.15.5/modules/StreamDevice-2.8.8|
-        |EPICS_BASE|/opt/epics-R3.15.5/base|
     </li>
 </ul>
+
+|Module|Value|
+|:----:|:---:|
+|ASYN|/opt/epics-R3.15.5/modules/asyn4-35|
+|AUTOSAVE|/opt/epics-R3.15.5/modules/autosave-R5-9|
+|CALC|/opt/epics-R3.15.5/modules/synApps/calc-R3-7-1|
+|STREAM|/opt/epics-R3.15.5/modules/StreamDevice-2.8.8|
+|EPICS_BASE|/opt/epics-R3.15.5/base|
+ 
+
 
 ## Installing
 Booster
