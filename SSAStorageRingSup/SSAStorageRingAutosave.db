@@ -1,0 +1,10 @@
+record(stringin, "$(P)$(R)AlarmsSaveName"){
+    field(VAL,  "$(P)Alarms.sav")
+    field(PINI, "YES")
+    field(DESC, "Autosave DRVL and DRVL destination file")
+}
+record(stringin, "$(P)$(R)OffsetsSaveName"){
+    field(VAL,  "$(P)Offsets.sav")
+    field(PINI, "YES")
+    field(DESC, "Autosave destination file")
+}

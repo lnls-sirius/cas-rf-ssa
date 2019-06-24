@@ -32,7 +32,7 @@ def message(LENGTH):
 
     return RES
 
-    
+
 class Comm():
     def __init__(self, socket_path='./socket'):
         self.socket_path = socket_path
@@ -64,10 +64,8 @@ class Comm():
 
                     if command == 'TORRE1':
                         response = message(2790)
-                    elif command == 'RACK1':
+                    elif command in ['RACK{}'.format(i) for i in range(1,5)]:
                         response = message(738)
-                    else:
-                        response = message(18+9)
 
                     connection.sendall((response + '\r\n').encode('utf-8'))
                     logger.info('{} {}'.format(command, response))
