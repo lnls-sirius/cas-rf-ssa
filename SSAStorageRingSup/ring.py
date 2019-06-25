@@ -1,34 +1,41 @@
 #!/usr/bin/python3
 import pandas
+import math
 from string import Template
 
-#V->I   return (4.8321*voltage - 2.4292)
-#V->dBm return (10 * math.log10((11.4*(voltage*voltage) + 1.7*voltage + 0.01)))
-
+"""
+:param RACK: Rack read command (RACK1, RACK2, RACK3 or RACK4)
+"""
 raw_data = Template('''
-record(waveform, "$(P)$(R)RawData-Mon"){
+record(waveform, "$(P)$(R)${RACK}RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
     field(SCAN, "1 second")
     field(DTYP, "stream")
-    field(INP,  "@SSABooster.proto getData($(TORRE=TORRE1)) $(PORT) $(A)")
+    field(INP,  "@SSAStorageRing.proto getData($(${RACK}=${RACK})) $(PORT) $(A)")
     field(FTVL, "STRING")
-    field(NELM, "310")
+    field(NELM, "82")
 }
 
-record(scalcout, "$(P)$(R)EOMCheck"){
+record(scalcout, "$(P)$(R)${RACK}EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[309] CP MSS")
+    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[81] CP MSS")
     field(INBB, "$(P)$(R)EOMCheck.STAT CP")
 }''')
 
+"""
+:param RACK: Rack read command (RACK1, RACK2, RACK3 or RACK4)
+"""
 pwr_sts = Template('''
 record(scalcout, "${PV}"){
     field(CALC, "AA[7,7]")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[0] CP MSS")
+    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[0] CP MSS")
     field(DESC, "${D}")
 }''')
 
+"""
+:param RACK: Rack read command (RACK1, RACK2, RACK3 or RACK4)
+"""
 ofs = Template('''
 record(ao, "${PV}"){
     field(PINI, "YES")
@@ -37,6 +44,9 @@ record(ao, "${PV}"){
 }
 ''')
 
+"""
+:param RACK: Rack read command (RACK1, RACK2, RACK3 or RACK4)
+"""
 alarm = Template('''
 record(ao, "${PV}"){
     field(PINI, "YES")
@@ -81,6 +91,7 @@ record(ao, "${PV}_LOLO"){
 
 """
 :param PV:      PV name
+:param RACK:    Rack read command (RACK1, RACK2, RACK3 or RACK4)
 :param HIHI:    Alarm PV name
 :param HIGH:    Alarm PV name
 :param D:       Description text
@@ -90,13 +101,13 @@ record(ao, "${PV}_LOLO"){
 current = Template('''
 record(scalcout, "${PV}_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[${N}] CP MSS")
+    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[${N}] CP MSS")
 
     field(EGU,  "V")
 }
 
 record(calc, "${PV}"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.09")
     field(INPA, "${PV}_v CP MSS")
 
     field(EGU,  "A")
@@ -112,6 +123,7 @@ record(calc, "${PV}"){
 
 """
 :param PV:      PV name
+:param RACK:    Rack read command (RACK1, RACK2, RACK3 or RACK4)
 :param HIHI:    Alarm PV name
 :param HIGH:    Alarm PV name
 :param LOW:     Alarm PV name
@@ -123,7 +135,7 @@ record(calc, "${PV}"){
 power = Template('''
 record(scalcout, "${PV}_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[${N}] CP MSS")
+    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[${N}] CP MSS")
 
     field(EGU,  "V")
 }
@@ -145,7 +157,7 @@ record(calc, "${PV}"){
 ''')
 
 class Data():
-    def __init__(self, index, row):
+    def __init__(self, index, row, rack):
        self.index = index
        self.Tower = row['Tower']
        self.HeatSink = row['HeatSink']
@@ -160,19 +172,27 @@ class Data():
        self.Device = row['Device Name']
        self.Indicative = row['Indicative']
        self.Module = row['Module']
+       self.rack = rack
 
 
 if __name__ == '__main__':
-    sheet = '../documentation/SSABooster/Variáveis Aquisição Booster.xlsx'
+    sheet_file = '../documentation/SSAStorageRing/Variáveis Aquisição Anel.xlsx'
+
     entries = []
-    sheet = pandas.read_excel(sheet, sheet_name='Plan1', dtype=str)
-    sheet = sheet.replace('nan', '')
-
-    for index, row in sheet.iterrows():
-       entries.append(Data(index, row))
-
     db = ''
-    db += raw_data.safe_substitute()
+
+    for i in range(1,5):
+        rack, sheet_name  ='RACK{}'.format(i), 'Rack{}'.format(i)
+        sheet = pandas.read_excel(sheet_file, sheet_name=sheet_name, dtype=str)
+        sheet = sheet.replace('nan', '')
+
+        for index, row in sheet.iterrows():
+            if type(row['Tower']) == float and math.isnan(row['Tower']):
+                continue
+
+            entries.append(Data(index, row, rack))
+
+        db += raw_data.safe_substitute(RACK=rack)
 
     # Alarms
     GENERAL_POWER_HIHI  = ':AlarmConfig:GeneralPowerLimHiHi'
@@ -206,8 +226,6 @@ if __name__ == '__main__':
     db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + CURRENT_LOW       , 'EGU': 'A'})
     db += alarm.safe_substitute(**{'PV': entries[0].Sec + '-' + entries[0].Sub + CURRENT_LOLO      , 'EGU': 'A'})
 
-
-
     # Offset
     BAR_UPPER_INCIDENT  = ":OffsetConfig:UpperIncidentPower"
     BAR_UPPER_REFLECTED = ":OffsetConfig:UpperReflectedPower"
@@ -231,13 +249,12 @@ if __name__ == '__main__':
 
     # Readings
     for e in entries:
-        if e.Tower != '1':
-            continue
 
         kwargs = {}
         kwargs['PV']    = e.Device
         kwargs['N']     = e.index
         kwargs['D']     = e.Indicative
+        kwargs['RACK']  = e.rack
 
         if e.index == 0:
             db += pwr_sts.safe_substitute(**kwargs)
