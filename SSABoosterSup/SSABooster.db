@@ -16011,60 +16011,6 @@ record(calc, "RA-ToBO:RF-HeatSink-H08:PwrFwdTop-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_HIHI"){
-    field(OMSL, "closed_loop")
-    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.HIHI")
-
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
-}
-
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_HIGH"){
-    field(OMSL, "closed_loop")
-    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.HIGH")
-
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
-}
-
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_LOW"){
-    field(OMSL, "closed_loop")
-    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.LOW")
-
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
-}
-
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_LOLO"){
-    field(OMSL, "closed_loop")
-    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.LOLO")
-
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
-}
-
-record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_v"){
-    field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[305] CP MSS")
-
-    field(EGU,  "V")
-}
-
-record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon"){
-    field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
-    field(INPA, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_v CP MSS")
-    field(INPB, "RA-ToBO:OffsetConfig:OutputIncidentPower CP ")
-
-    field(EGU,  "dBm")
-    field(DESC, "Potência Geral")
-    field(PREC, "2")
-
-    field(HHSV, "MAJOR")
-    field(HSV,  "MINOR")
-    field(LSV,  "MINOR")
-    field(LLSV, "MAJOR")
-}
-
 record(ao, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimHiHi CP")
@@ -16099,7 +16045,7 @@ record(ao, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon_LOLO"){
 
 record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[306] CP MSS")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[305] CP MSS")
 
     field(EGU,  "V")
 }
@@ -16107,7 +16053,7 @@ record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon_v"){
 record(calc, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon"){
     field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
     field(INPA, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon_v CP MSS")
-    field(INPB, "RA-ToBO:OffsetConfig:OutputReflectedPower CP ")
+    field(INPB, "RA-ToBO:OffsetConfig:OutputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16119,49 +16065,49 @@ record(calc, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[307] CP MSS")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[306] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon"){
+record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon"){
     field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
-    field(INPA, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_v CP MSS")
-    field(INPB, "RA-ToBO:OffsetConfig:InputIncidentPower CP ")
+    field(INPA, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_v CP MSS")
+    field(INPB, "RA-ToBO:OffsetConfig:OutputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16207,7 +16153,7 @@ record(ao, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon_LOLO"){
 
 record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
-    field(INAA, "$(P)$(R)RawData-Mon.VAL[308] CP MSS")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[307] CP MSS")
 
     field(EGU,  "V")
 }
@@ -16215,6 +16161,60 @@ record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon_v"){
 record(calc, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon"){
     field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
     field(INPA, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon_v CP MSS")
+    field(INPB, "RA-ToBO:OffsetConfig:InputIncidentPower CP ")
+
+    field(EGU,  "dBm")
+    field(DESC, "Potência Geral")
+    field(PREC, "2")
+
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "MINOR")
+    field(LLSV, "MAJOR")
+}
+
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_HIHI"){
+    field(OMSL, "closed_loop")
+    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimHiHi CP")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.HIHI")
+
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+}
+
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_HIGH"){
+    field(OMSL, "closed_loop")
+    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimHigh CP")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.HIGH")
+
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+}
+
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_LOW"){
+    field(OMSL, "closed_loop")
+    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimLow CP")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.LOW")
+
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+}
+
+record(ao, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_LOLO"){
+    field(OMSL, "closed_loop")
+    field(DOL, "RA-ToBO:AlarmConfig:GeneralPowerLimLoLo CP")
+    field(OUT, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon.LOLO")
+
+    field(FLNK, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon")
+}
+
+record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_v"){
+    field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
+    field(INAA, "$(P)$(R)RawData-Mon.VAL[308] CP MSS")
+
+    field(EGU,  "V")
+}
+
+record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon"){
+    field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
+    field(INPA, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_v CP MSS")
     field(INPB, "RA-ToBO:OffsetConfig:InputReflectedPower CP ")
 
     field(EGU,  "dBm")

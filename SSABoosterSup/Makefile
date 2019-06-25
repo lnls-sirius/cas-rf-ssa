@@ -11,8 +11,8 @@ DB_INSTALLS += $(TOP)/SSABoosterSup/SSABooster.proto
 DB_INSTALLS += $(TOP)/SSABoosterSup/SSABoosterAlarms.req
 DB_INSTALLS += $(TOP)/SSABoosterSup/SSABoosterOffsets.req
 
-.PHONY: install-dependencies
-install-dependencies:
+.PHONY: db
+db:
 	#SSABooster.db: /opt/cas-rf-ssa/documentation/SSABooster/Variáveis\ Aquisição\ Booster.xlsx
 	pip3 install -r requirements.txt
 	python3 $(TOP)/SSABoosterSup/booster.py > SSABooster.db
