@@ -16053,7 +16053,7 @@ record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon_v"){
 record(calc, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon"){
     field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
     field(INPA, "RA-ToBO:RF-SSAmpTower:PwrRevOut-Mon_v CP MSS")
-    field(INPB, "RA-ToBO:OffsetConfig:OutputIncidentPower CP ")
+    field(INPB, "RA-ToBO:OffsetConfig:OutputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16107,7 +16107,7 @@ record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_v"){
 record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon"){
     field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
     field(INPA, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon_v CP MSS")
-    field(INPB, "RA-ToBO:OffsetConfig:OutputReflectedPower CP ")
+    field(INPB, "RA-ToBO:OffsetConfig:OutputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16161,7 +16161,7 @@ record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon_v"){
 record(calc, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon"){
     field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
     field(INPA, "RA-ToBO:RF-SSAmpTower:PwrRevIn-Mon_v CP MSS")
-    field(INPB, "RA-ToBO:OffsetConfig:InputIncidentPower CP ")
+    field(INPB, "RA-ToBO:OffsetConfig:InputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16215,7 +16215,7 @@ record(scalcout, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_v"){
 record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon"){
     field(CALC, "(10 * LOG((11.4*(A*A) + 1.7*A + 0.01))) + B")
     field(INPA, "RA-ToBO:RF-SSAmpTower:PwrFwdIn-Mon_v CP MSS")
-    field(INPB, "RA-ToBO:OffsetConfig:InputReflectedPower CP ")
+    field(INPB, "RA-ToBO:OffsetConfig:InputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")

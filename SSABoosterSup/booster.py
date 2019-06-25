@@ -245,6 +245,21 @@ if __name__ == '__main__':
 
         if e.HeatSink == '9':
             # General Power
+            '''
+            PwrRevOut-Mon
+            PwrFwdOut-Mon
+            PwrRevIn-Mon
+            PwrFwdIn-Mon
+            '''
+            if int(e.Reading) == 1:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
+            elif int(e.Reading) == 2:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
+            elif int(e.Reading) == 3:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
+            elif int(e.Reading) == 4:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
+            '''
             if int(e.Reading) == 1:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
             elif int(e.Reading) == 2:
@@ -253,7 +268,7 @@ if __name__ == '__main__':
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
             elif int(e.Reading) == 4:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
-
+            '''
             kwargs['HIHI'] = e.Sec + '-' + e.Sub + GENERAL_POWER_HIHI
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + GENERAL_POWER_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + GENERAL_POWER_LOW
