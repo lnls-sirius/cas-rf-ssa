@@ -252,13 +252,13 @@ if __name__ == '__main__':
             PwrFwdIn-Mon
             '''
             if int(e.Reading) == 1:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
-            elif int(e.Reading) == 2:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
-            elif int(e.Reading) == 3:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
-            elif int(e.Reading) == 4:
+            elif int(e.Reading) == 2:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
+            elif int(e.Reading) == 3:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
+            elif int(e.Reading) == 4:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
             '''
             if int(e.Reading) == 1:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
