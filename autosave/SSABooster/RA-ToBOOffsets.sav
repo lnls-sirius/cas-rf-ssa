@@ -1,9 +1,9 @@
-# autosave R5.3	Automatically generated - DO NOT MODIFY - 190625-155142
-RA-ToBO:OffsetConfig:UpperIncidentPower 0
-RA-ToBO:OffsetConfig:UpperReflectedPower 0
-RA-ToBO:OffsetConfig:LowerIncidentPower 0
-RA-ToBO:OffsetConfig:LowerReflectedPower 0
-RA-ToBO:OffsetConfig:InputIncidentPower 0
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 190701-162358
+RA-ToBO:OffsetConfig:UpperIncidentPower 48.7
+RA-ToBO:OffsetConfig:UpperReflectedPower 48.7
+RA-ToBO:OffsetConfig:LowerIncidentPower 48.8
+RA-ToBO:OffsetConfig:LowerReflectedPower 48.8
+RA-ToBO:OffsetConfig:InputIncidentPower 30
 RA-ToBO:OffsetConfig:InputReflectedPower 0
 RA-ToBO:OffsetConfig:OutputIncidentPower 0
 RA-ToBO:OffsetConfig:OutputReflectedPower 0
