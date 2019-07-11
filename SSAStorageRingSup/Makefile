@@ -1,5 +1,5 @@
 TOP=..
-#include $(TOP)/configure/CONFIG
+include $(TOP)/configure/CONFIG
 #=======================================
 
 # Install .dbd and .db files
@@ -15,12 +15,8 @@ DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
 db:
 	pip3 install -r requirements.txt
 	python3 $(TOP)/SSAStorageRingSup/ring.py > SSAStorageRing.db
-	
-	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep AlarmConfig | grep -Po  '(?<=")(.*?)(?="\){)'\
-		>$(TOP)/SSAStorageRingSup/SSAStorageRingAlarms.req
-	
-	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep OffsetConfig | grep -Po  '(?<=")(.*?)(?="\){)'\
-		>$(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
+	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep AlarmConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRingAlarms.req
+	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep OffsetConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
 
 #=======================================
-#include $(TOP)/configure/RULES
+include $(TOP)/configure/RULES
