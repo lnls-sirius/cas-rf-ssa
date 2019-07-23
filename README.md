@@ -31,6 +31,25 @@ Author: Claudio Carneiro
 
 
 ## Installing
+### procServ
+Get the procServ-v2.8.0 tar file from `https://github.com/ralphlange/procServ/releases/download/v2.8.0/procServ-2.8.0.tar.gz`
+```
+wget https://github.com/ralphlange/procServ/releases/download/v2.8.0/procServ-2.8.0.tar.gz
+tar -zxvf procServ-2.8.0.tar.gz
+cd procServ-2.8.0
+./configure --enable-access-from-anywhere
+make install
+```
+
+### User permission
+This repository should be cloned at `/opt` <br>
+Make sure that the user `iocuser` is created and is part of `dialout` and `ioc` groups <br>
+Check the repository permisson
+```
+chown -R iocuser:ioc cas-rf-ssa
+```
+
+### Compiling
 Booster
 ```
 cd SSABoosterSup

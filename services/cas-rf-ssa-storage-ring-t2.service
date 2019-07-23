@@ -7,9 +7,11 @@ After=network-online.target
 Restart=always
 RestartSec=10
 Type=simple
+User=iocuser
+Group=ioc
 
-WorkingDirectory=/root/cas-rf-ssa/iocBoot/iocSSAStorageRing
-ExecStart=/usr/bin/procServ -d --chdir /root/cas-rf-ssa/iocBoot/iocSSAStorageRing 20200 ./st-02.cmd
+WorkingDirectory=/opt/cas-rf-ssa/iocBoot/iocSSAStorageRing
+ExecStart=/usr/local/bin/procServ -L - --allow -f --chdir /opt/cas-rf-ssa/iocBoot/iocSSAStorageRing 20200 ./st-02.cmd
 
 StandardOutput=syslog
 StandardError=syslog
