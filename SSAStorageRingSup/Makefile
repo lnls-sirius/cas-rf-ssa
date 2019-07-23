@@ -11,19 +11,12 @@ DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing.proto
 DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRingAlarms.req
 DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
 
-.PHONY: install-dependencies
-install-dependencies:
-	#SSAStorageRing.db: "$(TOP)/documentation/SSAStorageRing/Variáveis\ Aquisição\ Anel.xlsx"
+.PHONY: db
+db:
 	pip3 install -r requirements.txt
 	python3 $(TOP)/SSAStorageRingSup/ring.py > SSAStorageRing.db
-
-	#SSAStorageRingAlarms.req: ssaStorageRing.db
-	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep AlarmConfig | grep -Po  '(?<=")(.*?)(?="\){)'\
-		>$(TOP)/SSAStorageRingSup/SSAStorageRingAlarms.req
-
-	#SSAStorageRingOffsets.req: ssaStorageRing.db
-	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep OffsetConfig | grep -Po  '(?<=")(.*?)(?="\){)'\
-		>$(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
+	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep AlarmConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRingAlarms.req
+	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep OffsetConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
 
 #=======================================
 include $(TOP)/configure/RULES
