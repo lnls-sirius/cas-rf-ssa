@@ -3163,48 +3163,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M10:Current2-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[59] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
@@ -3215,48 +3215,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[60] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
@@ -5147,48 +5147,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M10:Current2-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[97] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
@@ -5199,48 +5199,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[98] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
@@ -7131,48 +7131,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M10:Current2-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[135] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
@@ -7183,48 +7183,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[136] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
@@ -9115,48 +9115,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M10:Current2-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[173] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
@@ -9167,48 +9167,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[174] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
@@ -11099,48 +11099,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M10:Current2-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[211] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
@@ -11151,48 +11151,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[212] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
@@ -13083,48 +13083,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M10:Current2-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[249] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
@@ -13135,48 +13135,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[250] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")
@@ -15067,48 +15067,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M10:Current2-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[287] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 21")
@@ -15119,48 +15119,48 @@ record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon"){
     field(LLSV, "MAJOR")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_HIHI"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_HIHI"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHiHi CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon.HIHI")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon.HIHI")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_HIGH"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_HIGH"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimHigh CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon.HIGH")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon.HIGH")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_LOW"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_LOW"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLow CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon.LOW")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon.LOW")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon")
 }
 
-record(ao, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_LOLO"){
+record(ao, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_LOLO"){
     field(OMSL, "closed_loop")
     field(DOL, "RA-ToBO:AlarmConfig:CurrentLimLoLo CP")
-    field(OUT, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon.LOLO")
+    field(OUT, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon.LOLO")
 
-    field(FLNK, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon")
+    field(FLNK, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon")
 }
 
-record(scalcout, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_v"){
+record(scalcout, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_v"){
     field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
     field(INAA, "$(P)$(R)RawData-Mon.VAL[288] CP MSS")
 
     field(EGU,  "V")
 }
 
-record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon"){
+record(calc, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon"){
     field(CALC, "(4.8321*A -2.4292)")
-    field(INPA, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_v CP MSS")
+    field(INPA, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
     field(DESC, "Corrente 22")

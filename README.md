@@ -39,6 +39,8 @@ tar -zxvf procServ-2.8.0.tar.gz
 cd procServ-2.8.0
 ./configure --enable-access-from-anywhere
 make install
+cd ..
+rm -rf procServ-2.8.0.tar.gz procServ-2.8.0
 ```
 
 ### User permission
