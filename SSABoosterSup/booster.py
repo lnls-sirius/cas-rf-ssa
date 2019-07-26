@@ -96,7 +96,7 @@ record(scalcout, "${PV}_v"){
 }
 
 record(calc, "${PV}"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "${PV}_v CP MSS")
 
     field(EGU,  "A")

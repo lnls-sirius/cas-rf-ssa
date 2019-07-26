@@ -179,7 +179,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -231,7 +231,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -283,7 +283,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -335,7 +335,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -387,7 +387,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -439,7 +439,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -491,7 +491,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -543,7 +543,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -595,7 +595,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -647,7 +647,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -699,7 +699,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -751,7 +751,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -803,7 +803,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -855,7 +855,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -907,7 +907,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -959,7 +959,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1011,7 +1011,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1063,7 +1063,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1115,7 +1115,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1167,7 +1167,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1219,7 +1219,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1271,7 +1271,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1323,7 +1323,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1375,7 +1375,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1427,7 +1427,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1479,7 +1479,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1531,7 +1531,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1583,7 +1583,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1635,7 +1635,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1687,7 +1687,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1739,7 +1739,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1791,7 +1791,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1843,7 +1843,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -1895,7 +1895,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H01M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H01M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H01M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2163,7 +2163,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2215,7 +2215,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2267,7 +2267,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2319,7 +2319,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2371,7 +2371,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2423,7 +2423,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2475,7 +2475,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2527,7 +2527,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2579,7 +2579,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2631,7 +2631,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2683,7 +2683,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2735,7 +2735,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2787,7 +2787,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2839,7 +2839,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2891,7 +2891,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2943,7 +2943,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -2995,7 +2995,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3047,7 +3047,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3099,7 +3099,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3151,7 +3151,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3203,7 +3203,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3255,7 +3255,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3307,7 +3307,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3359,7 +3359,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3411,7 +3411,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3463,7 +3463,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3515,7 +3515,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3567,7 +3567,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3619,7 +3619,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3671,7 +3671,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3723,7 +3723,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3775,7 +3775,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3827,7 +3827,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -3879,7 +3879,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H02M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H02M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H02M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4147,7 +4147,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4199,7 +4199,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4251,7 +4251,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4303,7 +4303,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4355,7 +4355,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4407,7 +4407,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4459,7 +4459,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4511,7 +4511,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4563,7 +4563,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4615,7 +4615,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4667,7 +4667,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4719,7 +4719,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4771,7 +4771,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4823,7 +4823,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4875,7 +4875,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4927,7 +4927,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -4979,7 +4979,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5031,7 +5031,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5083,7 +5083,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5135,7 +5135,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5187,7 +5187,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5239,7 +5239,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5291,7 +5291,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5343,7 +5343,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5395,7 +5395,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5447,7 +5447,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5499,7 +5499,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5551,7 +5551,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5603,7 +5603,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5655,7 +5655,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5707,7 +5707,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5759,7 +5759,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5811,7 +5811,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -5863,7 +5863,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H03M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H03M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H03M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6131,7 +6131,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6183,7 +6183,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6235,7 +6235,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6287,7 +6287,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6339,7 +6339,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6391,7 +6391,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6443,7 +6443,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6495,7 +6495,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6547,7 +6547,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6599,7 +6599,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6651,7 +6651,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6703,7 +6703,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6755,7 +6755,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6807,7 +6807,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6859,7 +6859,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6911,7 +6911,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -6963,7 +6963,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7015,7 +7015,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7067,7 +7067,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7119,7 +7119,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7171,7 +7171,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7223,7 +7223,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7275,7 +7275,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7327,7 +7327,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7379,7 +7379,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7431,7 +7431,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7483,7 +7483,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7535,7 +7535,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7587,7 +7587,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7639,7 +7639,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7691,7 +7691,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7743,7 +7743,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7795,7 +7795,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -7847,7 +7847,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H04M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H04M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H04M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8115,7 +8115,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8167,7 +8167,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8219,7 +8219,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8271,7 +8271,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8323,7 +8323,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8375,7 +8375,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8427,7 +8427,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8479,7 +8479,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8531,7 +8531,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8583,7 +8583,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8635,7 +8635,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8687,7 +8687,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8739,7 +8739,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8791,7 +8791,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8843,7 +8843,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8895,7 +8895,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8947,7 +8947,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -8999,7 +8999,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9051,7 +9051,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9103,7 +9103,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9155,7 +9155,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9207,7 +9207,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9259,7 +9259,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9311,7 +9311,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9363,7 +9363,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9415,7 +9415,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9467,7 +9467,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9519,7 +9519,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9571,7 +9571,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9623,7 +9623,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9675,7 +9675,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9727,7 +9727,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9779,7 +9779,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -9831,7 +9831,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H05M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H05M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H05M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10099,7 +10099,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10151,7 +10151,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10203,7 +10203,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10255,7 +10255,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10307,7 +10307,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10359,7 +10359,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10411,7 +10411,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10463,7 +10463,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10515,7 +10515,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10567,7 +10567,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10619,7 +10619,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10671,7 +10671,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10723,7 +10723,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10775,7 +10775,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10827,7 +10827,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10879,7 +10879,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10931,7 +10931,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -10983,7 +10983,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11035,7 +11035,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11087,7 +11087,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11139,7 +11139,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11191,7 +11191,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11243,7 +11243,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11295,7 +11295,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11347,7 +11347,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11399,7 +11399,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11451,7 +11451,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11503,7 +11503,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11555,7 +11555,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11607,7 +11607,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11659,7 +11659,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11711,7 +11711,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11763,7 +11763,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -11815,7 +11815,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H06M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H06M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H06M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12083,7 +12083,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12135,7 +12135,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12187,7 +12187,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12239,7 +12239,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12291,7 +12291,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12343,7 +12343,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12395,7 +12395,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12447,7 +12447,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12499,7 +12499,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12551,7 +12551,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12603,7 +12603,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12655,7 +12655,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12707,7 +12707,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12759,7 +12759,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12811,7 +12811,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12863,7 +12863,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12915,7 +12915,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -12967,7 +12967,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13019,7 +13019,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13071,7 +13071,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13123,7 +13123,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13175,7 +13175,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13227,7 +13227,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13279,7 +13279,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13331,7 +13331,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13383,7 +13383,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13435,7 +13435,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13487,7 +13487,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13539,7 +13539,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13591,7 +13591,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13643,7 +13643,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13695,7 +13695,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13747,7 +13747,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -13799,7 +13799,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H07M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H07M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H07M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14067,7 +14067,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M01:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14119,7 +14119,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M01:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14171,7 +14171,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M02:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M02:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M02:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14223,7 +14223,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M02:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M02:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M02:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14275,7 +14275,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M03:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M03:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M03:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14327,7 +14327,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M03:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M03:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M03:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14379,7 +14379,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M04:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M04:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M04:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14431,7 +14431,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M04:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M04:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M04:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14483,7 +14483,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M05:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M05:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M05:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14535,7 +14535,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M05:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M05:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M05:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14587,7 +14587,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M06:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M06:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M06:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14639,7 +14639,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M06:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M06:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M06:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14691,7 +14691,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M07:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M07:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M07:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14743,7 +14743,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M07:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M07:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M07:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14795,7 +14795,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M08:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M08:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M08:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14847,7 +14847,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M08:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M08:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M08:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14899,7 +14899,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M09:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M09:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M09:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -14951,7 +14951,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M09:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M09:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M09:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15003,7 +15003,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M10:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M10:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M10:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15055,7 +15055,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M10:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M10:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M10:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15107,7 +15107,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M11:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15159,7 +15159,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M11:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15211,7 +15211,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M12:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M12:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M12:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15263,7 +15263,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M12:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M12:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M12:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15315,7 +15315,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M13:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M13:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M13:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15367,7 +15367,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M13:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M13:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M13:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15419,7 +15419,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M14:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M14:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M14:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15471,7 +15471,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M14:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M14:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M14:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15523,7 +15523,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M15:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M15:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M15:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15575,7 +15575,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M15:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M15:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M15:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15627,7 +15627,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M16:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M16:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M16:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15679,7 +15679,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M16:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M16:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M16:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15731,7 +15731,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M17:Current1-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M17:Current1-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M17:Current1-Mon_v CP MSS")
 
     field(EGU,  "A")
@@ -15783,7 +15783,7 @@ record(scalcout, "RA-ToBO:RF-SSAmp-H08M17:Current2-Mon_v"){
 }
 
 record(calc, "RA-ToBO:RF-SSAmp-H08M17:Current2-Mon"){
-    field(CALC, "(4.8321*A -2.4292)")
+    field(CALC, "(4.8321*A -2.4292)*1.2")
     field(INPA, "RA-ToBO:RF-SSAmp-H08M17:Current2-Mon_v CP MSS")
 
     field(EGU,  "A")
