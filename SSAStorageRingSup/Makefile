@@ -5,11 +5,13 @@ include $(TOP)/configure/CONFIG
 # Install .dbd and .db files
 # SSAStorageRingAutosave.db
 DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRingAutosave.db
-DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing.db
 DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing.proto
-
-DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRingAlarms.req
-DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
+DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing01.db
+DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing01Alarms.req
+DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing01Offsets.req
+DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing02.db
+DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing02Alarms.req
+DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing02Offsets.req
 
 .PHONY: db
 db:
