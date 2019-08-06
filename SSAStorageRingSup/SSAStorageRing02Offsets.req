@@ -1,0 +1,8 @@
+RA-ToSIA02:OffsetConfig:UpperIncidentPower
+RA-ToSIA02:OffsetConfig:UpperReflectedPower
+RA-ToSIA02:OffsetConfig:LowerIncidentPower
+RA-ToSIA02:OffsetConfig:LowerReflectedPower
+RA-ToSIA02:OffsetConfig:InputIncidentPower
+RA-ToSIA02:OffsetConfig:InputReflectedPower
+RA-ToSIA02:OffsetConfig:OutputIncidentPower
+RA-ToSIA02:OffsetConfig:OutputReflectedPower

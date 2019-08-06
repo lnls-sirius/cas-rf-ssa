@@ -14,9 +14,11 @@ DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
 .PHONY: db
 db:
 	pip3 install -r requirements.txt
-	python3 $(TOP)/SSAStorageRingSup/ring.py > SSAStorageRing.db
-	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep AlarmConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRingAlarms.req
-	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep OffsetConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRingOffsets.req
-
+	python3 $(TOP)/SSAStorageRingSup/ring.py > SSAStorageRing01.db
+	cat $(TOP)/SSAStorageRingSup/SSAStorageRing.db | grep record | grep AlarmConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRing01Alarms.req
+	cat $(TOP)/SSAStorageRingSup/SSAStorageRing01.db | grep record | grep OffsetConfig | grep -Po  '(?<=")(.*?)(?="\){)' > $(TOP)/SSAStorageRingSup/SSAStorageRing01Offsets.req
+	sed -e 's/RA-ToSIA01/RA-ToSIA02/g' SSAStorageRing01.db > SSAStorageRing02.db
+	sed -e 's/RA-ToSIA01/RA-ToSIA02/g' SSAStorageRing01Offsets.req > SSAStorageRing02Offsets.req
+	sed -e 's/RA-ToSIA01/RA-ToSIA02/g' SSAStorageRing01Alarms.req > SSAStorageRing02Alarms.req
 #=======================================
 include $(TOP)/configure/RULES

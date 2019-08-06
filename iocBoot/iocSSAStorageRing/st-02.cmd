@@ -14,8 +14,8 @@ asynSetOption("L0", 0, "baud", "500000")
 epicsEnvSet("P","RA-ToSIA02")
 epicsEnvSet("R",":")
 
-dbLoadRecords("db/SSAStorageRingAutosave.db", "P=$(P),R=$(R)")
-dbLoadRecords("db/SSAStorageRing.db"        , "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0")
+dbLoadRecords("db/SSAStorageRing02Autosave.db", "P=$(P),R=$(R)")
+dbLoadRecords("db/SSAStorageRing02.db"        , "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0")
 
 #save_restoreSet_FilePermissions(0777)
 
@@ -36,5 +36,5 @@ iocInit
 #var streamDebug 1
 
 cd "${TOP}"
-create_monitor_set("$(TOP)/db/SSAStorageRingAlarms.req",  10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)AlarmsSaveName")
-create_monitor_set("$(TOP)/db/SSAStorageRingOffsets.req", 10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)OffsetsSaveName")
+create_monitor_set("$(TOP)/db/SSAStorageRing02Alarms.req",  10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)AlarmsSaveName")
+create_monitor_set("$(TOP)/db/SSAStorageRing02Offsets.req", 10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)OffsetsSaveName")
