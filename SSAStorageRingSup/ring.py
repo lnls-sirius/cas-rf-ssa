@@ -262,13 +262,13 @@ if __name__ == '__main__':
 
         if e.HeatSink == '9':
             # General Power
-            if int(e.Reading) == 1:
+            if int(e.Reading) in [1, 5, 9, 13]:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
-            elif int(e.Reading) == 2:
+            elif int(e.Reading) in [2, 6, 10, 14]:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
-            elif int(e.Reading) == 3:
+            elif int(e.Reading) in [3, 7, 11, 15]:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
-            elif int(e.Reading) == 4:
+            elif int(e.Reading) in [4, 8, 12, 16]:
                 kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
 
             kwargs['HIHI'] = e.Sec + '-' + e.Sub + GENERAL_POWER_HIHI
