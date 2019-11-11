@@ -12,7 +12,7 @@ record(waveform, "$(P)$(R)RACK1RawData-Mon"){
 record(scalcout, "$(P)$(R)RACK1EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
     field(INAA, "$(P)$(R)RACK1RawData-Mon.VAL[81] CP MSS")
-    field(INBB, "$(P)$(R)EOMCheck.STAT CP")
+    field(INBB, "$(P)$(R)RACK1RawData-Mon.STAT CP")
 }
 record(waveform, "$(P)$(R)RACK2RawData-Mon"){
     field(PINI, "YES")
@@ -27,7 +27,7 @@ record(waveform, "$(P)$(R)RACK2RawData-Mon"){
 record(scalcout, "$(P)$(R)RACK2EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
     field(INAA, "$(P)$(R)RACK2RawData-Mon.VAL[81] CP MSS")
-    field(INBB, "$(P)$(R)EOMCheck.STAT CP")
+    field(INBB, "$(P)$(R)RACK2RawData-Mon.STAT CP")
 }
 record(waveform, "$(P)$(R)RACK3RawData-Mon"){
     field(PINI, "YES")
@@ -42,7 +42,7 @@ record(waveform, "$(P)$(R)RACK3RawData-Mon"){
 record(scalcout, "$(P)$(R)RACK3EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
     field(INAA, "$(P)$(R)RACK3RawData-Mon.VAL[81] CP MSS")
-    field(INBB, "$(P)$(R)EOMCheck.STAT CP")
+    field(INBB, "$(P)$(R)RACK3RawData-Mon.STAT CP")
 }
 record(waveform, "$(P)$(R)RACK4RawData-Mon"){
     field(PINI, "YES")
@@ -57,7 +57,7 @@ record(waveform, "$(P)$(R)RACK4RawData-Mon"){
 record(scalcout, "$(P)$(R)RACK4EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
     field(INAA, "$(P)$(R)RACK4RawData-Mon.VAL[81] CP MSS")
-    field(INBB, "$(P)$(R)EOMCheck.STAT CP")
+    field(INBB, "$(P)$(R)RACK4RawData-Mon.STAT CP")
 }
 record(ao, "RA-ToSIA02:AlarmConfig:GeneralPowerLimHiHi"){
     field(PINI, "YES")
