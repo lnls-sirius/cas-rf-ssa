@@ -20,7 +20,7 @@ record(waveform, "$(P)$(R)${RACK}RawData-Mon"){
 record(scalcout, "$(P)$(R)${RACK}EOMCheck"){
     field(CALC, "AA='####FIM!'&BB='NO_ALARM'")
     field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[81] CP MSS")
-    field(INBB, "$(P)$(R)EOMCheck.STAT CP")
+    field(INBB, "$(P)$(R)${RACK}RawData-Mon.STAT CP")
 }''')
 
 """
