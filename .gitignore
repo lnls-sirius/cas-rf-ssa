@@ -7,6 +7,14 @@ teste.py
 sirius-cas-rf-bssa/server/alarms_parameters.db
 sirius-cas-rf-bssa/server/offsets_parameters.db
 
+SSAApp/Db/O.linux-arm/
+SSAApp/src/O.Common/
+SSAApp/src/O.linux-arm/
+SSABoosterSup/O.linux-arm/
+SSAStorageRingSup/O.linux-arm/
+configure/O.linux-arm/
+db/
+dbd/
 
 opi/.metadata/.plugins/org.eclipse.core.resources/.projects/CSS/.indexes/properties.index
 opi/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
