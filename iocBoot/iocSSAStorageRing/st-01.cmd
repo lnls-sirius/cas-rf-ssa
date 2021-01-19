@@ -14,20 +14,22 @@ asynSetOption("L0", 0, "baud", "500000")
 epicsEnvSet("P","RA-ToSIA01")
 epicsEnvSet("R",":")
 
-dbLoadRecords("db/SSAStorageRing01Autosave.db", "P=$(P),R=$(R)")
-dbLoadRecords("db/SSAStorageRing01.db"        , "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0")
+dbLoadRecords("db/SSAStorageRing01.db", "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0")
 
 #save_restoreSet_FilePermissions(0777)
 
+# Autosave settings
+set_requestfile_path("$(TOP)", "autosave/SSAStorageRing")
 set_savefile_path("$(TOP)/autosave/SSAStorageRing")
- 
-# Offsets
-set_pass0_restoreFile("$(P)Offsets.sav")
-set_pass1_restoreFile("$(P)Offsets.sav")
 
-# Alarms
-set_pass0_restoreFile("$(P)Alarms.sav")
-set_pass1_restoreFile("$(P)Alarms.sav")
+save_restoreSet_DatedBackupFiles(2)
+save_restoreSet_NumSeqFiles(3)
+save_restoreSet_SeqPeriodInSeconds(600)
+
+set_savefile_path("$(TOP)/autosave/SSAStorageRing")
+
+set_pass0_restoreFile("SSAStorageRing01.sav")
+set_pass1_restoreFile("SSAStorageRing01.sav")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
@@ -36,5 +38,4 @@ iocInit
 #var streamDebug 1
 
 cd "${TOP}"
-create_monitor_set("$(TOP)/db/SSAStorageRing01Alarms.req",  10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)AlarmsSaveName")
-create_monitor_set("$(TOP)/db/SSAStorageRing01Offsets.req", 10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)OffsetsSaveName")
+create_monitor_set("SSAStorageRing01.req",  10)
