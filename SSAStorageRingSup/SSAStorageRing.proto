@@ -1,5 +1,5 @@
-ReplyTimeout=1000;
-ReadTimeout=1000;
+ReplyTimeout=1200;
+ReadTimeout=1200;
 MaxInput=738;
 ExtraInput=Ignore;
 separator=';';
