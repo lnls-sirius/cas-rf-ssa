@@ -15,7 +15,7 @@ DB_INSTALLS += $(TOP)/SSAStorageRingSup/SSAStorageRing02Offsets.req
 
 # It's expected a python3 virtual environent here './env/' !
 
-.PHONY: db
+.PHONY: db req
 db:
 	./venv/bin/pip3 install -r requirements.txt
 	./venv/bin/python3 ring.py > SSAStorageRing01.db
@@ -24,5 +24,9 @@ db:
 	sed -e 's/RA-ToSIA01/RA-ToSIA02/g' SSAStorageRing01.db > SSAStorageRing02.db
 	sed -e 's/RA-ToSIA01/RA-ToSIA02/g' SSAStorageRing01Offsets.req > SSAStorageRing02Offsets.req
 	sed -e 's/RA-ToSIA01/RA-ToSIA02/g' SSAStorageRing01Alarms.req > SSAStorageRing02Alarms.req
+
+req:
+	cat SSAStorageRing01*.req > $(TOP)/autosave/SSAStorageRing/SSAStorageRing01.req
+	cat SSAStorageRing02*.req > $(TOP)/autosave/SSAStorageRing/SSAStorageRing02.req
 #=======================================
 include $(TOP)/configure/RULES
