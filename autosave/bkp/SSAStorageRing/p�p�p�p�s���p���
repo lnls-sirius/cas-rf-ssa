@@ -1,0 +1,14 @@
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 200109-001935
+RA-ToSIA02:AlarmConfig:GeneralPowerLimHiHi 78
+RA-ToSIA02:AlarmConfig:GeneralPowerLimHigh 70
+RA-ToSIA02:AlarmConfig:GeneralPowerLimLow 30
+RA-ToSIA02:AlarmConfig:GeneralPowerLimLoLo 10
+RA-ToSIA02:AlarmConfig:InnerPowerLimHiHi 68
+RA-ToSIA02:AlarmConfig:InnerPowerLimHigh 66
+RA-ToSIA02:AlarmConfig:InnerPowerLimLow 50
+RA-ToSIA02:AlarmConfig:InnerPowerLimLoLo 0
+RA-ToSIA02:AlarmConfig:CurrentLimHiHi 9
+RA-ToSIA02:AlarmConfig:CurrentLimHigh 7.7
+RA-ToSIA02:AlarmConfig:CurrentLimLow 4.9
+RA-ToSIA02:AlarmConfig:CurrentLimLoLo 0.1
+<END>

@@ -1,0 +1,15 @@
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 190806-122726
+! 12 channel(s) not connected - or not all gets were successful
+#RA-ToSIA01:AlarmConfig:GeneralPowerLimHiHi Search Issued
+#RA-ToSIA01:AlarmConfig:GeneralPowerLimHigh Search Issued
+#RA-ToSIA01:AlarmConfig:GeneralPowerLimLow Search Issued
+#RA-ToSIA01:AlarmConfig:GeneralPowerLimLoLo Search Issued
+#RA-ToSIA01:AlarmConfig:InnerPowerLimHiHi Search Issued
+#RA-ToSIA01:AlarmConfig:InnerPowerLimHigh Search Issued
+#RA-ToSIA01:AlarmConfig:InnerPowerLimLow Search Issued
+#RA-ToSIA01:AlarmConfig:InnerPowerLimLoLo Search Issued
+#RA-ToSIA01:AlarmConfig:CurrentLimHiHi Search Issued
+#RA-ToSIA01:AlarmConfig:CurrentLimHigh Search Issued
+#RA-ToSIA01:AlarmConfig:CurrentLimLow Search Issued
+#RA-ToSIA01:AlarmConfig:CurrentLimLoLo Search Issued
+<END>
