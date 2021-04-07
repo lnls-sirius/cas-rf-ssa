@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 import pandas
 import math
 from string import Template
@@ -175,9 +175,13 @@ record(scalcout, "${PV}_v"){
     field(EGU,  "V")
 }
 
-record(calc, "${PV}"){
-    field(CALC, "(10*LOG((((5.51659e-2*A-7.96536e-3)**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
+record(calc, "${PV}_p1"){
+    field(CALC, "5.51659e-2*A-7.96536e-3")
     field(INPA, "${PV}_v CP MSS")
+}
+record(calc, "${PV}"){
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
+    field(INPA, "${PV}_p1 CP MSS")
     field(INPB, "${OFS} CP ")
 
     field(EGU,  "dBm")
@@ -199,9 +203,13 @@ record(scalcout, "${PV}_v"){
     field(EGU,  "V")
 }
 
-record(calc, "${PV}"){
-    field(CALC, "(10*LOG((((5.12714e-2*A-6.87733e-3)**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
+record(calc, "${PV}_p1"){
+    field(CALC, "5.12714e-2*A-6.87733e-3")
     field(INPA, "${PV}_v CP MSS")
+}
+record(calc, "${PV}"){
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
+    field(INPA, "${PV}_p1 CP MSS")
     field(INPB, "${OFS} CP ")
 
     field(EGU,  "dBm")
