@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 import pandas
 import math
 from string import Template
@@ -156,6 +156,73 @@ record(calc, "${PV}"){
 }
 ''')
 
+"""
+:param PV:      PV name
+:param RACK:    Rack read command (RACK1, RACK2, RACK3 or RACK4)
+:param HIHI:    Alarm PV name
+:param HIGH:    Alarm PV name
+:param LOW:     Alarm PV name
+:param LOLO:    Alarm PV name
+:param D:       Description text
+:param OFS:     Offset PV name
+:param N:       Reading block number
+"""
+power_general_eq1 = Template('''
+record(scalcout, "${PV}_v"){
+    field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
+    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[${N}] CP MSS")
+
+    field(EGU,  "V")
+}
+
+record(calc, "${PV}_p1"){
+    field(CALC, "5.51659e-2*A-7.96536e-3")
+    field(INPA, "${PV}_v CP MSS")
+}
+record(calc, "${PV}"){
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
+    field(INPA, "${PV}_p1 CP MSS")
+    field(INPB, "${OFS} CP ")
+
+    field(EGU,  "dBm")
+    field(DESC, "${D}")
+    field(PREC, "2")
+
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "MINOR")
+    field(LLSV, "MAJOR")
+}
+''')
+
+power_general_eq2 = Template('''
+record(scalcout, "${PV}_v"){
+    field(CALC, "(DBL(AA[4,7])/4095.0) * 5.0")
+    field(INAA, "$(P)$(R)${RACK}RawData-Mon.VAL[${N}] CP MSS")
+
+    field(EGU,  "V")
+}
+
+record(calc, "${PV}_p1"){
+    field(CALC, "5.12714e-2*A-6.87733e-3")
+    field(INPA, "${PV}_v CP MSS")
+}
+record(calc, "${PV}"){
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
+    field(INPA, "${PV}_p1 CP MSS")
+    field(INPB, "${OFS} CP ")
+
+    field(EGU,  "dBm")
+    field(DESC, "${D}")
+    field(PREC, "2")
+
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "MINOR")
+    field(LLSV, "MAJOR")
+}
+''')
+
 class Data():
     def __init__(self, index, row, rack):
        self.index = index
@@ -262,21 +329,26 @@ if __name__ == '__main__':
 
         if e.HeatSink == '9':
             # General Power
-            if int(e.Reading) in [1, 5, 9, 13]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
-            elif int(e.Reading) in [2, 6, 10, 14]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
-            elif int(e.Reading) in [3, 7, 11, 15]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
-            elif int(e.Reading) in [4, 8, 12, 16]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
-
             kwargs['HIHI'] = e.Sec + '-' + e.Sub + GENERAL_POWER_HIHI
             kwargs['HIGH'] = e.Sec + '-' + e.Sub + GENERAL_POWER_HIGH
             kwargs['LOW']  = e.Sec + '-' + e.Sub + GENERAL_POWER_LOW
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + GENERAL_POWER_LOLO
+
+            if int(e.Reading) in [1, 5, 9, 13]:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
+                db += power_general_eq2.safe_substitute(**kwargs)
+            elif int(e.Reading) in [2, 6, 10, 14]:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
+                db += power_general_eq2.safe_substitute(**kwargs)
+
+            elif int(e.Reading) in [3, 7, 11, 15]:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
+                db += power_general_eq1.safe_substitute(**kwargs)
+            elif int(e.Reading) in [4, 8, 12, 16]:
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
+                db += power_general_eq2.safe_substitute(**kwargs)
+
             db += alarm_record.safe_substitute(**kwargs)
-            db += power.safe_substitute(**kwargs)
             continue
 
         if int(e.Reading) < 35:
