@@ -335,17 +335,17 @@ if __name__ == '__main__':
             kwargs['LOLO'] = e.Sec + '-' + e.Sub + GENERAL_POWER_LOLO
 
             if int(e.Reading) in [1, 5, 9, 13]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
-                db += power_general_eq2.safe_substitute(**kwargs)
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
+                db += power_general_eq1.safe_substitute(**kwargs)
             elif int(e.Reading) in [2, 6, 10, 14]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
                 db += power_general_eq2.safe_substitute(**kwargs)
 
             elif int(e.Reading) in [3, 7, 11, 15]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_INCIDENT
-                db += power_general_eq1.safe_substitute(**kwargs)
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_INCIDENT
+                db += power_general_eq2.safe_substitute(**kwargs)
             elif int(e.Reading) in [4, 8, 12, 16]:
-                kwargs['OFS'] = e.Sec + '-' + e.Sub + INPUT_REFLECTED
+                kwargs['OFS'] = e.Sec + '-' + e.Sub + OUTPUT_REFLECTED
                 db += power_general_eq2.safe_substitute(**kwargs)
 
             db += alarm_record.safe_substitute(**kwargs)

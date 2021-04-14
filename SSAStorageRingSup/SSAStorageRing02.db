@@ -4160,13 +4160,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut1-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut1-Mon_p1"){
-    field(CALC, "5.12714e-2*A-6.87733e-3")
+    field(CALC, "5.51659e-2*A-7.96536e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut1-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut1-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut1-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -4224,7 +4224,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut1-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut1-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut1-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -4276,13 +4276,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn1-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn1-Mon_p1"){
-    field(CALC, "5.51659e-2*A-7.96536e-3")
+    field(CALC, "5.12714e-2*A-6.87733e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn1-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn1-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn1-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -4340,7 +4340,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn1-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn1-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn1-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -8365,13 +8365,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut2-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut2-Mon_p1"){
-    field(CALC, "5.12714e-2*A-6.87733e-3")
+    field(CALC, "5.51659e-2*A-7.96536e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut2-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut2-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut2-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -8429,7 +8429,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut2-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut2-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut2-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -8481,13 +8481,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn2-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn2-Mon_p1"){
-    field(CALC, "5.51659e-2*A-7.96536e-3")
+    field(CALC, "5.12714e-2*A-6.87733e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn2-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn2-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn2-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -8545,7 +8545,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn2-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn2-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn2-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -12570,13 +12570,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut3-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut3-Mon_p1"){
-    field(CALC, "5.12714e-2*A-6.87733e-3")
+    field(CALC, "5.51659e-2*A-7.96536e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut3-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut3-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut3-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -12634,7 +12634,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut3-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut3-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut3-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -12686,13 +12686,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn3-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn3-Mon_p1"){
-    field(CALC, "5.51659e-2*A-7.96536e-3")
+    field(CALC, "5.12714e-2*A-6.87733e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn3-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn3-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn3-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -12750,7 +12750,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn3-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn3-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn3-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16775,13 +16775,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut4-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut4-Mon_p1"){
-    field(CALC, "5.12714e-2*A-6.87733e-3")
+    field(CALC, "5.51659e-2*A-7.96536e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut4-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut4-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdOut4-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16839,7 +16839,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut4-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut4-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut4-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16891,13 +16891,13 @@ record(scalcout, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn4-Mon_v"){
 }
 
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn4-Mon_p1"){
-    field(CALC, "5.51659e-2*A-7.96536e-3")
+    field(CALC, "5.12714e-2*A-6.87733e-3")
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn4-Mon_v CP MSS")
 }
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn4-Mon"){
-    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 1 10*log10((((5.51659e-2*V - 7.96536e-3)**2)/100)/1e-3)
+    field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrFwdIn4-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputIncidentPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputIncidentPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
@@ -16955,7 +16955,7 @@ record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn4-Mon_p1"){
 record(calc, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn4-Mon"){
     field(CALC, "(10*LOG(((A**2)/100)/1e-3))+B") # EQ. 2 10*log10((((5.12714e-2*V - 6,87733e-3)**2)/100)/1e-3)
     field(INPA, "RA-ToSIA02:RF-SSAmpTower:PwrRevIn4-Mon_p1 CP MSS")
-    field(INPB, "RA-ToSIA02:OffsetConfig:InputReflectedPower CP ")
+    field(INPB, "RA-ToSIA02:OffsetConfig:OutputReflectedPower CP ")
 
     field(EGU,  "dBm")
     field(DESC, "Potência Geral")
