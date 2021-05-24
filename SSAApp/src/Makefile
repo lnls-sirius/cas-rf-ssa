@@ -21,6 +21,7 @@ SSA_DBD += asyn.dbd
 SSA_DBD += stream.dbd
 SSA_DBD += drvAsynSerialPort.dbd
 SSA_DBD += drvAsynIPPort.dbd
+SSA_DBD += menuScan.dbd
  
 SSA_LIBS += autosave
 SSA_LIBS += stream
