@@ -2,11 +2,12 @@
 record(waveform, "$(P)$(R)RACK1RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
-    field(SCAN, "1 second")
+    field(SCAN, "$(SCAN=1) second")
     field(DTYP, "stream")
     field(INP,  "@SSAStorageRing.proto getData($(RACK1=RACK1)) $(PORT) $(A)")
     field(FTVL, "STRING")
     field(NELM, "82")
+    field(PHAS, "1")
 }
 
 record(scalcout, "$(P)$(R)RACK1EOMCheck"){
@@ -17,11 +18,12 @@ record(scalcout, "$(P)$(R)RACK1EOMCheck"){
 record(waveform, "$(P)$(R)RACK2RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
-    field(SCAN, "1 second")
+    field(SCAN, "$(SCAN=1) second")
     field(DTYP, "stream")
     field(INP,  "@SSAStorageRing.proto getData($(RACK2=RACK2)) $(PORT) $(A)")
     field(FTVL, "STRING")
     field(NELM, "82")
+    field(PHAS, "2")
 }
 
 record(scalcout, "$(P)$(R)RACK2EOMCheck"){
@@ -32,11 +34,12 @@ record(scalcout, "$(P)$(R)RACK2EOMCheck"){
 record(waveform, "$(P)$(R)RACK3RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
-    field(SCAN, "1 second")
+    field(SCAN, "$(SCAN=1) second")
     field(DTYP, "stream")
     field(INP,  "@SSAStorageRing.proto getData($(RACK3=RACK3)) $(PORT) $(A)")
     field(FTVL, "STRING")
     field(NELM, "82")
+    field(PHAS, "3")
 }
 
 record(scalcout, "$(P)$(R)RACK3EOMCheck"){
@@ -47,11 +50,12 @@ record(scalcout, "$(P)$(R)RACK3EOMCheck"){
 record(waveform, "$(P)$(R)RACK4RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
-    field(SCAN, "1 second")
+    field(SCAN, "$(SCAN=1) second")
     field(DTYP, "stream")
     field(INP,  "@SSAStorageRing.proto getData($(RACK4=RACK4)) $(PORT) $(A)")
     field(FTVL, "STRING")
     field(NELM, "82")
+    field(PHAS, "4")
 }
 
 record(scalcout, "$(P)$(R)RACK4EOMCheck"){
