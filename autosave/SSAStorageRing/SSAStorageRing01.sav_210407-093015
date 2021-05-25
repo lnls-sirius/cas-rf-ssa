@@ -1,4 +1,4 @@
-# autosave R5.3	Automatically generated - DO NOT MODIFY - 210525-082813
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 210407-091753
 RA-ToSIA01:AlarmConfig:GeneralPowerLimHiHi 78
 RA-ToSIA01:AlarmConfig:GeneralPowerLimHigh 77.5
 RA-ToSIA01:AlarmConfig:GeneralPowerLimLow 50
@@ -15,8 +15,8 @@ RA-ToSIA01:OffsetConfig:UpperIncidentPower 48.7
 RA-ToSIA01:OffsetConfig:UpperReflectedPower 48.7
 RA-ToSIA01:OffsetConfig:LowerIncidentPower 48.8
 RA-ToSIA01:OffsetConfig:LowerReflectedPower 48.8
-RA-ToSIA01:OffsetConfig:InputIncidentPower 29.87
-RA-ToSIA01:OffsetConfig:InputReflectedPower 27.12
-RA-ToSIA01:OffsetConfig:OutputIncidentPower 79.58
-RA-ToSIA01:OffsetConfig:OutputReflectedPower 75.4
+RA-ToSIA01:OffsetConfig:InputIncidentPower 23.97
+RA-ToSIA01:OffsetConfig:InputReflectedPower 24.12
+RA-ToSIA01:OffsetConfig:OutputIncidentPower 69.38
+RA-ToSIA01:OffsetConfig:OutputReflectedPower 69.4
 <END>
