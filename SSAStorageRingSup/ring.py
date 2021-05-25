@@ -39,7 +39,7 @@ raw_data = Template(
 record(waveform, "$(P)$(R)${RACK}RawData-Mon"){
     field(PINI, "YES")
     field(DESC, "SSA Data")
-    field(SCAN, "1.5 second")
+    field(SCAN, "$(SCAN=1) second")
     field(DTYP, "stream")
     field(INP,  "@SSAStorageRing.proto getData($(${RACK}=${RACK})) $(PORT) $(A)")
     field(FTVL, "STRING")
