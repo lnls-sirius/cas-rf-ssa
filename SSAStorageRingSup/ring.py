@@ -1,7 +1,35 @@
 #!/usr/bin/env python
+import typing
 import pandas
 import math
 from string import Template
+
+# Alarms
+GENERAL_POWER_HIHI = ":AlarmConfig:GeneralPowerLimHiHi"
+GENERAL_POWER_HIGH = ":AlarmConfig:GeneralPowerLimHigh"
+GENERAL_POWER_LOW = ":AlarmConfig:GeneralPowerLimLow"
+GENERAL_POWER_LOLO = ":AlarmConfig:GeneralPowerLimLoLo"
+
+INNER_POWER_HIHI = ":AlarmConfig:InnerPowerLimHiHi"
+INNER_POWER_HIGH = ":AlarmConfig:InnerPowerLimHigh"
+INNER_POWER_LOW = ":AlarmConfig:InnerPowerLimLow"
+INNER_POWER_LOLO = ":AlarmConfig:InnerPowerLimLoLo"
+
+CURRENT_HIHI = ":AlarmConfig:CurrentLimHiHi"
+CURRENT_HIGH = ":AlarmConfig:CurrentLimHigh"
+CURRENT_LOW = ":AlarmConfig:CurrentLimLow"
+CURRENT_LOLO = ":AlarmConfig:CurrentLimLoLo"
+
+# Offset
+BAR_UPPER_INCIDENT = ":OffsetConfig:UpperIncidentPower"
+BAR_UPPER_REFLECTED = ":OffsetConfig:UpperReflectedPower"
+BAR_LOWER_INCIDENT = ":OffsetConfig:LowerIncidentPower"
+BAR_LOWER_REFLECTED = ":OffsetConfig:LowerReflectedPower"
+
+INPUT_INCIDENT = ":OffsetConfig:InputIncidentPower"
+INPUT_REFLECTED = ":OffsetConfig:InputReflectedPower"
+OUTPUT_INCIDENT = ":OffsetConfig:OutputIncidentPower"
+OUTPUT_REFLECTED = ":OffsetConfig:OutputReflectedPower"
 
 """
 :param RACK: Rack read command (RACK1, RACK2, RACK3 or RACK4)
@@ -262,12 +290,8 @@ class Data:
         self.rack = rack
 
 
-if __name__ == "__main__":
-    sheet_file = "../documentation/SSAStorageRing/Variáveis Aquisição Anel.xlsx"
-
-    entries = []
-    db = ""
-
+def load_data(file_name: str) -> typing.List[Data]:
+    entries: typing.List[Data] = []
     for i in range(1, 5):
         rack, sheet_name = "RACK{}".format(i), "Rack{}".format(i)
         sheet = pandas.read_excel(
@@ -280,125 +304,108 @@ if __name__ == "__main__":
                 continue
 
             entries.append(Data(index, row, rack))
+    return entries
 
-        db += raw_data.safe_substitute(RACK=rack, N=i)
 
-    # Alarms
-    GENERAL_POWER_HIHI = ":AlarmConfig:GeneralPowerLimHiHi"
-    GENERAL_POWER_HIGH = ":AlarmConfig:GeneralPowerLimHigh"
-    GENERAL_POWER_LOW = ":AlarmConfig:GeneralPowerLimLow"
-    GENERAL_POWER_LOLO = ":AlarmConfig:GeneralPowerLimLoLo"
+def gen_raw_acquisition() -> str:
+    db = ""
+    for i in range(1, 5):
+        db += raw_data.safe_substitute(RACK=f"RACK{i}", N=i)
+    return db
 
-    INNER_POWER_HIHI = ":AlarmConfig:InnerPowerLimHiHi"
-    INNER_POWER_HIGH = ":AlarmConfig:InnerPowerLimHigh"
-    INNER_POWER_LOW = ":AlarmConfig:InnerPowerLimLow"
-    INNER_POWER_LOLO = ":AlarmConfig:InnerPowerLimLoLo"
 
-    CURRENT_HIHI = ":AlarmConfig:CurrentLimHiHi"
-    CURRENT_HIGH = ":AlarmConfig:CurrentLimHigh"
-    CURRENT_LOW = ":AlarmConfig:CurrentLimLow"
-    CURRENT_LOLO = ":AlarmConfig:CurrentLimLoLo"
+def gen_settings(entries: typing.List[Data]) -> str:
+    db = ""
+    data = [
+        # Limits
+        {"sufix": GENERAL_POWER_HIHI, "egu": "dBm"},
+        {"sufix": GENERAL_POWER_HIGH, "egu": "dBm"},
+        {"sufix": GENERAL_POWER_LOW, "egu": "dBm"},
+        {"sufix": GENERAL_POWER_LOLO, "egu": "dBm"},
+        {"sufix": INNER_POWER_HIHI, "egu": "dBm"},
+        {"sufix": INNER_POWER_HIGH, "egu": "dBm"},
+        {"sufix": INNER_POWER_LOW, "egu": "dBm"},
+        {"sufix": INNER_POWER_LOLO, "egu": "dBm"},
+        {"sufix": CURRENT_HIHI, "egu": "A"},
+        {"sufix": CURRENT_HIGH, "egu": "A"},
+        {"sufix": CURRENT_LOW, "egu": "A"},
+        {"sufix": CURRENT_LOLO, "egu": "A"},
+        # Offset
+        {"sufix": BAR_UPPER_INCIDENT, "egu": "dBm"},
+        {"sufix": BAR_UPPER_REFLECTED, "egu": "dBm"},
+        {"sufix": BAR_LOWER_INCIDENT, "egu": "dBm"},
+        {"sufix": BAR_LOWER_REFLECTED, "egu": "dBm"},
+        {"sufix": INPUT_INCIDENT, "egu": "dBm"},
+        {"sufix": INPUT_REFLECTED, "egu": "dBm"},
+        {"sufix": OUTPUT_INCIDENT, "egu": "dBm"},
+        {"sufix": OUTPUT_REFLECTED, "egu": "dBm"},
+    ]
+    for d in data:
+        db += alarm.safe_substitute(
+            PV=f"{entries[0].Sec}-{entries[0].Sub}{d['sufix']}", EGU=d["egu"]
+        )
+    return db
 
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{GENERAL_POWER_HIHI}",
-            "EGU": "dBm",
-        }
-    )
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{GENERAL_POWER_HIGH}",
-            "EGU": "dBm",
-        }
-    )
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{GENERAL_POWER_LOW}",
-            "EGU": "dBm",
-        }
-    )
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{GENERAL_POWER_LOLO}",
-            "EGU": "dBm",
-        }
-    )
 
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{INNER_POWER_HIHI}", "EGU": "dBm"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{INNER_POWER_HIGH}", "EGU": "dBm"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{INNER_POWER_LOW}", "EGU": "dBm"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{INNER_POWER_LOLO}", "EGU": "dBm"}
-    )
+def gen_general_power(e: Data, kwargs: typing.Dict) -> str:
+    db = ""
+    # General Power
+    kwargs["HIHI"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_HIHI}"
+    kwargs["HIGH"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_HIGH}"
+    kwargs["LOW"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_LOW}"
+    kwargs["LOLO"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_LOLO}"
 
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{CURRENT_HIHI}", "EGU": "A"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{CURRENT_HIGH}", "EGU": "A"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{CURRENT_LOW}", "EGU": "A"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{CURRENT_LOLO}", "EGU": "A"}
-    )
+    if int(e.Reading) in [1, 5, 9, 13]:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{INPUT_INCIDENT}"
+        db += power_general_eq1.safe_substitute(**kwargs)
+    elif int(e.Reading) in [2, 6, 10, 14]:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{INPUT_REFLECTED}"
+        db += power_general_eq2.safe_substitute(**kwargs)
 
-    # Offset
-    BAR_UPPER_INCIDENT = ":OffsetConfig:UpperIncidentPower"
-    BAR_UPPER_REFLECTED = ":OffsetConfig:UpperReflectedPower"
-    BAR_LOWER_INCIDENT = ":OffsetConfig:LowerIncidentPower"
-    BAR_LOWER_REFLECTED = ":OffsetConfig:LowerReflectedPower"
+    elif int(e.Reading) in [3, 7, 11, 15]:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{OUTPUT_INCIDENT}"
+        db += power_general_eq2.safe_substitute(**kwargs)
+    elif int(e.Reading) in [4, 8, 12, 16]:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{OUTPUT_REFLECTED}"
+        db += power_general_eq2.safe_substitute(**kwargs)
 
-    INPUT_INCIDENT = ":OffsetConfig:InputIncidentPower"
-    INPUT_REFLECTED = ":OffsetConfig:InputReflectedPower"
-    OUTPUT_INCIDENT = ":OffsetConfig:OutputIncidentPower"
-    OUTPUT_REFLECTED = ":OffsetConfig:OutputReflectedPower"
+    db += alarm_record.safe_substitute(**kwargs)
+    return db
 
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{BAR_UPPER_INCIDENT}",
-            "EGU": "dBm",
-        }
-    )
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{BAR_UPPER_REFLECTED}",
-            "EGU": "dBm",
-        }
-    )
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{BAR_LOWER_INCIDENT}",
-            "EGU": "dBm",
-        }
-    )
-    db += alarm.safe_substitute(
-        **{
-            "PV": f"{entries[0].Sec}-{entries[0].Sub}{BAR_LOWER_REFLECTED}",
-            "EGU": "dBm",
-        }
-    )
 
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{INPUT_INCIDENT}", "EGU": "dBm"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{INPUT_REFLECTED}", "EGU": "dBm"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{OUTPUT_INCIDENT}", "EGU": "dBm"}
-    )
-    db += alarm.safe_substitute(
-        **{"PV": f"{entries[0].Sec}-{entries[0].Sub}{OUTPUT_REFLECTED}", "EGU": "dBm"}
-    )
+def gen_current(e: Data, kwargs: typing.Dict) -> str:
+    db = ""
+    kwargs["HIHI"] = f"{e.Sec}-{e.Sub}{CURRENT_HIHI}"
+    kwargs["HIGH"] = f"{e.Sec}-{e.Sub}{CURRENT_HIGH}"
+    kwargs["LOW"] = f"{e.Sec}-{e.Sub}{CURRENT_LOW}"
+    kwargs["LOLO"] = f"{e.Sec}-{e.Sub}{CURRENT_LOLO}"
+    db += alarm_record.safe_substitute(**kwargs)
+    db += current.safe_substitute(**kwargs)
+    return db
 
+
+def gen_power(e: Data, kwargs: typing.Dict) -> str:
+    db = ""
+    if int(e.Reading) == 35:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_LOWER_REFLECTED}"
+    elif int(e.Reading) == 36:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_LOWER_INCIDENT}"
+    elif int(e.Reading) == 37:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_UPPER_REFLECTED}"
+    elif int(e.Reading) == 38:
+        kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_UPPER_INCIDENT}"
+
+    kwargs["HIHI"] = f"{e.Sec}-{e.Sub}{INNER_POWER_HIHI}"
+    kwargs["HIGH"] = f"{e.Sec}-{e.Sub}{INNER_POWER_HIGH}"
+    kwargs["LOW"] = f"{e.Sec}-{e.Sub}{INNER_POWER_LOW}"
+    kwargs["LOLO"] = f"{e.Sec}-{e.Sub}{INNER_POWER_LOLO}"
+    db += alarm_record.safe_substitute(**kwargs)
+    db += power.safe_substitute(**kwargs)
+    return db
+
+
+def gen_readings(entries: typing.List[Data]) -> str:
+    db = ""
     # Readings
     for e in entries:
 
@@ -414,55 +421,27 @@ if __name__ == "__main__":
 
         if e.HeatSink == "9":
             # General Power
-            kwargs["HIHI"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_HIHI}"
-            kwargs["HIGH"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_HIGH}"
-            kwargs["LOW"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_LOW}"
-            kwargs["LOLO"] = f"{e.Sec}-{e.Sub}{GENERAL_POWER_LOLO}"
-
-            if int(e.Reading) in [1, 5, 9, 13]:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{INPUT_INCIDENT}"
-                db += power_general_eq1.safe_substitute(**kwargs)
-            elif int(e.Reading) in [2, 6, 10, 14]:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{INPUT_REFLECTED}"
-                db += power_general_eq2.safe_substitute(**kwargs)
-
-            elif int(e.Reading) in [3, 7, 11, 15]:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{OUTPUT_INCIDENT}"
-                db += power_general_eq2.safe_substitute(**kwargs)
-            elif int(e.Reading) in [4, 8, 12, 16]:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{OUTPUT_REFLECTED}"
-                db += power_general_eq2.safe_substitute(**kwargs)
-
-            db += alarm_record.safe_substitute(**kwargs)
+            db += gen_general_power(e=e, kwargs=kwargs)
             continue
 
         if int(e.Reading) < 35:
             # Current
-            kwargs["HIHI"] = f"{e.Sec}-{e.Sub}{CURRENT_HIHI}"
-            kwargs["HIGH"] = f"{e.Sec}-{e.Sub}{CURRENT_HIGH}"
-            kwargs["LOW"] = f"{e.Sec}-{e.Sub}{CURRENT_LOW}"
-            kwargs["LOLO"] = f"{e.Sec}-{e.Sub}{CURRENT_LOLO}"
-            db += alarm_record.safe_substitute(**kwargs)
-            db += current.safe_substitute(**kwargs)
+            db += gen_current(e=e, kwargs=kwargs)
             continue
 
-        else:
-            # Power
-            if int(e.Reading) == 35:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_LOWER_REFLECTED}"
-            elif int(e.Reading) == 36:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_LOWER_INCIDENT}"
-            elif int(e.Reading) == 37:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_UPPER_REFLECTED}"
-            elif int(e.Reading) == 38:
-                kwargs["OFS"] = f"{e.Sec}-{e.Sub}{BAR_UPPER_INCIDENT}"
+        # Power
+        db += gen_power(e=e, kwargs=kwargs)
 
-            kwargs["HIHI"] = f"{e.Sec}-{e.Sub}{INNER_POWER_HIHI}"
-            kwargs["HIGH"] = f"{e.Sec}-{e.Sub}{INNER_POWER_HIGH}"
-            kwargs["LOW"] = f"{e.Sec}-{e.Sub}{INNER_POWER_LOW}"
-            kwargs["LOLO"] = f"{e.Sec}-{e.Sub}{INNER_POWER_LOLO}"
-            db += alarm_record.safe_substitute(**kwargs)
-            db += power.safe_substitute(**kwargs)
-            continue
+    return db
+
+
+if __name__ == "__main__":
+    sheet_file = "../documentation/SSAStorageRing/Variáveis Aquisição Anel.xlsx"
+
+    entries = load_data(file_name=sheet_file)
+
+    db = gen_raw_acquisition()
+    db += gen_settings(entries=entries)
+    db += gen_readings(entries=entries)
 
     print(db)
