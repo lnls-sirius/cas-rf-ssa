@@ -41,3 +41,5 @@ cd "${TOP}"
 create_monitor_set("SSAStorageRing01.req",  10)
 
 dbl
+
+seq &SSAStorageRingCurrentCalc "prefix=$(P)"
