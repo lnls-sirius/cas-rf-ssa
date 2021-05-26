@@ -1,12 +1,13 @@
 program SSAStorageRing
 
 #define CURRENTS_NUM 272
+#define DELAY_SECONDS 2.0
 
 double totalCurrent = 0;
 assign totalCurrent to "{prefix}:RF-SSAmpTower:DCCurrent-Mon";
 
 double currents[CURRENTS_NUM];
-assign currents to  {
+assign currents to {
   "{prefix}:RF-SSAmp-H01AM01:Current1-Mon",
   "{prefix}:RF-SSAmp-H01AM01:Current2-Mon",
   "{prefix}:RF-SSAmp-H01AM02:Current1-Mon",
@@ -141,7 +142,7 @@ assign currents to  {
   "{prefix}:RF-SSAmp-H04BM07:Current2-Mon",
   "{prefix}:RF-SSAmp-H04BM08:Current1-Mon",
   "{prefix}:RF-SSAmp-H04BM08:Current2-Mon",
-  "{prefix}:RF-SSAmp-H04PreAmp:Current1-Mon,"
+  "{prefix}:RF-SSAmp-H04PreAmp:Current1-Mon",
   "{prefix}:RF-SSAmp-H04PreAmp:Current2-Mon",
   "{prefix}:RF-SSAmp-H05AM01:Current1-Mon",
   "{prefix}:RF-SSAmp-H05AM01:Current2-Mon",
@@ -280,27 +281,26 @@ assign currents to  {
   "{prefix}:RF-SSAmp-H08PreAmp:Current1-Mon",
   "{prefix}:RF-SSAmp-H08PreAmp:Current2-Mon" };
 
-double delaySeconds = 2.0;
 
 float totalAux = 0.0;
 int idx = 0;
-ss calc_total {
-    state prepare {
-        when(delay(delaySeconds)) {
+ss calcTotal {
+    state prepareReadings {
+        when(delay(DELAY_SECONDS)) {
             totalAux = 0.0;
             for(idx = 0; idx < CURRENTS_NUM; idx++) {
                 totalAux += pvGet(currents[idx], SYNC);
             }
             totalCurrent = totalAux;
-        } state assign
+        } state assignValue
     }
 
-    state assign {
+    state assignValue {
         entry {
             pvPut(totalCurrent);
         }
         when(delay(0.1)) {
-        } state prepare
+        } state prepareReadings
     }
 }
 
