@@ -29,7 +29,8 @@ SSA_SNCFLAGS += -a # Synchronous pvGet: the program waits for completion.
 SSA_SNCFLAGS += +c # Wait for process variables to connect before allowing the program to begin execution.
 SSA_SNCFLAGS += +s # Safe Mode: variables are local to state set and must be communicated explicitly.
 
-SSA_SRCS += SSAStorageRing.st
+SSA_SRCS += SSAStorageRingCurrentCalc.st
+SSA_DBD  += SSAStorageRingCurrentCalc.dbd
 
 # SSA_registerRecordDeviceDriver.cpp derives from SSA.dbd
 SSA_SRCS += SSA_registerRecordDeviceDriver.cpp
