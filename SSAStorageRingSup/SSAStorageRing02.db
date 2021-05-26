@@ -17003,3 +17003,11 @@ record(ao, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut4-Mon_LOLO"){
     field(FLNK, "RA-ToSIA02:RF-SSAmpTower:PwrRevOut4-Mon")
 }
 
+record(ai, "RA-ToSIA02:RF-SSAmpTower:DCCurrent-Mon") {
+    field(EGU,  "A")
+    field(DESC, "Total DC Current")
+    field(PREC, "2")
+    field(SCAN, "Passive")
+    field(PINI, "NO")
+}
+
