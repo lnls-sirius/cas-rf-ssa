@@ -23,4 +23,4 @@ iocInit
 
 cd "${TOP}"
 
-seq SSAStorageRing "prefix=$(P)"
+seq &SSAStorageRingCurrentCalc "prefix=$(P)"

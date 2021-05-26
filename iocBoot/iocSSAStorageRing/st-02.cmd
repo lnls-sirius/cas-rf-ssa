@@ -39,3 +39,7 @@ iocInit
 
 cd "${TOP}"
 create_monitor_set("SSAStorageRing02.req",  10)
+
+dbl
+
+seq &SSAStorageRingCurrentCalc "prefix=$(P)"
