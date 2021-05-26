@@ -63,16 +63,15 @@ class Comm:
 
     def _handle(self, connection: socket.socket):
         while True:
-            with connection:
-                command = connection.recv(1024).decode("utf-8")
+            command = connection.recv(1024).decode("utf-8")
 
-                if not command:
-                    raise RuntimeWarning("Empty command")
+            if not command:
+                raise RuntimeWarning("Empty command")
 
-                response = self.hardware.get(command=command)
+            response = self.hardware.get(command=command)
 
-                connection.sendall(response.encode("utf-8"))
-                logger.info("{} {}".format(command, response))
+            connection.sendall(response.encode("utf-8"))
+            logger.info("{} {}".format(command, response))
 
     def serve(self):
         try:
@@ -83,14 +82,13 @@ class Comm:
             self.welcome_socket.listen(1)
 
             while True:
-                connection, addr = self.welcome_socket.accept()
-                logger.info("Client {} connected at {}".format(connection, addr))
-                self._handle(connection=connection)
-        except RuntimeWarning as e:
-            logger.warning(f"Client disconnected, {e}")
-        except Exception:
-            logger.exception("Failed to init server")
-
+                try:
+                    connection, addr = self.welcome_socket.accept()
+                    with connection:
+                        logger.info("Client {} connected at {}".format(connection, addr))
+                        self._handle(connection=connection)
+                except RuntimeWarning as e:
+                    logger.warning(f"Client disconnected, {e}")
         finally:
             self._close()
 
