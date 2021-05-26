@@ -1,4 +1,4 @@
-program SSAStorageRing
+program SSAStorageRingCurrentCalc
 
 #define CURRENTS_NUM 272
 #define DELAY_SECONDS 2.0
@@ -286,10 +286,13 @@ float totalAux = 0.0;
 int idx = 0;
 ss calcTotal {
     state prepareReadings {
-        when(delay(DELAY_SECONDS)) {
+        entry {
             totalAux = 0.0;
+        }
+        when(delay(DELAY_SECONDS)) {
             for(idx = 0; idx < CURRENTS_NUM; idx++) {
-                totalAux += pvGet(currents[idx], SYNC);
+                pvGet(currents[idx], SYNC);
+                totalAux += currents[idx];
             }
             totalCurrent = totalAux;
         } state assignValue
@@ -297,7 +300,7 @@ ss calcTotal {
 
     state assignValue {
         entry {
-            pvPut(totalCurrent);
+            pvPut(totalCurrent, SYNC);
         }
         when(delay(0.1)) {
         } state prepareReadings
