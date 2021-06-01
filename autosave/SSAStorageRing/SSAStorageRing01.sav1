@@ -1,0 +1,22 @@
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 210525-080812
+RA-ToSIA01:AlarmConfig:GeneralPowerLimHiHi 78
+RA-ToSIA01:AlarmConfig:GeneralPowerLimHigh 77.5
+RA-ToSIA01:AlarmConfig:GeneralPowerLimLow 50
+RA-ToSIA01:AlarmConfig:GeneralPowerLimLoLo 30
+RA-ToSIA01:AlarmConfig:InnerPowerLimHiHi 69
+RA-ToSIA01:AlarmConfig:InnerPowerLimHigh 67
+RA-ToSIA01:AlarmConfig:InnerPowerLimLow 27
+RA-ToSIA01:AlarmConfig:InnerPowerLimLoLo 10
+RA-ToSIA01:AlarmConfig:CurrentLimHiHi 9
+RA-ToSIA01:AlarmConfig:CurrentLimHigh 8
+RA-ToSIA01:AlarmConfig:CurrentLimLow 4.5
+RA-ToSIA01:AlarmConfig:CurrentLimLoLo 2
+RA-ToSIA01:OffsetConfig:UpperIncidentPower 48.7
+RA-ToSIA01:OffsetConfig:UpperReflectedPower 48.7
+RA-ToSIA01:OffsetConfig:LowerIncidentPower 48.8
+RA-ToSIA01:OffsetConfig:LowerReflectedPower 48.8
+RA-ToSIA01:OffsetConfig:InputIncidentPower 29.87
+RA-ToSIA01:OffsetConfig:InputReflectedPower 27.12
+RA-ToSIA01:OffsetConfig:OutputIncidentPower 79.58
+RA-ToSIA01:OffsetConfig:OutputReflectedPower 75.4
+<END>
