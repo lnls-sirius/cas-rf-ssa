@@ -1,14 +1,14 @@
-# autosave R5.3	Automatically generated - DO NOT MODIFY - 190717-110751
-RA-ToBO:AlarmConfig:GeneralPowerLimHiHi 0
-RA-ToBO:AlarmConfig:GeneralPowerLimHigh 0
-RA-ToBO:AlarmConfig:GeneralPowerLimLow 0
-RA-ToBO:AlarmConfig:GeneralPowerLimLoLo 0
-RA-ToBO:AlarmConfig:InnerPowerLimHiHi 0
-RA-ToBO:AlarmConfig:InnerPowerLimHigh 0
-RA-ToBO:AlarmConfig:InnerPowerLimLow 0
-RA-ToBO:AlarmConfig:InnerPowerLimLoLo 0
-RA-ToBO:AlarmConfig:CurrentLimHiHi 10
-RA-ToBO:AlarmConfig:CurrentLimHigh 9
-RA-ToBO:AlarmConfig:CurrentLimLow 1
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 200908-071709
+RA-ToBO:AlarmConfig:GeneralPowerLimHiHi 76
+RA-ToBO:AlarmConfig:GeneralPowerLimHigh 75
+RA-ToBO:AlarmConfig:GeneralPowerLimLow 57
+RA-ToBO:AlarmConfig:GeneralPowerLimLoLo 40
+RA-ToBO:AlarmConfig:InnerPowerLimHiHi 67
+RA-ToBO:AlarmConfig:InnerPowerLimHigh 65
+RA-ToBO:AlarmConfig:InnerPowerLimLow 47
+RA-ToBO:AlarmConfig:InnerPowerLimLoLo 20
+RA-ToBO:AlarmConfig:CurrentLimHiHi 9
+RA-ToBO:AlarmConfig:CurrentLimHigh 7
+RA-ToBO:AlarmConfig:CurrentLimLow 1.5
 RA-ToBO:AlarmConfig:CurrentLimLoLo 0.1
 <END>
