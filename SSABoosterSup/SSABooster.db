@@ -16227,3 +16227,11 @@ record(calc, "RA-ToBO:RF-SSAmpTower:PwrFwdOut-Mon"){
     field(LLSV, "MAJOR")
 }
 
+record(ai, "RA-ToBO:RF-SSAmpTower:DCCurrent-Mon") {
+    field(EGU,  "A")
+    field(DESC, "Total DC Current")
+    field(PREC, "2")
+    field(SCAN, "Passive")
+    field(PINI, "NO")
+}
+
