@@ -38,3 +38,8 @@ iocInit
 cd "${TOP}"
 create_monitor_set("$(TOP)/db/SSABoosterAlarms.req",  10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)AlarmsSaveName")
 create_monitor_set("$(TOP)/db/SSABoosterOffsets.req", 10, "TOP=$(TOP), SAVENAMEPV=$(P)$(R)OffsetsSaveName")
+
+dbl
+
+seq &SSABoosterCurrentCalc "prefix=$(P)"
+

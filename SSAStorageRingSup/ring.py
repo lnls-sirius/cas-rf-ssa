@@ -270,6 +270,18 @@ record(calc, "${PV}"){
 """
 )
 
+total_dc_current = Template(
+    """
+record(ai, "${prefix}:RF-SSAmpTower:DCCurrent-Mon") {
+    field(EGU,  "A")
+    field(DESC, "Total DC Current")
+    field(PREC, "2")
+    field(SCAN, "Passive")
+    field(PINI, "NO")
+}
+"""
+)
+
 
 class Data:
     def __init__(self, index, row, rack):
@@ -443,5 +455,6 @@ if __name__ == "__main__":
     db = gen_raw_acquisition()
     db += gen_settings(entries=entries)
     db += gen_readings(entries=entries)
+    db += total_dc_current.safe_substitute(prefix=f"{entries[0].Sec}-{entries[0].Sub}")
 
     print(db)
