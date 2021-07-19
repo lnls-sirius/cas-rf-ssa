@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from scripts import (
     fm,
     gen_raw_acquisition,
@@ -9,8 +10,7 @@ from scripts import (
 
 
 if __name__ == "__main__":
-    sheet_file = "../documentation/SSAStorageRing/Variáveis Aquisição Anel.xlsx"
-
+    sheet_file = "../documentation/SSAStorageRing/SI.xlsx"
     entries = load_data(file_name=sheet_file)
     gen_raw_acquisition()
     gen_settings(entries=entries)
