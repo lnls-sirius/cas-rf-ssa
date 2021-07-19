@@ -1,0 +1,120 @@
+
+record(ao, "$(P):AlarmConfig:GeneralPowerLimHiHi"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:GeneralPowerLimHigh"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:GeneralPowerLimLow"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:GeneralPowerLimLoLo"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:InnerPowerLimHiHi"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:InnerPowerLimHigh"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:InnerPowerLimLow"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:InnerPowerLimLoLo"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:CurrentLimHiHi"){
+    field(PINI, "YES")
+    field(EGU,  "A")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:CurrentLimHigh"){
+    field(PINI, "YES")
+    field(EGU,  "A")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:CurrentLimLow"){
+    field(PINI, "YES")
+    field(EGU,  "A")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):AlarmConfig:CurrentLimLoLo"){
+    field(PINI, "YES")
+    field(EGU,  "A")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:UpperIncidentPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:UpperReflectedPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:LowerIncidentPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:LowerReflectedPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:InputIncidentPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:InputReflectedPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:OutputIncidentPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}
+
+record(ao, "$(P):OffsetConfig:OutputReflectedPower"){
+    field(PINI, "YES")
+    field(EGU,  "dBm")
+    field(PREC, "2")
+}

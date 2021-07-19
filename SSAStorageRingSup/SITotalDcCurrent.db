@@ -1,0 +1,8 @@
+
+record(ai, "$(P):RF-SSAmpTower:DCCurrent-Mon") {
+    field(EGU,  "A")
+    field(DESC, "Total DC Current")
+    field(PREC, "2")
+    field(SCAN, "Passive")
+    field(PINI, "NO")
+}

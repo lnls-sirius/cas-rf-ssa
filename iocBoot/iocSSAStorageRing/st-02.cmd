@@ -14,7 +14,11 @@ asynSetOption("L0", 0, "baud", "500000")
 epicsEnvSet("P","RA-ToSIA02")
 epicsEnvSet("R",":")
 
-dbLoadRecords("db/SSAStorageRing02.db", "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0,SCAN=2")
+dbLoadRecords("db/SIRack2.db", "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0,SCAN=2")
+dbLoadRecords("db/SIRack3.db", "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0,SCAN=2")
+dbLoadRecords("db/SIRack4.db", "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0,SCAN=2")
+dbLoadRecords("db/SISettings.db", "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0,SCAN=2")
+dbLoadRecords("db/SITotalDcCurrent.db", "P=$(P),R=$(R),RACK=RACK,PORT=L0,A=0,SCAN=2")
 
 #save_restoreSet_FilePermissions(0777)
 
