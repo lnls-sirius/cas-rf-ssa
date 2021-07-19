@@ -3,7 +3,7 @@ set -exu
 
 [ -z "$1" ] && echo "arg 1) TOP" && exit 1 || TOP=$1
 
-python ring.py
+python __run__.py
 
 cat SI*.db | \
     grep record | \
