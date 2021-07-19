@@ -211,8 +211,7 @@ assign currents to {
     "{prefix}:RF-SSAmp-H06M16:Current1-Mon",
     "{prefix}:RF-SSAmp-H06M16:Current2-Mon",
     "{prefix}:RF-SSAmp-H06M17:Current1-Mon",
-    "{prefix}:RF-SSAmp-H06M17:Current2-Mon",
-};
+    "{prefix}:RF-SSAmp-H06M17:Current2-Mon"};
 
 
 float totalAux = 0.0;
