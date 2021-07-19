@@ -159,6 +159,18 @@ record(calc, "${PV}"){
 """
 )
 
+total_dc_current = Template(
+    """
+record(ai, "${prefix}:RF-SSAmpTower:DCCurrent-Mon") {
+    field(EGU,  "A")
+    field(DESC, "Total DC Current")
+    field(PREC, "2")
+    field(SCAN, "Passive")
+    field(PINI, "NO")
+}
+"""
+)
+
 
 class Data:
     def __init__(self, index, row):
@@ -167,12 +179,13 @@ class Data:
         self.HeatSink = row["HeatSink"]
         self.Reading = row["Reading"]
         self.Valor = row["Valor"]
-        self.Sec = row["Sec"]
-        self.Sub = row["Sub"]
-        self.Dis = row["Dis"]
-        self.Dev = row["Dev"]
-        self.Idx = row["Idx"]
-        self.Prop = row["Prop"]
+
+        self.Sec = row["SEC"]
+        self.Sub = row["SUB"]
+        self.Dis = row["DIS"]
+        self.Dev = row["DEV"]
+        self.Idx = row["IDX"]
+        self.Prop = row["PROP"]
         self.Device = row["Device Name"]
         self.Indicative = row["Indicative"]
         self.Module = row["Module"]
@@ -309,7 +322,7 @@ def gen_power(e: Data, kwargs: dict) -> str:
 
 
 if __name__ == "__main__":
-    sheet = "../documentation/SSABooster/Variáveis Aquisição Booster.xlsx"
+    sheet = "../documentation/SSABooster/BO.xlsx"
     entries = load_entries(file_name=sheet)
 
     db = ""
@@ -318,7 +331,11 @@ if __name__ == "__main__":
 
     # Readings
     for e in entries:
+
         if e.Tower != "1":
+            continue
+
+        if e.Device == "" or type(e.Device) == float:
             continue
 
         kwargs = {}
@@ -344,5 +361,7 @@ if __name__ == "__main__":
             # Power
             db += gen_power(e, kwargs=kwargs)
             continue
+
+    db += total_dc_current.safe_substitute(prefix=f"{entries[0].Sec}-{entries[0].Sub}")
 
     print(db)
