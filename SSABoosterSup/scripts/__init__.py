@@ -21,12 +21,13 @@ class Data:
         self.HeatSink = row["HeatSink"]
         self.Reading = row["Reading"]
         self.Valor = row["Valor"]
-        self.Sec = row["Sec"]
-        self.Sub = row["Sub"]
-        self.Dis = row["Dis"]
-        self.Dev = row["Dev"]
-        self.Idx = row["Idx"]
-        self.Prop = row["Prop"]
+
+        self.Sec = row["SEC"]
+        self.Sub = row["SUB"]
+        self.Dis = row["DIS"]
+        self.Dev = row["DEV"]
+        self.Idx = row["IDX"]
+        self.Prop = row["PROP"]
         self.Device = row["Device Name"]
         self.Indicative = row["Indicative"]
         self.Module = row["Module"]
@@ -163,7 +164,7 @@ def gen_power(e: Data, kwargs: dict) -> str:
 
 
 def main():
-    sheet = "../documentation/BO.xlsx"
+    sheet = "../documentation/SSABooster/BO.xlsx"
     entries = load_entries(file_name=sheet)
 
     db = ""
@@ -172,7 +173,11 @@ def main():
 
     # Readings
     for e in entries:
+
         if e.Tower != "1":
+            continue
+
+        if e.Device == "" or type(e.Device) == float:
             continue
 
         kwargs = {}
